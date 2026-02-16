@@ -5,6 +5,8 @@ import { foodData, mockRestaurants, mockHotels, Hotel } from '../data/foodData';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import AreaMap from '../components/AreaMap';
+
 
 export default function MapView() {
   const [searchParams] = useSearchParams();
@@ -68,34 +70,10 @@ export default function MapView() {
             <Card className="p-6">
               <h2 className="text-xl font-bold mb-4">クラスタリング分析結果</h2>
               
-              {/* モックマップ */}
-              <div className="bg-gradient-to-br from-blue-100 to-green-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                
-                {/* 模擬的な店舗マーカー */}
-                <div className="relative w-full h-full">
-                  {mockRestaurants.map((restaurant, index) => (
-                    <div
-                      key={restaurant.id}
-                      className="absolute w-8 h-8 bg-red-500 rounded-full border-2 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold"
-                      style={{
-                        left: `${30 + index * 15}%`,
-                        top: `${40 + index * 10}%`,
-                      }}
-                    >
-                      店
-                    </div>
-                  ))}
-                  
-                  {/* クラスタリング円 */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-64 h-64 border-4 border-blue-500 border-dashed rounded-full opacity-50"></div>
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-                      密集エリア
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Google Map（店＋宿） */} 
+              <AreaMap center={{ lat: region.lat, lng: region.lng }}
+              foodKeyword={food.name} 
+              radiusKm={20} />
 
               <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                 <div className="flex items-start gap-3">
