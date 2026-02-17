@@ -1,0 +1,1464 @@
+[
+  {
+    "id": "牡蠣",
+    "name": "牡蠣",
+    "imageQuery": "牡蠣",
+    "regions": [
+      {
+        "id": "牡蠣-松島町",
+        "name": "松島町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牡蠣-赤穂市",
+        "name": "赤穂市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牡蠣-能登町",
+        "name": "能登町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牡蠣-厚岸町",
+        "name": "厚岸町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "カニ",
+    "name": "カニ",
+    "imageQuery": "カニ",
+    "regions": [
+      {
+        "id": "カニ-鳥取市",
+        "name": "鳥取市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カニ-境港市",
+        "name": "境港市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カニ-香美町",
+        "name": "香美町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カニ-越前町",
+        "name": "越前町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カニ-京丹後市",
+        "name": "京丹後市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ホタテ",
+    "name": "ホタテ",
+    "imageQuery": "ホタテ",
+    "regions": [
+      {
+        "id": "ホタテ-猿払村",
+        "name": "猿払村",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ホタテ-紋別市",
+        "name": "紋別市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ホタテ-青森市",
+        "name": "青森市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ウニ",
+    "name": "ウニ",
+    "imageQuery": "ウニ",
+    "regions": [
+      {
+        "id": "ウニ-利尻町",
+        "name": "利尻町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ウニ-積丹町",
+        "name": "積丹町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ウニ-八戸市",
+        "name": "八戸市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "マグロ",
+    "name": "マグロ",
+    "imageQuery": "マグロ",
+    "regions": [
+      {
+        "id": "マグロ-大間町",
+        "name": "大間町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "マグロ-勝浦市",
+        "name": "勝浦市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "マグロ-那智勝浦町",
+        "name": "那智勝浦町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "カツオ",
+    "name": "カツオ",
+    "imageQuery": "カツオ",
+    "regions": [
+      {
+        "id": "カツオ-焼津市",
+        "name": "焼津市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カツオ-枕崎市",
+        "name": "枕崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カツオ-高知市",
+        "name": "高知市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ブリ",
+    "name": "ブリ",
+    "imageQuery": "ブリ",
+    "regions": [
+      {
+        "id": "ブリ-氷見市",
+        "name": "氷見市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ブリ-富山市",
+        "name": "富山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ブリ-金沢市",
+        "name": "金沢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "しらす",
+    "name": "しらす",
+    "imageQuery": "しらす",
+    "regions": [
+      {
+        "id": "しらす-藤沢市",
+        "name": "藤沢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "しらす-和歌山市",
+        "name": "和歌山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "しらす-由比町",
+        "name": "由比町",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "明太子",
+    "name": "明太子",
+    "imageQuery": "明太子",
+    "regions": [
+      {
+        "id": "明太子-福岡市",
+        "name": "福岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "明太子-北九州市",
+        "name": "北九州市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ふぐ",
+    "name": "ふぐ",
+    "imageQuery": "ふぐ",
+    "regions": [
+      {
+        "id": "ふぐ-下関市",
+        "name": "下関市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ふぐ-北九州市",
+        "name": "北九州市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "うなぎ",
+    "name": "うなぎ",
+    "imageQuery": "うなぎ",
+    "regions": [
+      {
+        "id": "うなぎ-浜松市",
+        "name": "浜松市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "うなぎ-西尾市",
+        "name": "西尾市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "うなぎ-志布志市",
+        "name": "志布志市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "あなご",
+    "name": "あなご",
+    "imageQuery": "あなご",
+    "regions": [
+      {
+        "id": "あなご-廿日市市",
+        "name": "廿日市市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "あなご-明石市",
+        "name": "明石市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "いか",
+    "name": "いか",
+    "imageQuery": "いか",
+    "regions": [
+      {
+        "id": "いか-函館市",
+        "name": "函館市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "いか-八戸市",
+        "name": "八戸市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "たこ",
+    "name": "たこ",
+    "imageQuery": "たこ",
+    "regions": [
+      {
+        "id": "たこ-明石市",
+        "name": "明石市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "たこ-泉佐野市",
+        "name": "泉佐野市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ラーメン",
+    "name": "ラーメン",
+    "imageQuery": "ラーメン",
+    "regions": [
+      {
+        "id": "ラーメン-札幌市",
+        "name": "札幌市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-函館市",
+        "name": "函館市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-旭川市",
+        "name": "旭川市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-喜多方市",
+        "name": "喜多方市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-白河市",
+        "name": "白河市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-佐野市",
+        "name": "佐野市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-富山市",
+        "name": "富山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-福岡市",
+        "name": "福岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-尾道市",
+        "name": "尾道市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-和歌山市",
+        "name": "和歌山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-須崎市",
+        "name": "須崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ラーメン-竹岡市",
+        "name": "竹岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "うどん",
+    "name": "うどん",
+    "imageQuery": "うどん",
+    "regions": [
+      {
+        "id": "うどん-高松市",
+        "name": "高松市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "うどん-丸亀市",
+        "name": "丸亀市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "うどん-伊勢市",
+        "name": "伊勢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "そば",
+    "name": "そば",
+    "imageQuery": "そば",
+    "regions": [
+      {
+        "id": "そば-長野市",
+        "name": "長野市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "そば-福井市",
+        "name": "福井市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "そば-出雲市",
+        "name": "出雲市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "そば-那覇市",
+        "name": "那覇市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "そば-会津若松市",
+        "name": "会津若松市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "焼きそば",
+    "name": "焼きそば",
+    "imageQuery": "焼きそば",
+    "regions": [
+      {
+        "id": "焼きそば-富士宮市",
+        "name": "富士宮市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "焼きそば-太田市",
+        "name": "太田市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ちゃんぽん",
+    "name": "ちゃんぽん",
+    "imageQuery": "ちゃんぽん",
+    "regions": [
+      {
+        "id": "ちゃんぽん-長崎市",
+        "name": "長崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "牛肉",
+    "name": "牛肉",
+    "imageQuery": "牛肉",
+    "regions": [
+      {
+        "id": "牛肉-神戸市",
+        "name": "神戸市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牛肉-松阪市",
+        "name": "松阪市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牛肉-近江八幡市",
+        "name": "近江八幡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牛肉-高山市",
+        "name": "高山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "牛肉-米沢市",
+        "name": "米沢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "豚肉",
+    "name": "豚肉",
+    "imageQuery": "豚肉",
+    "regions": [
+      {
+        "id": "豚肉-鹿児島市",
+        "name": "鹿児島市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "豚肉-都城市",
+        "name": "都城市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "鶏肉",
+    "name": "鶏肉",
+    "imageQuery": "鶏肉",
+    "regions": [
+      {
+        "id": "鶏肉-宮崎市",
+        "name": "宮崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "鶏肉-中津市",
+        "name": "中津市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "牛タン",
+    "name": "牛タン",
+    "imageQuery": "牛タン",
+    "regions": [
+      {
+        "id": "牛タン-仙台市",
+        "name": "仙台市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ジンギスカン",
+    "name": "ジンギスカン",
+    "imageQuery": "ジンギスカン",
+    "regions": [
+      {
+        "id": "ジンギスカン-札幌市",
+        "name": "札幌市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "ジンギスカン-滝川市",
+        "name": "滝川市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "馬刺し",
+    "name": "馬刺し",
+    "imageQuery": "馬刺し",
+    "regions": [
+      {
+        "id": "馬刺し-熊本市",
+        "name": "熊本市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "寿司",
+    "name": "寿司",
+    "imageQuery": "寿司",
+    "regions": [
+      {
+        "id": "寿司-金沢市",
+        "name": "金沢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "寿司-函館市",
+        "name": "函館市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "寿司-富山市",
+        "name": "富山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "餃子",
+    "name": "餃子",
+    "imageQuery": "餃子",
+    "regions": [
+      {
+        "id": "餃子-宇都宮市",
+        "name": "宇都宮市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "餃子-浜松市",
+        "name": "浜松市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "お好み焼き",
+    "name": "お好み焼き",
+    "imageQuery": "お好み焼き",
+    "regions": [
+      {
+        "id": "お好み焼き-広島市",
+        "name": "広島市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "お好み焼き-大阪市",
+        "name": "大阪市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "たこ焼き",
+    "name": "たこ焼き",
+    "imageQuery": "たこ焼き",
+    "regions": [
+      {
+        "id": "たこ焼き-大阪市",
+        "name": "大阪市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "もつ鍋",
+    "name": "もつ鍋",
+    "imageQuery": "もつ鍋",
+    "regions": [
+      {
+        "id": "もつ鍋-福岡市",
+        "name": "福岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "水炊き",
+    "name": "水炊き",
+    "imageQuery": "水炊き",
+    "regions": [
+      {
+        "id": "水炊き-福岡市",
+        "name": "福岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "きりたんぽ",
+    "name": "きりたんぽ",
+    "imageQuery": "きりたんぽ",
+    "regions": [
+      {
+        "id": "きりたんぽ-大館市",
+        "name": "大館市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ほうとう",
+    "name": "ほうとう",
+    "imageQuery": "ほうとう",
+    "regions": [
+      {
+        "id": "ほうとう-甲府市",
+        "name": "甲府市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ひつまぶし",
+    "name": "ひつまぶし",
+    "imageQuery": "ひつまぶし",
+    "regions": [
+      {
+        "id": "ひつまぶし-名古屋市",
+        "name": "名古屋市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "味噌カツ",
+    "name": "味噌カツ",
+    "imageQuery": "味噌カツ",
+    "regions": [
+      {
+        "id": "味噌カツ-名古屋市",
+        "name": "名古屋市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "手羽先",
+    "name": "手羽先",
+    "imageQuery": "手羽先",
+    "regions": [
+      {
+        "id": "手羽先-名古屋市",
+        "name": "名古屋市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "せんべい汁",
+    "name": "せんべい汁",
+    "imageQuery": "せんべい汁",
+    "regions": [
+      {
+        "id": "せんべい汁-八戸市",
+        "name": "八戸市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "カレー",
+    "name": "カレー",
+    "imageQuery": "カレー",
+    "regions": [
+      {
+        "id": "カレー-金沢市",
+        "name": "金沢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カレー-横須賀市",
+        "name": "横須賀市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "カレー-札幌市",
+        "name": "札幌市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "明石焼き",
+    "name": "明石焼き",
+    "imageQuery": "明石焼き",
+    "regions": [
+      {
+        "id": "明石焼き-明石市",
+        "name": "明石市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "もんじゃ焼き",
+    "name": "もんじゃ焼き",
+    "imageQuery": "もんじゃ焼き",
+    "regions": [
+      {
+        "id": "もんじゃ焼き-中央区（東京）",
+        "name": "中央区（東京）",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "りんご",
+    "name": "りんご",
+    "imageQuery": "りんご",
+    "regions": [
+      {
+        "id": "りんご-弘前市",
+        "name": "弘前市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "りんご-青森市",
+        "name": "青森市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "さくらんぼ",
+    "name": "さくらんぼ",
+    "imageQuery": "さくらんぼ",
+    "regions": [
+      {
+        "id": "さくらんぼ-天童市",
+        "name": "天童市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "もも",
+    "name": "もも",
+    "imageQuery": "もも",
+    "regions": [
+      {
+        "id": "もも-岡山市",
+        "name": "岡山市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ぶどう",
+    "name": "ぶどう",
+    "imageQuery": "ぶどう",
+    "regions": [
+      {
+        "id": "ぶどう-甲州市",
+        "name": "甲州市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "梨",
+    "name": "梨",
+    "imageQuery": "梨",
+    "regions": [
+      {
+        "id": "梨-船橋市",
+        "name": "船橋市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "みかん",
+    "name": "みかん",
+    "imageQuery": "みかん",
+    "regions": [
+      {
+        "id": "みかん-有田市",
+        "name": "有田市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "メロン",
+    "name": "メロン",
+    "imageQuery": "メロン",
+    "regions": [
+      {
+        "id": "メロン-富良野市",
+        "name": "富良野市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "いちご",
+    "name": "いちご",
+    "imageQuery": "いちご",
+    "regions": [
+      {
+        "id": "いちご-久留米市",
+        "name": "久留米市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "マンゴー",
+    "name": "マンゴー",
+    "imageQuery": "マンゴー",
+    "regions": [
+      {
+        "id": "マンゴー-宮崎市",
+        "name": "宮崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "さつまいも",
+    "name": "さつまいも",
+    "imageQuery": "さつまいも",
+    "regions": [
+      {
+        "id": "さつまいも-鹿屋市",
+        "name": "鹿屋市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "じゃがいも",
+    "name": "じゃがいも",
+    "imageQuery": "じゃがいも",
+    "regions": [
+      {
+        "id": "じゃがいも-帯広市",
+        "name": "帯広市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "玉ねぎ",
+    "name": "玉ねぎ",
+    "imageQuery": "玉ねぎ",
+    "regions": [
+      {
+        "id": "玉ねぎ-淡路市",
+        "name": "淡路市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "とうもろこし",
+    "name": "とうもろこし",
+    "imageQuery": "とうもろこし",
+    "regions": [
+      {
+        "id": "とうもろこし-富良野市",
+        "name": "富良野市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "枝豆",
+    "name": "枝豆",
+    "imageQuery": "枝豆",
+    "regions": [
+      {
+        "id": "枝豆-鶴岡市",
+        "name": "鶴岡市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "日本酒",
+    "name": "日本酒",
+    "imageQuery": "日本酒",
+    "regions": [
+      {
+        "id": "日本酒-新潟市",
+        "name": "新潟市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      },
+      {
+        "id": "日本酒-伏見区（京都市）",
+        "name": "伏見区（京都市）",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "焼酎",
+    "name": "焼酎",
+    "imageQuery": "焼酎",
+    "regions": [
+      {
+        "id": "焼酎-霧島市",
+        "name": "霧島市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "泡盛",
+    "name": "泡盛",
+    "imageQuery": "泡盛",
+    "regions": [
+      {
+        "id": "泡盛-那覇市",
+        "name": "那覇市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ワイン",
+    "name": "ワイン",
+    "imageQuery": "ワイン",
+    "regions": [
+      {
+        "id": "ワイン-甲州市",
+        "name": "甲州市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "もみじ饅頭",
+    "name": "もみじ饅頭",
+    "imageQuery": "もみじ饅頭",
+    "regions": [
+      {
+        "id": "もみじ饅頭-広島市",
+        "name": "広島市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "八ツ橋",
+    "name": "八ツ橋",
+    "imageQuery": "八ツ橋",
+    "regions": [
+      {
+        "id": "八ツ橋-京都市",
+        "name": "京都市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "信玄餅",
+    "name": "信玄餅",
+    "imageQuery": "信玄餅",
+    "regions": [
+      {
+        "id": "信玄餅-甲府市",
+        "name": "甲府市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "赤福",
+    "name": "赤福",
+    "imageQuery": "赤福",
+    "regions": [
+      {
+        "id": "赤福-伊勢市",
+        "name": "伊勢市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "白い恋人",
+    "name": "白い恋人",
+    "imageQuery": "白い恋人",
+    "regions": [
+      {
+        "id": "白い恋人-札幌市",
+        "name": "札幌市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "カステラ",
+    "name": "カステラ",
+    "imageQuery": "カステラ",
+    "regions": [
+      {
+        "id": "カステラ-長崎市",
+        "name": "長崎市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "ちんすこう",
+    "name": "ちんすこう",
+    "imageQuery": "ちんすこう",
+    "regions": [
+      {
+        "id": "ちんすこう-那覇市",
+        "name": "那覇市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  },
+  {
+    "id": "栗きんとん",
+    "name": "栗きんとん",
+    "imageQuery": "栗きんとん",
+    "regions": [
+      {
+        "id": "栗きんとん-中津川市",
+        "name": "中津川市",
+        "prefecture": "",
+        "description": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ]
+  }
+]
