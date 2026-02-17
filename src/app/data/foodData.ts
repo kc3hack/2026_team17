@@ -1,4 +1,4 @@
-// src/app/data/foodData.ts
+// src/app/data/foodData.変更
 import XLSX from "xlsx";
 import path from "path";
 import fs from "fs";
