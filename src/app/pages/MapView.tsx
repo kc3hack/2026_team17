@@ -1,11 +1,11 @@
 import { useSearchParams, useNavigate } from 'react-router';
 import { useState, useEffect } from 'react';
 import { ArrowLeft, MapPin, Star, DollarSign, Hotel as HotelIcon, Navigation } from 'lucide-react';
-import { foodData, mockRestaurants, mockHotels, Hotel } from '../data/foodData';
+import { foodData} from '../data/foodData';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import AreaMap from '../components/AreaMap';
+import AreaMap,{ PlaceItem } from '../components/AreaMap';
 
 
 export default function MapView() {
@@ -14,20 +14,12 @@ export default function MapView() {
   const foodId = searchParams.get('food') || '';
   const regionId = searchParams.get('region') || '';
 
-  const [hotels, setHotels] = useState<Hotel[]>([]);
-  const [loading, setLoading] = useState(true);
 
   const food = foodData.find((f) => f.id === foodId);
   const region = food?.regions.find((r) => r.id === regionId);
 
-  useEffect(() => {
-    // クラスタリング分析をシミュレート
-    setLoading(true);
-    setTimeout(() => {
-      setHotels(mockHotels);
-      setLoading(false);
-    }, 1500);
-  }, [foodId, regionId]);
+  const [restaurants, setRestaurants] = useState<PlaceItem[]>([]);
+  const [lodgings, setLodgings] = useState<PlaceItem[]>([]);
 
   if (!food || !region) {
     return (
@@ -68,21 +60,23 @@ export default function MapView() {
           {/* 地図エリア */}
           <div className="lg:sticky lg:top-24 h-fit">
             <Card className="p-6">
-              <h2 className="text-xl font-bold mb-4">クラスタリング分析結果</h2>
+              <h2 className="text-xl font-bold mb-4">Google Maps 検索結果</h2>
               
               {/* Google Map（店＋宿） */} 
               <AreaMap center={{ lat: region.lat, lng: region.lng }}
               foodKeyword={food.name} 
-              radiusKm={20} />
+              radiusKm={20} 
+              onRestaurants={setRestaurants}
+              onLodgings={setLodgings}/>
 
               <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                 <div className="flex items-start gap-3">
                   <Navigation className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                   <div>
-                    <h3 className="font-bold mb-1">分析完了</h3>
+                    <h3 className="font-bold mb-1">取得状況</h3>
                     <p className="text-sm text-gray-700">
-                      {mockRestaurants.length}件の{food.name}店舗が密集するエリアを検出しました。
-                      半径約1km圏内に{hotels.length}件の宿泊施設があります。
+                      {restaurants.length}件の{food.name}店舗が密集するエリアを検出しました。
+                      半径約1km圏内に{lodgings.length}件の宿泊施設があります。
                     </p>
                   </div>
                 </div>
@@ -92,20 +86,23 @@ export default function MapView() {
               <div className="mt-6">
                 <h3 className="font-bold mb-3">周辺の{food.name}店舗</h3>
                 <div className="space-y-2">
-                  {mockRestaurants.map((restaurant) => (
-                    <div key={restaurant.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  {restaurants.map((r) => (
+                    <div key={r.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                       <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">
                         店
                       </div>
                       <div className="flex-1">
-                        <p className="font-medium">{restaurant.name}</p>
+                        <p className="font-medium">{r.name}</p>
                         <div className="flex items-center gap-1 text-sm text-gray-600">
                           <Star size={14} className="fill-yellow-400 text-yellow-400" />
-                          <span>{restaurant.rating}</span>
+                          <span>{r.rating}</span>
                         </div>
                       </div>
                     </div>
                   ))}
+                  {restaurants.length === 0 && (
+                    <p className="text-sm text-gray-500">店舗が見つかりませんでした。</p>
+                  )}
                 </div>
               </div>
             </Card>
@@ -116,67 +113,52 @@ export default function MapView() {
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">おすすめの宿泊施設</h2>
               <Badge variant="secondary" className="text-sm">
-                {hotels.length}件
+                {lodgings.length}件
               </Badge>
             </div>
 
-            {loading ? (
-              <div className="space-y-4">
-                {[1, 2, 3].map((i) => (
-                  <Card key={i} className="p-6 animate-pulse">
-                    <div className="h-48 bg-gray-200 rounded-lg mb-4"></div>
-                    <div className="h-6 bg-gray-200 rounded mb-2 w-3/4"></div>
-                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                  </Card>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-6">
-                {hotels.map((hotel, index) => (
-                  <Card key={hotel.id} className="overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="grid md:grid-cols-5 gap-4">
-                      <div className="md:col-span-2 h-48 md:h-auto bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                        <HotelIcon size={48} className="text-gray-400" />
-                      </div>
-                      <div className="md:col-span-3 p-6">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <h3 className="text-xl font-bold mb-1">{hotel.name}</h3>
+            <div className="space-y-6">
+             {lodgings.map((h, index) => (
+                <Card key={h.id} className="overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="grid md:grid-cols-5 gap-4">
+                    <div className="md:col-span-2 h-48 md:h-auto bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                      <HotelIcon size={48} className="text-gray-400" />
+                    </div>
+                    <div className="md:col-span-3 p-6">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <h3 className="text-xl font-bold mb-1">{h.name}</h3>
+                          {typeof h.rating === "number" && (
                             <div className="flex items-center gap-2 mb-2">
                               <div className="flex items-center gap-1">
                                 <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                                <span className="font-medium">{hotel.rating}</span>
+                                <span className="font-medium">{h.rating}</span>
                               </div>
                               <span className="text-gray-400">•</span>
                               <span className="text-sm text-gray-600">
-                                密集エリアから徒歩{5 + index * 2}分
+                                中心から徒歩{5 + index * 2}分（仮）
                               </span>
                             </div>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-2 mb-3 text-gray-600">
-                          <MapPin size={16} />
-                          <span className="text-sm">{hotel.address}</span>
-                        </div>
-
-                        <div className="flex items-center justify-between pt-4 border-t">
-                          <div>
-                            <div className="text-sm text-gray-600">1泊あたり</div>
-                            <div className="text-2xl font-bold text-blue-600">
-                              ¥{hotel.price.toLocaleString()}
-                            </div>
-                          </div>
-                          <Button size="lg">
-                            詳細を見る
-                          </Button>
+                          )}
                         </div>
                       </div>
+
+                      <div className="flex items-center gap-2 mb-3 text-gray-600">
+                        <MapPin size={16} />
+                        <span className="text-sm">{h.address ?? "住所情報なし"}</span>
+                      </div>
+
+                      <div className="pt-4 border-t">
+                        <Button size="lg">詳細を見る</Button>
+                      </div>
                     </div>
-                  </Card>
-                ))}
-              </div>
-            )}
+                  </div>
+                </Card>
+              ))}
+              {lodgings.length === 0 && (
+                <p className="text-sm text-gray-500">宿泊施設が見つかりませんでした。</p>
+              )}
+            </div>
 
             {/* 注意事項 */}
             <Card className="mt-8 p-6 bg-yellow-50 border-yellow-200">
@@ -185,10 +167,9 @@ export default function MapView() {
                 実装に関する注意
               </h3>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li>• 実際の地図表示にはGoogle Maps APIの統合が必要です</li>
-                <li>• クラスタリング分析には実際の店舗データとアルゴリズムが必要です</li>
-                <li>• 宿泊施設の予約には外部APIとの連携が必要です</li>
-                <li>• 現在はモックデータを使用しています</li>
+                <li>• 店舗/宿泊施設は Google Places API の検索結果を表示しています</li>
+                <li>• 名産地候補（地域一覧）のみデータセットに基づきます</li>
+
               </ul>
             </Card>
           </div>
