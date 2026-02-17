@@ -2,10 +2,23 @@ import { useEffect, useRef } from "react";
 
 type LatLng = { lat: number; lng: number };
 
+
+export type PlaceItem = {
+  id: string; // place_id
+  name: string;
+  rating?: number;
+  address?: string; // vicinity
+  lat: number;
+  lng: number;
+};
+
 type Props = {
   center: LatLng;
   foodKeyword: string;
   radiusKm?: number;
+
+  onRestaurants?: (items: PlaceItem[]) => void;
+  onLodgings?: (items: PlaceItem[]) => void;
 };
 
 declare global {
