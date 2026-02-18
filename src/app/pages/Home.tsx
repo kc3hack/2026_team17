@@ -3,7 +3,26 @@ import { useNavigate } from 'react-router';
 import { Search, BarChart3, Hotel } from 'lucide-react';
 import { SearchBar } from '../components/SearchBar';
 import { StepCard } from '../components/StepCard';
-import { foodData } from '../data/foodData';
+import generatedFoodData from '../data/foodData.generated.json';
+
+export type Region = {
+  id: string;
+  name: string;
+  prefecture: string;
+  description: string;
+  lat: number;
+  lng: number;
+};
+
+export type FoodItem = {
+  id: string;
+  name: string;
+  imageQuery: string;
+  regions: Region[];
+};
+
+export const foodData = generatedFoodData as FoodItem[];
+
 import { Button } from '../components/ui/button';
 
 export default function Home() {

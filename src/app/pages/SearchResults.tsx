@@ -1,8 +1,26 @@
 import { useSearchParams, useNavigate } from 'react-router';
 import { ArrowLeft, MapPin } from 'lucide-react';
-import { foodData } from '../data/foodData';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
+import generatedFoodData from '../data/foodData.generated.json';
+
+export type Region = {
+  id: string;
+  name: string;
+  prefecture: string;
+  description: string;
+  lat: number;
+  lng: number;
+};
+
+export type FoodItem = {
+  id: string;
+  name: string;
+  imageQuery: string;
+  regions: Region[];
+};
+
+export const foodData = generatedFoodData as FoodItem[];
 
 export default function SearchResults() {
   const [searchParams] = useSearchParams();
@@ -38,7 +56,7 @@ export default function SearchResults() {
     );
   }
 
-  const food = matchedFoods[0];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -57,14 +75,21 @@ export default function SearchResults() {
       </header>
 
       {/* メインコンテンツ */}
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="text-8xl mb-6">{getEmoji(food.id)}</div>
-            <h1 className="text-4xl font-bold mb-4">{food.name}</h1>
-            <p className="text-xl text-gray-600">
-              {food.name}の名産地を選択してください
-            </p>
+      {/* メインコンテンツ */}
+<main className="container mx-auto px-4 py-12">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-10">
+      <h1 className="text-3xl font-bold mb-2">「{query}」の検索結果</h1>
+      <p className="text-gray-600">{matchedFoods.length}件見つかりました</p>
+    </div>
+
+    <div className="space-y-12">
+      {matchedFoods.map((food) => (
+        <section key={food.id} className="bg-white/60 rounded-2xl p-6 shadow-sm">
+          <div className="text-center mb-8">
+            <div className="text-7xl mb-4">{getEmoji(food.id)}</div>
+            <h2 className="text-3xl font-bold mb-2">{food.name}</h2>
+            <p className="text-gray-600">{food.name}の名産地を選択してください</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -85,15 +110,17 @@ export default function SearchResults() {
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t">
-                  <Button className="w-full">
-                    この地域の宿を探す
-                  </Button>
+                  <Button className="w-full">この地域の宿を探す</Button>
                 </div>
               </Card>
             ))}
           </div>
-        </div>
-      </main>
+        </section>
+      ))}
+    </div>
+  </div>
+</main>
+
     </div>
   );
 }
