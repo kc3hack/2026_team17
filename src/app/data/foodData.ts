@@ -8,12 +8,14 @@ const { readFile, utils } = xlsx as any;
 // --------------------
 // Excel 1行の型
 // A: food
-// B: city
-// C: prefecture
-// D: lat
-// E: lng
+// B: kana
+// C: city
+// D: prefecture
+// E: lat
+// F: lng
 type Row = {
   food: string;
+  kana: string;
   city: string;
   prefecture: string;
   lat: number;
@@ -33,8 +35,9 @@ export type Region = {
 export type FoodItem = {
   id: string;
   name: string;
-  regions: Region[];
+  kana: string; // ★追加
   imageQuery: string;
+  regions: Region[];
 };
 
 // --------------------
@@ -44,7 +47,7 @@ const excelPath = path.join(
   "src",
   "app",
   "dataset",
-  "データセット県名緯度経度.xlsx"
+  "データセットふりがな県名緯度経度.xlsx"
 );
 
 if (!fs.existsSync(excelPath)) {
@@ -59,8 +62,14 @@ export function loadFoodExcel(): Row[] {
   const sheetName = workbook.SheetNames[0];
   const sheet = workbook.Sheets[sheetName];
 
+  // A: food
+  // B: kana
+  // C: city
+  // D: prefecture
+  // E: lat
+  // F: lng
   const rows = utils.sheet_to_json(sheet, {
-    header: ["food", "city", "prefecture", "lat", "lng"],
+    header: ["food", "kana", "city", "prefecture", "lat", "lng"],
     range: 1,
   }) as Row[];
 
@@ -68,6 +77,7 @@ export function loadFoodExcel(): Row[] {
     .filter(r => r.food && r.city)
     .map(r => ({
       food: String(r.food).trim(),
+      kana: String(r.kana ?? "").trim(),
       city: String(r.city).trim(),
       prefecture: String(r.prefecture ?? "").trim(),
       lat: Number(r.lat),
@@ -80,30 +90,35 @@ export function loadFoodExcel(): Row[] {
 export function buildFoodDataFromExcel(): FoodItem[] {
   const rows = loadFoodExcel();
 
+  // food 単位でまとめる
   const grouped = rows.reduce((acc, row) => {
     if (!acc[row.food]) acc[row.food] = [];
     acc[row.food].push(row);
     return acc;
   }, {} as Record<string, Row[]>);
 
-  return Object.entries(grouped).map(([food, items]) => ({
-    id: food,
-    name: food,
-    imageQuery: food,
-    regions: items.map(item => ({
-      id: `${food}-${item.city}`,
-      name: item.city,
-      prefecture: item.prefecture,
-      description: "",
-      lat: item.lat,
-      lng: item.lng,
-    })),
-  }));
+  return Object.entries(grouped).map(([food, items]) => {
+    const first = items[0];
+
+    return {
+      id: food,
+      name: food,
+      kana: first.kana,   // ★ここで代表の読みを入れる
+      imageQuery: food,
+      regions: items.map(item => ({
+        id: `${food}-${item.city}`,
+        name: item.city,
+        prefecture: item.prefecture,
+        description: "",
+        lat: item.lat,
+        lng: item.lng,
+      })),
+    };
+  });
 }
 
 // --------------------
-// ★ これが前と同じやり方
-// foodData を生成して JSON に保存する
+// ★ 前と同じやり方で JSON を生成
 
 export const foodData: FoodItem[] = buildFoodDataFromExcel();
 

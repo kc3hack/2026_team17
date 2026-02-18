@@ -16,9 +16,11 @@ export type Region = {
 export type FoodItem = {
   id: string;
   name: string;
+  kana: string;
   imageQuery: string;
   regions: Region[];
 };
+
 
 export const foodData = generatedFoodData as FoodItem[];
 
@@ -28,9 +30,13 @@ export default function SearchResults() {
   const query = searchParams.get('q') || '';
 
   // 検索クエリに一致する食べ物を検索
-  const matchedFoods = foodData.filter((food) =>
-    food.name.toLowerCase().includes(query.toLowerCase())
-  );
+  const q = query.trim().toLowerCase();
+
+const matchedFoods = foodData.filter((food) =>
+  food.name.toLowerCase().includes(q) ||
+  food.kana?.toLowerCase().includes(q)
+);
+
 
   if (matchedFoods.length === 0) {
     return (
