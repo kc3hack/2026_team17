@@ -1,12 +1,29 @@
 import { useSearchParams, useNavigate } from 'react-router';
 import { useState, useEffect } from 'react';
 import { ArrowLeft, MapPin, Star, DollarSign, Hotel as HotelIcon, Navigation } from 'lucide-react';
-import { foodData} from '../data/foodData';
+import generatedFoodData from '../data/foodData.generated.json';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import AreaMap,{ PlaceItem } from '../components/AreaMap';
 
+type Region = {
+  id: string;
+  name: string;
+  prefecture: string;
+  description: string;
+  lat: number;
+  lng: number;
+};
+
+type FoodItem = {
+  id: string;
+  name: string;
+  imageQuery: string;
+  regions: Region[];
+};
+
+const foodData = generatedFoodData as FoodItem[];
 
 export default function MapView() {
   const [searchParams] = useSearchParams();
@@ -20,6 +37,11 @@ export default function MapView() {
 
   const [restaurants, setRestaurants] = useState<PlaceItem[]>([]);
   const [lodgings, setLodgings] = useState<PlaceItem[]>([]);
+
+  const [selected, setSelected] = useState<
+  { lat: number; lng: number; title?: string; kind?: "restaurant" | "lodging" } | null
+>(null);
+
 
   if (!food || !region) {
     return (
@@ -65,9 +87,10 @@ export default function MapView() {
               {/* Google Map（店＋宿） */} 
               <AreaMap center={{ lat: region.lat, lng: region.lng }}
               foodKeyword={food.name} 
-              radiusKm={20} 
+              radiusKm={10} 
               onRestaurants={setRestaurants}
-              onLodgings={setLodgings}/>
+              onLodgings={setLodgings}
+              selected={selected ?? undefined}/>
 
               <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                 <div className="flex items-start gap-3">
@@ -87,7 +110,12 @@ export default function MapView() {
                 <h3 className="font-bold mb-3">周辺の{food.name}店舗</h3>
                 <div className="space-y-2">
                   {restaurants.map((r) => (
-                    <div key={r.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <button
+                    key={r.id}
+                    type="button"
+                    onClick={() => setSelected({ lat: r.lat, lng: r.lng, title: r.name, kind: "restaurant" })}
+                    className="w-full text-left flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100">
+
                       <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">
                         店
                       </div>
@@ -98,7 +126,7 @@ export default function MapView() {
                           <span>{r.rating}</span>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ))}
                   {restaurants.length === 0 && (
                     <p className="text-sm text-gray-500">店舗が見つかりませんでした。</p>
@@ -119,7 +147,11 @@ export default function MapView() {
 
             <div className="space-y-6">
              {lodgings.map((h, index) => (
-                <Card key={h.id} className="overflow-hidden hover:shadow-xl transition-shadow">
+                <Card
+                key={h.id}
+                className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+                onClick={() => setSelected({ lat: h.lat, lng: h.lng, title: h.name, kind: "lodging" })}>
+
                   <div className="grid md:grid-cols-5 gap-4">
                     <div className="md:col-span-2 h-48 md:h-auto bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                       <HotelIcon size={48} className="text-gray-400" />
