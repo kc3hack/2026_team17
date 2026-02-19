@@ -1,3 +1,4 @@
+
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { Hotel } from "lucide-react";
@@ -7,6 +8,8 @@ import { JapanDotMap } from "../components/JapanDotMap";
 import { SideFoodSlider } from "../components/SideFoodSlider";
 import foodItems from "../data/foodData.generated.json";
 import Joyride, { Step, CallBackProps, STATUS, EVENTS } from "react-joyride";
+//use client 削除　コード内容'use client'
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -241,6 +244,7 @@ export default function Home() {
                 使い方
               </Button>
             </div>
+
           </div>
         </div>
       </header>
@@ -362,6 +366,7 @@ export default function Home() {
             <li>検索ボタンで宿候補を表示（予定）</li>
           </ol>
         </section>
+
       </main>
     </div>
   );
