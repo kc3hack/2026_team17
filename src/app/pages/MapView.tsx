@@ -9,7 +9,6 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-
 import generatedFoodData from "../data/foodData.generated.json";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
@@ -57,6 +56,17 @@ function distanceKm(a: { lat: number; lng: number }, b: { lat: number; lng: numb
   return 2 * R * Math.asin(Math.sqrt(x));
 }
 
+function mapsUrlFromPlaceId(placeId?: string, fallbackQuery?: string) {
+  if (placeId && placeId.trim()) {
+    return `https://www.google.com/maps/search/?api=1&query_place_id=${encodeURIComponent(
+      placeId
+    )}`;
+  }
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    fallbackQuery ?? ""
+  )}`;
+}
+
 export default function MapView() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -73,8 +83,9 @@ export default function MapView() {
   const [lodgings, setLodgings] = useState<PlaceItem[]>([]);
 
   const [selected, setSelected] = useState<
-    { lat: number; lng: number; title?: string; kind?: "restaurant" | "lodging" } | null
-  >(null);
+  { id: string; lat: number; lng: number; title?: string; kind?: "restaurant" | "lodging" } | null
+>(null);
+
 
   // ✅ 近くの料理：展開状態
   const [openedNearbyFoodIds, setOpenedNearbyFoodIds] = useState<string[]>([]);
@@ -139,6 +150,9 @@ export default function MapView() {
     });
   }, [openedNearbyFoodIds, nearbyRestaurantsByFood]);
 
+  // ✅ lodgings の中身を確認したい（必要ならコメント外してOK）
+  // console.log("lodgings sample", lodgings[0]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ヘッダー */}
@@ -169,7 +183,6 @@ export default function MapView() {
             <Card className="p-6">
               <h2 className="text-xl font-bold mb-4">Google Maps 検索結果</h2>
 
-              {/* Google Map（店＋宿＋黄色(近くの料理の店舗)） */}
               <AreaMap
                 center={{ lat: regionSafe.lat, lng: regionSafe.lng }}
                 foodKeyword={food.name}
@@ -177,9 +190,7 @@ export default function MapView() {
                 onRestaurants={setRestaurants}
                 onLodgings={setLodgings}
                 selected={selected ?? undefined}
-                // ✅ 黄色ピン＝「近くの料理で表示している店舗」
                 nearbyStorePins={yellowPinStores}
-                // ✅ 店舗検索だけ追加で実行（近くの料理用）
                 fetchFoodId={fetchFoodId}
                 fetchFoodKeyword={fetchFoodKeyword}
                 onNearbyFoodRestaurants={(id, items) => {
@@ -210,7 +221,7 @@ export default function MapView() {
                       key={r.id}
                       type="button"
                       onClick={() =>
-                        setSelected({ lat: r.lat, lng: r.lng, title: r.name, kind: "restaurant" })
+                        setSelected({ id: r.id, lat: r.lat, lng: r.lng, title: r.name, kind: "restaurant" })                  
                       }
                       className="w-full text-left flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100"
                     >
@@ -232,7 +243,7 @@ export default function MapView() {
                 </div>
               </div>
 
-              {/* ✅ 近くの料理：展開すると、その料理の店舗が出て、黄色ピンもその店舗に打たれる */}
+              {/* ✅ 近くの料理 */}
               <div className="mt-8">
                 <h3 className="font-bold mb-3">近くにはこんな料理もあります</h3>
 
@@ -252,7 +263,6 @@ export default function MapView() {
                               const open = prev.includes(f.id);
                               const next = open ? prev.filter((id) => id !== f.id) : [...prev, f.id];
 
-                              // ✅ 開く時：まだ取得してなければ検索依頼
                               if (!open && nearbyRestaurantsByFood[f.id] === undefined) {
                                 setFetchFoodId(f.id);
                               }
@@ -273,7 +283,6 @@ export default function MapView() {
                           </div>
                         </button>
 
-                        {/* 展開：この料理の店舗リスト */}
                         {isOpen && (
                           <div className="mt-4 space-y-2">
                             {!hasFetched && <p className="text-sm text-gray-500">店舗を検索中...</p>}
@@ -287,8 +296,8 @@ export default function MapView() {
                                 key={r.id}
                                 type="button"
                                 onClick={() =>
-                                  setSelected({ lat: r.lat, lng: r.lng, title: r.name, kind: "restaurant" })
-                                }
+                                  setSelected({ id: r.id, lat: r.lat, lng: r.lng, title: r.name, kind: "restaurant" })
+                                  }
                                 className="w-full text-left flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100"
                               >
                                 <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold">
@@ -329,51 +338,82 @@ export default function MapView() {
             </div>
 
             <div className="space-y-6">
-              {lodgings.map((h, index) => (
-                <Card
-                  key={h.id}
-                  className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-                  onClick={() =>
-                    setSelected({ lat: h.lat, lng: h.lng, title: h.name, kind: "lodging" })
-                  }
-                >
-                  <div className="grid md:grid-cols-5 gap-4">
-                    <div className="md:col-span-2 h-48 md:h-auto bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                      <HotelIcon size={48} className="text-gray-400" />
-                    </div>
+              {lodgings.map((h, index) => {
+                const url = mapsUrlFromPlaceId(h.id, `${h.name} ${h.address ?? ""}`);
 
-                    <div className="md:col-span-3 p-6">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h3 className="text-xl font-bold mb-1">{h.name}</h3>
+                return (
+                  <Card
+                    key={h.id}
+                    className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+                    onClick={() => {
+                      console.log("[CARD CLICK] move map to:", h.name, h.id);
+                    setSelected({ id: h.id, lat: h.lat, lng: h.lng, title: h.name, kind: "lodging" })
+                    }}
+                  >
+                    <div className="grid md:grid-cols-5 gap-4">
+                      <div className="md:col-span-2 h-48 md:h-auto bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                        <HotelIcon size={48} className="text-gray-400" />
+                      </div>
 
-                          {typeof h.rating === "number" && (
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="flex items-center gap-1">
-                                <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                                <span className="font-medium">{h.rating}</span>
+                      <div className="md:col-span-3 p-6">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className="text-xl font-bold mb-1">{h.name}</h3>
+
+                            {typeof h.rating === "number" && (
+                              <div className="flex items-center gap-2 mb-2">
+                                <div className="flex items-center gap-1">
+                                  <Star size={16} className="fill-yellow-400 text-yellow-400" />
+                                  <span className="font-medium">{h.rating}</span>
+                                </div>
+                                <span className="text-gray-400">•</span>
+                                <span className="text-sm text-gray-600">
+                                  中心から徒歩{5 + index * 2}分（仮）
+                                </span>
                               </div>
-                              <span className="text-gray-400">•</span>
-                              <span className="text-sm text-gray-600">
-                                中心から徒歩{5 + index * 2}分（仮）
-                              </span>
-                            </div>
-                          )}
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 mb-3 text-gray-600">
+                          <MapPin size={16} />
+                          <span className="text-sm">{h.address ?? "住所情報なし"}</span>
+                        </div>
+
+                        <div className="pt-4 border-t flex items-center justify-end gap-2">
+                          <Button
+                            variant="outline"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              console.log("[MAP BUTTON] move map to:", h.name, h.id);
+                              setSelected({ id: h.id, lat: h.lat, lng: h.lng, title: h.name, kind: "lodging" })
+                            }}
+                          >
+                            地図で見る
+                          </Button>
+
+                          <a
+                            href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(h.id)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                              e.stopPropagation();
+
+                              const url = `https://www.google.com/maps/place/?q=place_id:${h.id}`;
+                              console.log("🔍 詳細リンクURL:", url);
+                              console.log("🔍 place_id:", h.id);
+                            }}
+                          >
+                            <Button size="lg">詳細を見る</Button>
+                          </a>
+
+
                         </div>
                       </div>
-
-                      <div className="flex items-center gap-2 mb-3 text-gray-600">
-                        <MapPin size={16} />
-                        <span className="text-sm">{h.address ?? "住所情報なし"}</span>
-                      </div>
-
-                      <div className="pt-4 border-t">
-                        <Button size="lg">詳細を見る</Button>
-                      </div>
                     </div>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                );
+              })}
 
               {lodgings.length === 0 && (
                 <p className="text-sm text-gray-500">宿泊施設が見つかりませんでした。</p>
