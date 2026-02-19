@@ -1,9 +1,15 @@
+'use client';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+
 import { Search, BarChart3, Hotel } from 'lucide-react';
+
 import { SearchBar } from '../components/SearchBar';
 import { StepCard } from '../components/StepCard';
+
 import generatedFoodData from '../data/foodData.generated.json';
+import { Button } from '../components/ui/button';
 
 export type Region = {
   id: string;
@@ -17,13 +23,12 @@ export type Region = {
 export type FoodItem = {
   id: string;
   name: string;
+  kana?: string;
   imageQuery: string;
   regions: Region[];
 };
 
 export const foodData = generatedFoodData as FoodItem[];
-
-import { Button } from '../components/ui/button';
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,10 +45,37 @@ export default function Home() {
     navigate(`/search?q=${encodeURIComponent(food)}`);
   };
 
-  const popularFoods = ['かき', 'りんご', 'うに'];
+  // ★ 人気カテゴリ（ローカル画像）
+  const popularFoods = [
+    {
+      name: 'ラーメン',
+      image: '/images/ramen.jpg',
+    },
+    {
+      name: '海鮮',
+      image: '/images/kaisen.jpg',
+    },
+    {
+      name: '寿司',
+      image: '/images/sushi.jpg',
+    },
+    {
+      name: '牛料理',
+      image: '/images/beef.jpg',
+    },
+    {
+      name: '鍋',
+      image: '/images/nabe.jpg',
+    },
+    {
+      name: 'うどん',
+      image: '/images/udon.jpg',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+
       {/* ヘッダー */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center gap-3">
@@ -52,20 +84,23 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-xl font-bold">特産品から探す宿泊プラン</h1>
-            <p className="text-sm text-gray-600">食べたい特産品から最適な宿を提案します</p>
+            <p className="text-sm text-gray-600">
+              食べたい特産品から最適な宿を提案します
+            </p>
           </div>
         </div>
       </header>
 
       {/* メインコンテンツ */}
       <main className="container mx-auto px-4 py-12">
+
         {/* ヒーローセクション */}
         <section className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">食べたい特産品を検索</h2>
           <p className="text-xl text-gray-600 mb-12">
             お店が多く集まるエリアの宿を、クラスタリング分析で提案
           </p>
-          
+
           <div className="flex justify-center mb-8">
             <SearchBar
               value={searchQuery}
@@ -78,12 +113,12 @@ export default function Home() {
             <span className="text-gray-600">人気の検索：</span>
             {popularFoods.map((food) => (
               <Button
-                key={food}
+                key={food.name}
                 variant="outline"
-                onClick={() => handlePopularSearch(food)}
+                onClick={() => handlePopularSearch(food.name)}
                 className="rounded-full"
               >
-                {food}
+                {food.name}
               </Button>
             ))}
           </div>
@@ -113,27 +148,45 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 特産品一覧 */}
+        {/* 人気の特産品 */}
         <section>
-          <h2 className="text-3xl font-bold text-center mb-8">人気の特産品</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">
+            人気の特産品
+          </h2>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {foodData.slice(0, 6).map((food) => (
-              <div
-                key={food.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1"
-                onClick={() => handlePopularSearch(food.name)}
-              >
-                <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <span className="text-6xl">{getEmoji(food.id)}</span>
+            {popularFoods.map((food) => {
+              const regionCount =
+                foodData.find(f => f.name === food.name)?.regions.length ?? 0;
+
+              return (
+                <div
+                  key={food.name}
+                  className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1"
+                  onClick={() => handlePopularSearch(food.name)}
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={food.image}
+                      alt={food.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg mb-1">
+                      {food.name}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {regionCount}つの地域
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg mb-1">{food.name}</h3>
-                  <p className="text-sm text-gray-600">{food.regions.length}つの地域</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
+
       </main>
 
       {/* フッター */}
@@ -147,15 +200,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-
-function getEmoji(foodId: string): string {
-  const emojiMap: Record<string, string> = {
-    oyster: '🦪',
-    apple: '🍎',
-    uni: '🦐',
-    wagyu: '🥩',
-    crab: '🦀',
-  };
-  return emojiMap[foodId] || '🍽️';
 }
