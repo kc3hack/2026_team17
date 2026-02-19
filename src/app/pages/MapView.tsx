@@ -5,8 +5,8 @@ import generatedFoodData from '../data/foodData.generated.json';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import AreaMap,{ PlaceItem } from '../components/AreaMap';
-
+import AreaMap from '../components/AreaMap';
+import type { PlaceItem } from '../../services/placeSearch';
 type Region = {
   id: string;
   name: string;
