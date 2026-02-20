@@ -1,14 +1,7 @@
 import { useSearchParams, useNavigate } from "react-router";
 import { useMemo, useState } from "react";
-import {
-  ArrowLeft,
-  MapPin,
-  Star,
-  Hotel as HotelIcon,
-  Navigation,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { AppHeader } from "../components/AppHeader";
+import { ArrowLeft, MapPin, Star, Hotel as HotelIcon, Navigation, ChevronDown, ChevronUp,} from "lucide-react";
 import generatedFoodData from "../data/foodData.generated.json";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
@@ -85,7 +78,14 @@ export default function MapView() {
   const [selected, setSelected] = useState<
   { id: string; lat: number; lng: number; title?: string; kind?: "restaurant" | "lodging" } | null
 >(null);
+  // ✅ AppHeader用：検索欄（初期値は food.name）
+  const [searchQuery, setSearchQuery] = useState<string>(() => food?.name ?? "");
 
+  const handleSearch = () => {
+    const q = searchQuery.trim();
+    if (!q) return;
+    navigate(`/search?q=${encodeURIComponent(q)}`);
+  };
 
   // ✅ 近くの料理：展開状態
   const [openedNearbyFoodIds, setOpenedNearbyFoodIds] = useState<string[]>([]);
@@ -156,9 +156,14 @@ export default function MapView() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ヘッダー */}
-      <header className="border-b bg-white sticky top-0 z-50 shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <AppHeader
+        value={searchQuery}
+        onChange={setSearchQuery}
+        onSearch={handleSearch}
+      />
+      <div className="border-b bg-white">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between gap-3">
             <Button variant="ghost" onClick={() => navigate(-1)} className="gap-2">
               <ArrowLeft size={20} />
               戻る
@@ -174,7 +179,7 @@ export default function MapView() {
             <div className="w-20" />
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8">

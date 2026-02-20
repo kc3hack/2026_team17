@@ -1,15 +1,15 @@
-
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router";
-import { Hotel } from "lucide-react";
-import { SearchBar } from "../components/SearchBar";
-import { Button } from "../components/ui/button";
 import { JapanDotMap } from "../components/JapanDotMap";
 import { SideFoodSlider } from "../components/SideFoodSlider";
+import { AppHeader } from "../components/AppHeader";
 import foodItems from "../data/foodData.generated.json";
+import imageItems from "../../data/images.generated.json";
 import Joyride, { Step, CallBackProps, STATUS, EVENTS } from "react-joyride";
-//use client 削除　コード内容'use client'
 
+// use client 削除　コード内容'use client'
+
+type SliderItem = { label: string; src: string };
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,8 +18,10 @@ export default function Home() {
   const [tourRun, setTourRun] = useState(false);
   const [tourStepIndex, setTourStepIndex] = useState(0);
 
-  const [logoX, setLogoX] = useState(0); 
+  const [logoX, setLogoX] = useState(0);
   const [tourNonce, setTourNonce] = useState(0);
+
+  const BASE = import.meta.env.BASE_URL;
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
@@ -27,23 +29,49 @@ export default function Home() {
     }
   };
 
-  const BASE = import.meta.env.BASE_URL;
+  // ✅ 写真クリック時：検索ページへ自動遷移（名産一覧クリックと同じ挙動）
+  const handleImageSearch = (label: string) => {
+    const v = label.trim();
+    if (!v) return;
+    setSearchQuery(v); // 検索窓にも反映（任意）
+    navigate(`/search?q=${encodeURIComponent(v)}`);
+  };
 
-  const LEFT_ITEMS = [
-    { label: "かき", src: `${BASE}hero/1.jpg` },
-    { label: "りんご", src: `${BASE}hero/2.jpg` },
-    { label: "うに", src: `${BASE}hero/3.jpg` },
-    { label: "ラーメン", src: `${BASE}hero/1.jpg` },
-    { label: "メロン", src: `${BASE}hero/2.jpg` },
-  ];
+  // ✅ 配列シャッフル関数（Fisher-Yates）
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
 
-  const RIGHT_ITEMS = [
-    { label: "ぎょうざ", src: `${BASE}hero/2.jpg` },
-    { label: "寿司", src: `${BASE}hero/3.jpg` },
-    { label: "焼肉", src: `${BASE}hero/1.jpg` },
-    { label: "うどん", src: `${BASE}hero/2.jpg` },
-    { label: "いちご", src: `${BASE}hero/3.jpg` },
-  ];
+  // ✅ public/images から自動生成した JSON をスライダー用に変換（BASE対応）＋ランダム化
+  const ALL_SLIDER_ITEMS: SliderItem[] = useMemo(() => {
+    const arr = imageItems as Array<{ label?: string; src: string }>;
+
+    const formatted: SliderItem[] = arr
+      .filter((x) => typeof x?.src === "string" && x.src.length > 0)
+      .map((x) => ({
+        label:
+          (x.label ?? "").trim() ||
+          x.src.split("/").pop()?.replace(/\.\w+$/, "") ||
+          "image",
+        src: `${BASE}${x.src.replace(/^\//, "")}`, // "/images/xxx.jpg" → "${BASE}images/xxx.jpg"
+      }));
+
+    return shuffleArray(formatted);
+  }, [BASE]);
+
+  // ✅ 左右に分ける（半分ずつ）
+  const { LEFT_ITEMS, RIGHT_ITEMS } = useMemo(() => {
+    const mid = Math.ceil(ALL_SLIDER_ITEMS.length / 2);
+    return {
+      LEFT_ITEMS: ALL_SLIDER_ITEMS.slice(0, mid),
+      RIGHT_ITEMS: ALL_SLIDER_ITEMS.slice(mid),
+    };
+  }, [ALL_SLIDER_ITEMS]);
 
   const foods = useMemo(() => {
     const arr = foodItems as Array<{ name: string }>;
@@ -56,12 +84,12 @@ export default function Home() {
 
   // ★ 人気カテゴリ（カードで表示する固定リスト）
   const popularFoods = [
-    { name: "ラーメン", image: `${BASE}popular/ramen.jpg` },
-    { name: "海鮮", image: `${BASE}popular/kaisen.jpg` },
-    { name: "寿司", image: `${BASE}popular/sushi.jpg` },
-    { name: "牛料理", image: `${BASE}popular/beef.jpg` },
-    { name: "鍋", image: `${BASE}popular/nabe.jpg` },
-    { name: "うどん", image: `${BASE}popular/udon.jpg` },
+    { name: "ラーメン", image: `${BASE}images/ramen.jpg` },
+    { name: "海鮮", image: `${BASE}images/kaisen.jpg` },
+    { name: "寿司", image: `${BASE}images/sushi.jpg` },
+    { name: "牛料理", image: `${BASE}images/beef.jpg` },
+    { name: "鍋", image: `${BASE}images/nabe.jpg` },
+    { name: "うどん", image: `${BASE}images/udon.jpg` },
   ];
 
   const handlePopularSearch = (food: string) => {
@@ -81,12 +109,10 @@ export default function Home() {
 
   // ★ 使い方：必ず最初から（内部状態も捨てる）
   const startTour = () => {
-    // 一旦止めて完全リセット
     setTourRun(false);
     setTourStepIndex(0);
     setTourNonce((n) => n + 1);
 
-    // 次のtickで開始（毎回まっさら）
     setTimeout(() => {
       setTourRun(true);
     }, 0);
@@ -124,22 +150,20 @@ export default function Home() {
   const onTourCallback = (data: CallBackProps) => {
     const { status, index, type, action } = data;
 
-    // 次へ/戻るでstepIndexを同期（途中再開の原因を潰す）
     if (type === EVENTS.STEP_AFTER) {
       const next =
-        action === "prev" ? Math.max(0, index - 1) : Math.min(tourSteps.length - 1, index + 1);
+        action === "prev"
+          ? Math.max(0, index - 1)
+          : Math.min(tourSteps.length - 1, index + 1);
       setTourStepIndex(next);
     }
 
-    // ★ ここが重要：見つからない時に勝手に別ステップへ飛ばさない
-    // （これが“変な場所に暗転”の主原因）
     if (type === EVENTS.TARGET_NOT_FOUND) {
       setTourRun(false);
       setTourStepIndex(0);
       return;
     }
 
-    // 終了系は完全リセット（次回は必ず最初から）
     if (status === STATUS.FINISHED || status === STATUS.SKIPPED) {
       setTourRun(false);
       setTourStepIndex(0);
@@ -149,7 +173,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Joyride
-        key={tourNonce} // ★毎回リセット
+        key={tourNonce}
         steps={tourSteps}
         run={tourRun}
         stepIndex={tourStepIndex}
@@ -159,7 +183,7 @@ export default function Home() {
         showProgress
         disableOverlayClose
         scrollToFirstStep
-        scrollOffset={140} // ★stickyヘッダー分。必要なら 120〜180で微調整
+        scrollOffset={140}
         styles={{
           options: {
             primaryColor: "#111827",
@@ -169,89 +193,17 @@ export default function Home() {
         }}
       />
 
-      {/* ===== ヘッダー ===== */}
-      <header className="border-b sticky top-0 z-50 relative overflow-hidden">
-        {/* 背景画像レイヤー */}
-        <div className="absolute inset-0">
-          <img
-            src={`${BASE}hero/header.jpg`}
-            alt=""
-            className="w-full h-full object-cover"
-            aria-hidden="true"
-          />
-        </div>
-
-        <div className="container mx-auto px-4 py-3 relative z-10">
-          {/* 1段目：中央タイトル */}
-          <div className="flex justify-center">
-            <div className="text-center">
-              <div className="text-4xl font-bold tracking-wide text-white">
-                しょくたび <span className="ml-1">✈</span>
-              </div>
-              <div className="text-2xs text-gray-600 mt-1 text-white">
-                食べたい名産から、旅先と宿を見つける
-              </div>
-            </div>
-              {/* 左ロゴ*/}
-<div
-  className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex items-center"
-  style={{ transform: `translate(${logoX}px, -50%)` }}
->
-  <img
-    src={`${BASE}hero/ロゴ.png`}
-    alt="R-Hack"
-    className="h-14 w-auto select-none"
-    draggable={false}
-  />
-</div>
-
-
-          </div>
-
-          {/* 2段目：ロゴ + 検索 */}
-          <div className="mt-3 flex items-center gap-3">
-            <div className="flex items-center gap-2 shrink-0">
-              <div className="w-11 h-11 bg-gray-900 rounded-lg flex items-center justify-center">
-                <Hotel className="text-white" size={22} />
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-sm font-semibold text-white">
-                  特産品から探す食べもの旅
-                </div>
-                <div className="text-xs text-gray-600 text-white">
-                  地図と検索でサクッと
-                </div>
-              </div>
-            </div>
-
-            {/* ★ data-tour="search" は“確実に存在する”この箱に付ける */}
-            <div className="flex-1 flex justify-center">
-              <div data-tour="search" className="w-full max-w-2xl">
-                <SearchBar
-                  value={searchQuery}
-                  onChange={setSearchQuery}
-                  onSearch={handleSearch}
-                />
-              </div>
-            </div>
-
-            <div className="hidden md:flex shrink-0　ml-auto">
-              <Button
-                variant="outline"
-                className="rounded-full bg-white/85 hover:bg-white text-gray-900 border-white/60"
-                onClick={startTour} // ★毎回最初から
-              >
-                使い方
-              </Button>
-            </div>
-
-          </div>
-        </div>
-      </header>
-
+      {/* ヘッダー */}
+      <AppHeader
+      value={searchQuery}
+      onChange={setSearchQuery}
+      onSearch={handleSearch}
+      onStartTour={startTour}
+      logoX={logoX}
+      enableTourTarget
+    />
       {/* ===== メイン ===== */}
       <main className="container mx-auto px-4 py-8">
-        {/* 地図セクション：ここだけ全幅 */}
         <section id="map" className="mb-12">
           <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
             <div className="px-6 2xl:px-10">
@@ -262,7 +214,6 @@ export default function Home() {
               </div>
 
               <div className="flex gap-4 items-stretch h-[71vh]">
-                {/* 左：地図 */}
                 <div data-tour="map" className="flex-1 min-w-0">
                   <JapanDotMap
                     svgPath={`${BASE}maps/geolonia/map-full.svg`}
@@ -270,8 +221,10 @@ export default function Home() {
                   />
                 </div>
 
-                {/* 中：名産一覧 */}
-                <aside data-tour="list" className="hidden xl:block w-[300px] min-w-[300px] h-full">
+                <aside
+                  data-tour="list"
+                  className="hidden xl:block w-[300px] min-w-[300px] h-full"
+                >
                   <div className="rounded-2xl border bg-white p-3 h-full flex flex-col min-h-0">
                     <div className="text-sm font-semibold mb-2"></div>
 
@@ -296,15 +249,18 @@ export default function Home() {
                   </div>
                 </aside>
 
-                {/* 右：写真 */}
-                <aside data-tour="photo" className="hidden xl:block w-[360px] min-w-[360px] h-full">
+                <aside
+                  data-tour="photo"
+                  className="hidden xl:block w-[360px] min-w-[360px] h-full"
+                >
                   <SideFoodSlider
                     side="right"
                     items={RIGHT_ITEMS}
-                    onPick={(label) => setSearchQuery(label)}
+                    // ✅ クリックで検索ページへ自動遷移
+                    onPick={(label) => handleImageSearch(label)}
                     intervalMs={9000}
                     fadeMs={1200}
-                    clickable={false}
+                    clickable={true}
                     className="h-full"
                   />
                 </aside>
@@ -313,8 +269,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 人気の名産品（カード） */}
-        <section data-tour="popular" id="popular" className="max-w-6xl mx-auto mb-12">
+        <section
+          data-tour="popular"
+          id="popular"
+          className="max-w-6xl mx-auto mb-12"
+        >
           <div className="flex items-end justify-between gap-4 mb-4">
             <div>
               <div className="text-2xl font-bold">人気の名産品</div>
@@ -357,7 +316,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 使い方（下のセクションは残す。ツアーは別） */}
         <section id="howto" className="max-w-5xl mx-auto pb-12">
           <div className="text-lg font-semibold mb-3">使い方</div>
           <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-2">
@@ -366,7 +324,6 @@ export default function Home() {
             <li>検索ボタンで宿候補を表示（予定）</li>
           </ol>
         </section>
-
       </main>
     </div>
   );
