@@ -179,3 +179,41 @@
     line-height: 1.5;
   }
 }
+
+/* =========================================================
+   ✅ 追加：人気の名産品「回転ずし」(無限スクロール)
+   - Home.tsx 側で className="sushi-track" と "sushi-card" を使う
+   ========================================================= */
+
+.sushi-track {
+  display: flex;
+  animation: sushi-marquee 22s linear infinite;
+  will-change: transform;
+}
+
+/* hoverで止める（PCで扱いやすい） */
+.sushi-track:hover {
+  animation-play-state: paused;
+}
+
+/* カードはクリックできるように */
+.sushi-card {
+  pointer-events: auto;
+}
+
+@keyframes sushi-marquee {
+  /* 左→右に流す */
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 動き軽減設定のユーザー配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .sushi-track {
+    animation: none;
+  }
+}
