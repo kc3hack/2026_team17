@@ -30,10 +30,19 @@ export default function SearchResults() {
 
   const q = query.trim().toLowerCase();
 
-  const matchedFoods = foodData.filter((food) =>
-    food.name.toLowerCase().includes(q) ||
-    food.kana?.toLowerCase().includes(q)
-  );
+  const matchedFoods = foodData.filter((food) => {
+    // ① 料理名・かな検索
+    const matchByFood =
+      food.name.toLowerCase().includes(q) ||
+      food.kana?.toLowerCase().includes(q);
+
+    // ② 県名検索（regionsの中を見る）
+    const matchByPrefecture = food.regions.some((region) =>
+      region.prefecture.toLowerCase().includes(q)
+    );
+
+    return matchByFood || matchByPrefecture;
+  });
 
   if (matchedFoods.length === 0) {
     return (
@@ -56,7 +65,7 @@ export default function SearchResults() {
             「{query}」の検索結果が見つかりませんでした
           </h2>
           <p className="text-gray-600 mb-8">
-            別の特産品で検索してみてください
+            別の特産品や県名で検索してみてください
           </p>
           <Button onClick={() => navigate('/')}>ホームに戻る</Button>
         </div>
@@ -93,75 +102,94 @@ export default function SearchResults() {
           </div>
 
           <div className="space-y-12">
-            {matchedFoods.map((food) => (
-              <section
-                key={food.id}
-                className="bg-white/60 rounded-2xl p-6 shadow-sm"
-              >
-                <div className="text-center mb-8">
+            {matchedFoods.map((food) => {
+              const regionsToShow = food.regions.filter((region) => {
+                // 県名検索時はその県だけ表示
+                if (
+                  region.prefecture.toLowerCase().includes(q)
+                ) {
+                  return true;
+                }
 
-                  {/* ★ ここが画像表示 */}
-                  <div className="flex justify-center mb-4">
-                    <img
-                      src={getFoodImage(food)}
-                      alt={food.name}
-                      className="w-48 h-48 object-cover rounded-xl shadow"
-                      onError={(e) => {
-                        e.currentTarget.src = '/images/noimage.jpg';
-                      }}
-                    />
+                // 料理名検索時は全部表示
+                if (
+                  food.name.toLowerCase().includes(q) ||
+                  food.kana?.toLowerCase().includes(q)
+                ) {
+                  return true;
+                }
+
+                return false;
+              });
+
+              return (
+                <section
+                  key={food.id}
+                  className="bg-white/60 rounded-2xl p-6 shadow-sm"
+                >
+                  <div className="text-center mb-8">
+                    <div className="flex justify-center mb-4">
+                      <img
+                        src={getFoodImage(food)}
+                        alt={food.name}
+                        className="w-48 h-48 object-cover rounded-xl shadow"
+                        onError={(e) => {
+                          e.currentTarget.src = '/images/noimage.jpg';
+                        }}
+                      />
+                    </div>
+
+                    <h2 className="text-3xl font-bold mb-2">
+                      {food.name}
+                    </h2>
+                    <p className="text-gray-600">
+                      {food.name}の名産地を選択してください
+                    </p>
                   </div>
 
-                  <h2 className="text-3xl font-bold mb-2">
-                    {food.name}
-                  </h2>
-                  <p className="text-gray-600">
-                    {food.name}の名産地を選択してください
-                  </p>
-                </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {regionsToShow.map((region) => (
+                      <Card
+                        key={region.id}
+                        className="p-8 cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1"
+                        onClick={() =>
+                          navigate(
+                            `/map?food=${food.id}&region=${region.id}`
+                          )
+                        }
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <MapPin
+                              className="text-blue-600"
+                              size={24}
+                            />
+                          </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  {food.regions.map((region) => (
-                    <Card
-                      key={region.id}
-                      className="p-8 cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1"
-                      onClick={() =>
-                        navigate(
-                          `/map?food=${food.id}&region=${region.id}`
-                        )
-                      }
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <MapPin
-                            className="text-blue-600"
-                            size={24}
-                          />
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold mb-2">
+                              {region.name}
+                            </h3>
+                            <p className="text-gray-600 mb-3">
+                              {region.prefecture}
+                            </p>
+                            <p className="text-sm text-gray-500">
+                              {region.description}
+                            </p>
+                          </div>
                         </div>
 
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold mb-2">
-                            {region.name}
-                          </h3>
-                          <p className="text-gray-600 mb-3">
-                            {region.prefecture}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {region.description}
-                          </p>
+                        <div className="mt-4 pt-4 border-t">
+                          <Button className="w-full">
+                            この地域の宿を探す
+                          </Button>
                         </div>
-                      </div>
-
-                      <div className="mt-4 pt-4 border-t">
-                        <Button className="w-full">
-                          この地域の宿を探す
-                        </Button>
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-              </section>
-            ))}
+                      </Card>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         </div>
       </main>
@@ -172,5 +200,3 @@ export default function SearchResults() {
 function getFoodImage(food: FoodItem): string {
   return `/images/${food.imageQuery}.jpg`;
 }
-
-
