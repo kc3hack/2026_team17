@@ -56,12 +56,12 @@ export default function Home() {
 
   // ★ 人気カテゴリ（カードで表示する固定リスト）
   const popularFoods = [
-    { name: "ラーメン", image: `${BASE}popular/ramen.jpg` },
-    { name: "海鮮", image: `${BASE}popular/kaisen.jpg` },
-    { name: "寿司", image: `${BASE}popular/sushi.jpg` },
-    { name: "牛料理", image: `${BASE}popular/beef.jpg` },
-    { name: "鍋", image: `${BASE}popular/nabe.jpg` },
-    { name: "うどん", image: `${BASE}popular/udon.jpg` },
+    { name: "ラーメン", image: `${BASE}images/ramen.jpg` },
+    { name: "海鮮", image: `${BASE}images/kaisen.jpg` },
+    { name: "寿司", image: `${BASE}images/sushi.jpg` },
+    { name: "牛料理", image: `${BASE}images/beef.jpg` },
+    { name: "鍋", image: `${BASE}images/nabe.jpg` },
+    { name: "うどん", image: `${BASE}images/udon.jpg` },
   ];
 
   const handlePopularSearch = (food: string) => {
