@@ -21,12 +21,23 @@ export default function Home() {
   const [logoX, setLogoX] = useState(0);
   const [tourNonce, setTourNonce] = useState(0);
 
+  // ✅ 煽り表示用
+  const [roastOpen, setRoastOpen] = useState(false);
+
   const BASE = import.meta.env.BASE_URL;
 
   const handleSearch = () => {
-    if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+    const q = searchQuery.trim();
+    if (!q) return;
+
+    // ✅ 「彼女が欲しい」系は煽り表示（検索遷移させない）
+    const roastRegex = /彼女.*欲しい|彼女が欲しい/;
+    if (roastRegex.test(q)) {
+      setRoastOpen(true);
+      return;
     }
+
+    navigate(`/search?q=${encodeURIComponent(q)}`);
   };
 
   // ✅ 写真クリック時：検索ページへ自動遷移（名産一覧クリックと同じ挙動）
@@ -102,11 +113,6 @@ export default function Home() {
     return arr.find((f) => f?.name === foodName)?.regions?.length ?? 0;
   };
 
-  const scrollToId = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   // ★ 使い方：必ず最初から（内部状態も捨てる）
   const startTour = () => {
     setTourRun(false);
@@ -171,7 +177,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-red-50">
       <Joyride
         key={tourNonce}
         steps={tourSteps}
@@ -193,138 +199,213 @@ export default function Home() {
         }}
       />
 
-      {/* ヘッダー */}
-      <AppHeader
-      value={searchQuery}
-      onChange={setSearchQuery}
-      onSearch={handleSearch}
-      onStartTour={startTour}
-      logoX={logoX}
-      enableTourTarget
-    />
-      {/* ===== メイン ===== */}
-      <main className="container mx-auto px-4 py-8">
-        <section id="map" className="mb-12">
-          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-            <div className="px-6 2xl:px-10">
-              <div className="mb-3 hidden xl:grid grid-cols-[1fr_300px_360px] gap-4 items-end">
-                <div className="text-2xl font-bold text-center">地図から探す</div>
-                <div className="text-2xl font-bold text-center">名産一覧</div>
-                <div className="text-2xl font-bold text-center">写真から選ぶ</div>
-              </div>
+      {/* ✅ 煽りオーバーレイ */}
+      {roastOpen && (
+        <div className="fixed inset-0 z-[11000]">
+          {/* 背景 */}
+          <div
+            className="absolute inset-0 bg-black/60"
+            onClick={() => setRoastOpen(false)}
+          />
 
-              <div className="flex gap-4 items-stretch h-[71vh]">
-                <div data-tour="map" className="flex-1 min-w-0">
-                  <JapanDotMap
-                    svgPath={`${BASE}maps/geolonia/map-full.svg`}
-                    onPickPrefecture={(pref) => setSearchQuery(pref)}
-                  />
+          {/* 本体 */}
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="w-full max-w-xl rounded-2xl bg-white shadow-2xl border p-6 relative">
+              <button
+                type="button"
+                onClick={() => setRoastOpen(false)}
+                className="absolute right-3 top-3 rounded-lg px-3 py-1 text-sm hover:bg-gray-100"
+                aria-label="閉じる"
+              >
+                ✕
+              </button>
+
+              <div className="text-center">
+                <div className="text-3xl font-extrabold tracking-tight">
+                  現実を見ろ
+                </div>
+                <div className="text-sm text-gray-600 mt-2">
+                  （検索する前に、まず外出して会話しようね）
                 </div>
 
-                <aside
-                  data-tour="list"
-                  className="hidden xl:block w-[300px] min-w-[300px] h-full"
-                >
-                  <div className="rounded-2xl border bg-white p-3 h-full flex flex-col min-h-0">
-                    <div className="text-sm font-semibold mb-2"></div>
+                <div className="mt-6">
+                  <div className="text-6xl leading-none">🤪</div>
+                  <pre className="mt-4 text-sm bg-gray-50 border rounded-xl p-4 overflow-auto text-left"></pre>
+                </div>
 
-                    <div className="flex-1 min-h-0 overflow-auto pr-1">
-                      <div className="grid grid-cols-2 gap-x-2 gap-y-1">
-                        {foods.map((name) => (
-                          <button
-                            key={name}
-                            type="button"
-                            className="w-full text-left rounded-lg px-2 py-1.5 text-sm hover:bg-gray-100 transition"
-                            onClick={() => {
-                              setSearchQuery(name);
-                              navigate(`/search?q=${encodeURIComponent(name)}`);
-                            }}
-                            title={`${name}で検索`}
-                          >
-                            {name}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </aside>
+                <div className="mt-6 flex gap-2 justify-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRoastOpen(false);
+                      setSearchQuery("");
+                    }}
+                    className="rounded-xl px-4 py-2 border bg-white hover:bg-gray-50"
+                  >
+                    検索欄をリセット
+                  </button>
 
-                <aside
-                  data-tour="photo"
-                  className="hidden xl:block w-[360px] min-w-[360px] h-full"
-                >
-                  <SideFoodSlider
-                    side="right"
-                    items={RIGHT_ITEMS}
-                    // ✅ クリックで検索ページへ自動遷移
-                    onPick={(label) => handleImageSearch(label)}
-                    intervalMs={9000}
-                    fadeMs={1200}
-                    clickable={true}
-                    className="h-full"
-                  />
-                </aside>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRoastOpen(false);
+                    }}
+                    className="rounded-xl px-4 py-2 bg-gray-900 text-white hover:bg-gray-800"
+                  >
+                    了解（閉じる）
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      )}
 
+      {/* ヘッダー */}
+      <AppHeader
+        value={searchQuery}
+        onChange={setSearchQuery}
+        onSearch={handleSearch}
+        onStartTour={startTour}
+        logoX={logoX}
+        enableTourTarget
+      />
+
+      {/* ===== メイン ===== */}
+      <main className="container mx-auto px-4 py-8 space-y-10">
+        {/* ================= 地図/一覧/写真 ================= */}
         <section
-          data-tour="popular"
-          id="popular"
-          className="max-w-6xl mx-auto mb-12"
+          id="map"
+          
         >
-          <div className="flex items-end justify-between gap-4 mb-4">
-            <div>
-              <div className="text-2xl font-bold">人気の名産品</div>
-              <div className="text-sm text-gray-600 mt-1">
-                クリックするとその名産で検索します
-              </div>
+          <div className="mb-6 hidden xl:grid grid-cols-[1fr_300px_360px] gap-4 items-end">
+            <div className="text-2xl font-bold text-center text-red-900">
+              地図から探す
+            </div>
+            <div className="text-2xl font-bold text-center text-red-900">
+              名産一覧
+            </div>
+            <div className="text-2xl font-bold text-center text-red-900">
+              写真から選ぶ
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {popularFoods.map((food) => {
-              const regionCount = getRegionCount(food.name);
+          <div className="flex gap-4 items-stretch h-[71vh]">
+            {/* 地図 */}
+            <div data-tour="map" className="flex-1 min-w-0 japanMapWrap">
+              <div className="h-full rounded-xl border border-black overflow-hidden bg-white">
+                <JapanDotMap
+                  svgPath={`${BASE}maps/geolonia/map-full.svg`}
+                  onPickPrefecture={(pref) => setSearchQuery(pref)}
+                />
+              </div>
+            </div>
 
-              return (
-                <button
-                  key={food.name}
-                  type="button"
-                  onClick={() => handlePopularSearch(food.name)}
-                  className="group text-left rounded-2xl border bg-white overflow-hidden hover:shadow-lg transition hover:-translate-y-0.5"
-                  title={`${food.name}で検索`}
-                >
-                  <div className="h-28 sm:h-32 overflow-hidden">
-                    <img
-                      src={food.image}
-                      alt={food.name}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition"
-                      loading="lazy"
-                    />
-                  </div>
+            {/* 名産一覧 */}
+            <aside
+              data-tour="list"
+              className="hidden xl:block w-[300px] min-w-[300px] h-full"
+            >
+              <div className="h-full rounded-xl border border-black bg-white p-3 overflow-auto">
+                <div className="grid grid-cols-2 gap-1">
+                  {foods.map((name) => (
+                    <button
+                      key={name}
+                      type="button"
+                      className="w-full text-left rounded-md px-2 py-1.5 text-sm hover:bg-red-200 transition"
+                      onClick={() => {
+                        setSearchQuery(name);
+                        navigate(`/search?q=${encodeURIComponent(name)}`);
+                      }}
+                      title={`${name}で検索`}
+                    >
+                      {name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
 
-                  <div className="p-3">
-                    <div className="font-semibold">{food.name}</div>
-                    <div className="text-xs text-gray-600 mt-1">
-                      {regionCount}つの地域
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
+            {/* 写真 */}
+            <aside
+              data-tour="photo"
+              className="hidden xl:block w-[360px] min-w-[360px] h-full"
+            >
+              <div className="h-full rounded-xl border border-black overflow-hidden bg-white">
+                <SideFoodSlider
+                  side="right"
+                  items={RIGHT_ITEMS}
+                  onPick={(label) => handleImageSearch(label)}
+                  intervalMs={9000}
+                  fadeMs={1200}
+                  clickable={true}
+                  className="h-full"
+                />
+              </div>
+            </aside>
           </div>
         </section>
 
-        <section id="howto" className="max-w-5xl mx-auto pb-12">
-          <div className="text-lg font-semibold mb-3">使い方</div>
-          <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-2">
-            <li>検索欄に食べたい名産を入力する</li>
-            <li>または地図で都道府県を選ぶ</li>
-            <li>検索ボタンで宿候補を表示（予定）</li>
-          </ol>
-        </section>
+        {/* ================= 人気の名産品（横スクロール） ================= */}
+{/* ================= 人気の名産品（回転ずし・無限） ================= */}
+<section data-tour="popular" id="popular">
+  <div className="mb-4">
+    <div className="text-2xl font-bold text-red-900">人気の名産品</div>
+    <div className="text-sm text-gray-600 mt-1">
+      クリックするとその名産で検索します
+    </div>
+  </div>
+
+  <div className="relative rounded-2xl border border-black/10 bg-white overflow-hidden">
+    {/* 端フェード（任意） */}
+    <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
+
+    {/* レーン（2列つなげて無限に見せる） */}
+    <div className="sushi-viewport py-3">
+      <div className="sushi-track">
+        {[...popularFoods, ...popularFoods].map((food, i) => {
+          const regionCount = getRegionCount(food.name);
+
+          return (
+            <button
+              key={`${food.name}-${i}`}
+              type="button"
+              onClick={() => handlePopularSearch(food.name)}
+              className="
+                sushi-card group text-left
+                rounded-2xl border border-black/10 bg-white overflow-hidden
+                hover:shadow-xl transition duration-300 hover:-translate-y-1
+              "
+              style={{
+                width: 250,      // ✅ カード大きめ（好きに調整OK）
+                flex: "0 0 auto" // ✅ つぶれ防止
+              }}
+              title={`${food.name}で検索`}
+            >
+              <div className="h-44 overflow-hidden">
+                <img
+                  src={food.image}
+                  alt={food.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="p-4">
+                <div className="font-semibold text-lg">{food.name}</div>
+                <div className="text-sm text-gray-500 mt-1">
+                  {regionCount}つの地域
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
       </main>
     </div>
   );
-}
+} 
