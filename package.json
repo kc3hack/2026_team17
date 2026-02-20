@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite"
-  },
+  "gen:images": "node scripts/genImages.mjs",
+  "dev": "npm run gen:images && vite",
+  "build": "npm run gen:images && vite build"
+},
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",

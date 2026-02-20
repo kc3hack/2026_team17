@@ -3557,7 +3557,7 @@
     "id": "うなぎ料理",
     "name": "うなぎ料理",
     "kana": "うなぎりょうり",
-    "imageQuery": "うなぎ料理",
+    "imageQuery": "unagi",
     "regions": [
       {
         "id": "うなぎ料理-浜松市",
