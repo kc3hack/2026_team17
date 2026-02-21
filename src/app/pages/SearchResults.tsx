@@ -178,15 +178,7 @@ export default function SearchResults() {
   value={searchQuery}
   onChange={setSearchQuery}
   onSearch={handleSearch}
-  leftSlot={
-    <button
-      type="button"
-      onClick={() => navigate("/")}
-      className="text-white font-semibold hover:opacity-80"
-    >
-      ← 戻る
-    </button>
-  }
+  
 />
 
       {/* サブバー（戻る＋件数） */}
