@@ -33,10 +33,10 @@ type FoodItem = {
 
 const foodData = generatedFoodData as FoodItem[];
 
-const MAX_RESTAURANTS = 40;
-const MAX_LODGINGS = 40;
-const MAX_NEARBY_FOODS = 20;
-const SEARCH_RADIUS_KM = 10;
+const MAX_RESTAURANTS = 20;
+const MAX_LODGINGS = 20;
+const MAX_NEARBY_FOODS = 10;
+const SEARCH_RADIUS_KM = 3;
 
 function extractCityFromRegionParam(regionParam: string) {
   if (!regionParam) return "";
