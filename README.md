@@ -142,6 +142,7 @@ MapViewでは、地図上に以下の3種類のピンが表示される。
 - Google Maps JavaScript API
 - Google Geocoding API
 - Google Places API
+- Open AI API
 
 <!-- 使用技術を入力してください -->
 
