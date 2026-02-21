@@ -9,6 +9,11 @@ import { loadStore, saveStore, clearStore } from "../edit/storage";
 import { downloadJson, readJsonFile } from "../edit/exportImport";
 import type { FoodPlacement, PlacementStore } from "../edit/types";
 
+function pickSearchKey(foodId: string, fallbackName: string) {
+  const head = (foodId ?? "").split("-")[0]?.trim();
+  return head || fallbackName;
+}
+
 function clamp01(v: number) {
   return Math.max(0, Math.min(1, v));
 }
@@ -28,17 +33,27 @@ export default function PrefMapEditor() {
   const foods = foodsByPref[pref] ?? [];
 
   const foodItems = useMemo(() => {
-    return foods.map((f) => {
-      const id = makeFoodId(pref, f.name);
-      return { ...f, id };
-    });
-  }, [foods, pref]);
+  // 同じ name が何回出てきたかを数える
+  const seen = new Map<string, number>();
+
+  return foods.map((f) => {
+    const baseId = makeFoodId(pref, f.name);
+
+    const count = (seen.get(baseId) ?? 0);
+    seen.set(baseId, count + 1);
+
+    // ★重要：1個目は旧IDのまま（既存配置を壊さない）
+    const id = count === 0 ? baseId : `${baseId}__dup${count}`;
+
+    return { ...f, id };
+  });
+}, [foods, pref]);
 
   const placements: FoodPlacement[] = store.placementsByPref[pref] ?? [];
   const placedSet = useMemo(() => new Set(placements.map((p) => p.foodId)), [placements]);
 
   const [selectedFoodId, setSelectedFoodId] = useState<string>("");
-  const [selectedIconKey, setSelectedIconKey] = useState<string>(() => Object.keys(iconManifest)[0] ?? "");
+  const [selectedIconKey, setSelectedIconKey] = useState<string | null>(null);
 
   const [autoNext, setAutoNext] = useState(true);
 
@@ -103,18 +118,21 @@ export default function PrefMapEditor() {
   }
 
   function upsertPlacement(foodId: string, x: number, y: number) {
-    const food = foodItems.find((f) => f.id === foodId);
-    if (!food) return;
+  const food = foodItems.find((f) => f.id === foodId);
+  if (!food) return;
 
-    const newPlacement: FoodPlacement = {
-      prefCode: pref,
-      foodId,
-      foodName: food.name,
-      iconKey: selectedIconKey,
-      x,
-      y,
-      updatedAt: Date.now(),
-    };
+  const existing = placements.find((p) => p.foodId === foodId);
+
+  const newPlacement: FoodPlacement = {
+    prefCode: pref,
+    foodId,
+    foodName: food.name,
+    searchKey: pickSearchKey(foodId, food.name),
+    iconKey: selectedIconKey ?? existing?.iconKey ?? Object.keys(iconManifest)[0] ?? "",
+    x,
+    y,
+    updatedAt: Date.now(),
+  };
 
     setStore((prev) => {
       const next = structuredClone(prev) as PlacementStore;
@@ -131,7 +149,6 @@ export default function PrefMapEditor() {
 
   function onClickMap(e: React.MouseEvent) {
     if (!selectedFoodId) return;
-    if (!selectedIconKey) return;
 
     const p = getPoint(e);
     if (!p) return;
@@ -339,6 +356,33 @@ export default function PrefMapEditor() {
               </button>
             )}
           </div>
+
+          {/* ★追加：アイコン選択解除（上書きOFF） */}
+<div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
+  <button
+    type="button"
+    onClick={() => setSelectedIconKey(null)}
+    disabled={selectedIconKey === null}
+    style={{
+      padding: "8px 10px",
+      borderRadius: 12,
+      border: "1px solid #ddd",
+      background: selectedIconKey === null ? "#f3f3f3" : "#fff",
+      cursor: selectedIconKey === null ? "not-allowed" : "pointer",
+      fontSize: 12,
+      fontWeight: 700,
+      whiteSpace: "nowrap",
+    }}
+    title="アイコンの上書きを止めます（座標だけ調整したい時）"
+  >
+    選択解除（上書きOFF）
+  </button>
+
+  <div style={{ fontSize: 12, color: "#666" }}>
+    選択中: {selectedIconKey ?? "（未選択）"}
+  </div>
+</div>
+          
           <div style={{ fontSize: 12, color: "#666", marginBottom: 8 }}>
             表示中: {filteredIcons.length} 件 / 全 {Object.keys(iconManifest).length} 件
           </div>
