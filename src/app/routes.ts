@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
 import MapView from './pages/MapView';
 import NotFound from './pages/NotFound';
+import TestPage from "./pages/testpage";
+import PrefMapEditor from './pages/PrefMapEditor';
 
 export const router = createBrowserRouter([
   {
@@ -21,4 +23,13 @@ export const router = createBrowserRouter([
     path: '*',
     Component: NotFound,
   },
+  {
+  path: "/test",
+  Component: TestPage,
+},
+{
+  path: "/PrefMapEditor",
+  Component: PrefMapEditor,
+
+},
 ]);

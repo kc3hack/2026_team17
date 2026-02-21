@@ -1,0 +1,3634 @@
+{
+  "version": 1,
+  "placementsByPref": {
+    "aichi": [
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__ひつまぶし",
+        "foodName": "ひつまぶし",
+        "iconKey": "ひつまぶし",
+        "x": 0.2351846513452604,
+        "y": 0.3475694696107012,
+        "updatedAt": 1771669333525
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__味噌カツ",
+        "foodName": "味噌カツ",
+        "iconKey": "味噌カツ",
+        "x": 0.2455453283266197,
+        "y": 0.40016982966991005,
+        "updatedAt": 1771669344293
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__きしめん",
+        "foodName": "きしめん",
+        "iconKey": "きしめん",
+        "x": 0.2949577877761796,
+        "y": 0.3308329914100438,
+        "updatedAt": 1771669313509
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__手羽先",
+        "foodName": "手羽先",
+        "iconKey": "手羽先",
+        "x": 0.2941608126237673,
+        "y": 0.3866212520789017,
+        "updatedAt": 1771669279779
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__あんかけスパ",
+        "foodName": "あんかけスパ",
+        "iconKey": "あんかけスパ",
+        "x": 0.349152098140213,
+        "y": 0.3515543453727625,
+        "updatedAt": 1771669294179
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__台湾ラーメン",
+        "foodName": "台湾ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.352339998749862,
+        "y": 0.4110376706535692,
+        "updatedAt": 1771669380214
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__豊橋カレーうどん",
+        "foodName": "豊橋カレーうどん",
+        "iconKey": "カレーうどん",
+        "x": 0.598458304134548,
+        "y": 0.6755430974071479,
+        "updatedAt": 1771628808293
+      },
+      {
+        "prefCode": "aichi",
+        "foodId": "aichi__味噌煮込みうどん",
+        "foodName": "味噌煮込みうどん",
+        "iconKey": "味噌煮込みうどん",
+        "x": 0.2997396386906531,
+        "y": 0.43255599976870013,
+        "updatedAt": 1771669367078
+      }
+    ],
+    "akita": [
+      {
+        "prefCode": "akita",
+        "foodId": "akita__きりたんぽ鍋",
+        "foodName": "きりたんぽ鍋",
+        "iconKey": "きりたんぽ鍋",
+        "x": 0.6591754324285803,
+        "y": 0.1889714142806623,
+        "updatedAt": 1771669406494
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__横手やきそば",
+        "foodName": "横手やきそば",
+        "iconKey": "焼きそば",
+        "x": 0.6268586978425265,
+        "y": 0.7346653876086727,
+        "updatedAt": 1771629154908
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__稲庭うどん",
+        "foodName": "稲庭うどん",
+        "iconKey": "うどん",
+        "x": 0.540659817973718,
+        "y": 0.7822955194752338,
+        "updatedAt": 1771629207134
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__比内地鶏料理",
+        "foodName": "比内地鶏料理",
+        "iconKey": "比内地鶏料理",
+        "x": 0.6024627884456939,
+        "y": 0.18773232869953999,
+        "updatedAt": 1771629253301
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__横手ホルモン",
+        "foodName": "横手ホルモン",
+        "iconKey": "ホルモン",
+        "x": 0.5618029394509729,
+        "y": 0.6726300946413575,
+        "updatedAt": 1771629320631
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__十文字ラーメン",
+        "foodName": "十文字ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.6691449407970362,
+        "y": 0.7311802771937557,
+        "updatedAt": 1771629364121
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__男鹿ハタハタ料理",
+        "foodName": "男鹿ハタハタ料理",
+        "iconKey": "ラーメン",
+        "x": 0.288568754206448,
+        "y": 0.3440984938248351,
+        "updatedAt": 1771629410009
+      },
+      {
+        "prefCode": "akita",
+        "foodId": "akita__しょっつる鍋",
+        "foodName": "しょっつる鍋",
+        "iconKey": "しょっつる鍋",
+        "x": 0.23977693541278283,
+        "y": 0.365009276520724,
+        "updatedAt": 1771629477835
+      }
+    ],
+    "aomori": [
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__大間マグロ",
+        "foodName": "大間マグロ",
+        "iconKey": "マグロ",
+        "x": 0.5536709696520288,
+        "y": 0.0494888421174887,
+        "updatedAt": 1771630477776
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__八戸せんべい汁",
+        "foodName": "八戸せんべい汁",
+        "iconKey": "せんべい汁",
+        "x": 0.8724441857706411,
+        "y": 0.7578996100784012,
+        "updatedAt": 1771630516873
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__貝焼き味噌",
+        "foodName": "貝焼き味噌",
+        "iconKey": "貝焼き味噌",
+        "x": 0.46259290790385377,
+        "y": 0.5443773067217799,
+        "updatedAt": 1771630575434
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__味噌カレー牛乳ラーメン",
+        "foodName": "味噌カレー牛乳ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.5097583327377301,
+        "y": 0.5327602140995173,
+        "updatedAt": 1771630600298
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__いちご煮",
+        "foodName": "いちご煮",
+        "iconKey": "いちご煮",
+        "x": 0.8545538522129639,
+        "y": 0.7111988798688085,
+        "updatedAt": 1771630648763
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__十和田バラ焼き",
+        "foodName": "十和田バラ焼き",
+        "iconKey": "バラ焼き",
+        "x": 0.7163103656309125,
+        "y": 0.6823884584000905,
+        "updatedAt": 1771630686180
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__黒石つゆ焼そば",
+        "foodName": "黒石つゆ焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.37151484615567876,
+        "y": 0.6298791818793665,
+        "updatedAt": 1771630742197
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__十三湖しじみラーメン",
+        "foodName": "十三湖しじみラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.3259758152815913,
+        "y": 0.5116170926222624,
+        "updatedAt": 1771630770885
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__弘前中みそラーメン",
+        "foodName": "弘前中みそラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.2723048146085596,
+        "y": 0.6275557335747511,
+        "updatedAt": 1771630808317
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__深浦マグロ料理",
+        "foodName": "深浦マグロ料理",
+        "iconKey": "マグロ料理",
+        "x": 0.13894050990587484,
+        "y": 0.6157063060487481,
+        "updatedAt": 1771630845167
+      },
+      {
+        "prefCode": "aomori",
+        "foodId": "aomori__けの汁",
+        "foodName": "けの汁",
+        "iconKey": "けの汁",
+        "x": 0.2804367844075038,
+        "y": 0.6628717308826245,
+        "updatedAt": 1771630887039
+      }
+    ],
+    "chiba": [
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__勝浦タンタンメン",
+        "foodName": "勝浦タンタンメン",
+        "iconKey": "汁なし担々麵",
+        "x": 0.4869888173006863,
+        "y": 0.7209572436275415,
+        "updatedAt": 1771630989081
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__海鮮丼",
+        "foodName": "海鮮丼",
+        "iconKey": "海鮮丼",
+        "x": 0.8087774294670846,
+        "y": 0.19958202716823406,
+        "updatedAt": 1771635264659
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__金目鯛料理",
+        "foodName": "金目鯛料理",
+        "iconKey": "金目鯛料理",
+        "x": 0.34691745036572624,
+        "y": 0.7753396029258098,
+        "updatedAt": 1771635316196
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__勝浦朝市海鮮",
+        "foodName": "勝浦朝市海鮮",
+        "iconKey": "海鮮丼",
+        "x": 0.5391849529780565,
+        "y": 0.6865203761755486,
+        "updatedAt": 1771635429358
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__九十九里はまぐり料理",
+        "foodName": "九十九里はまぐり料理",
+        "iconKey": "はまぐり料理",
+        "x": 0.5454545454545454,
+        "y": 0.400208986415883,
+        "updatedAt": 1771635478848
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__なめろう",
+        "foodName": "なめろう",
+        "iconKey": "なめろう",
+        "x": 0.16135791135301428,
+        "y": 0.9291701117250268,
+        "updatedAt": 1771635658810
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__伊勢海老料理",
+        "foodName": "伊勢海老料理",
+        "iconKey": "伊勢海老料理",
+        "x": 0.16387258012628905,
+        "y": 0.8600167204599707,
+        "updatedAt": 1771635708780
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__さんが焼き",
+        "foodName": "さんが焼き",
+        "iconKey": "さんが焼き",
+        "x": 0.19656327417886105,
+        "y": 0.8688180611664325,
+        "updatedAt": 1771635727333
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__竹岡式ラーメン",
+        "foodName": "竹岡式ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.17393125521938813,
+        "y": 0.6324391964786042,
+        "updatedAt": 1771635756949
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__アリランラーメン",
+        "foodName": "アリランラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.41659679184040327,
+        "y": 0.6626152217579014,
+        "updatedAt": 1771635778188
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__銚子つりきんめ丼",
+        "foodName": "銚子つりきんめ丼",
+        "iconKey": "銚子つりきんめどん",
+        "x": 0.7673930857122334,
+        "y": 0.2288348583680039,
+        "updatedAt": 1771635830926
+      },
+      {
+        "prefCode": "chiba",
+        "foodId": "chiba__房総アジフライ",
+        "foodName": "房総アジフライ",
+        "iconKey": "房総アジフライ",
+        "x": 0.20033527733877318,
+        "y": 0.814752682541025,
+        "updatedAt": 1771635910096
+      }
+    ],
+    "ehime": [
+      {
+        "prefCode": "ehime",
+        "foodId": "ehime__鯛めし",
+        "foodName": "鯛めし",
+        "iconKey": "鯛めし",
+        "x": 0.2018220042046251,
+        "y": 0.7119831814996496,
+        "updatedAt": 1771635998987
+      },
+      {
+        "prefCode": "ehime",
+        "foodId": "ehime__焼豚玉子飯",
+        "foodName": "焼豚玉子飯",
+        "iconKey": "焼豚玉子飯",
+        "x": 0.5038789958795302,
+        "y": 0.09614772038348113,
+        "updatedAt": 1771636077477
+      },
+      {
+        "prefCode": "ehime",
+        "foodId": "ehime__じゃこ天",
+        "foodName": "じゃこ天",
+        "iconKey": "じゃこ天",
+        "x": 0.1934771216309251,
+        "y": 0.6790719181249294,
+        "updatedAt": 1771636122152
+      },
+      {
+        "prefCode": "ehime",
+        "foodId": "ehime__今治焼き鳥",
+        "foodName": "今治焼き鳥",
+        "iconKey": "焼き鳥",
+        "x": 0.5101922543388239,
+        "y": 0.11613970550457772,
+        "updatedAt": 1771636155853
+      },
+      {
+        "prefCode": "ehime",
+        "foodId": "ehime__道後鯛めし",
+        "foodName": "道後鯛めし",
+        "iconKey": "鯛めし",
+        "x": 0.33566923615977573,
+        "y": 0.2803083391730904,
+        "updatedAt": 1771636201631
+      }
+    ],
+    "fukui": [
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__越前ガニ料理",
+        "foodName": "越前ガニ料理",
+        "iconKey": "カニ",
+        "x": 0.48913805185704273,
+        "y": 0.3475823405746321,
+        "updatedAt": 1771636495645
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__越前おろしそば",
+        "foodName": "越前おろしそば",
+        "iconKey": "そば",
+        "x": 0.5508058864751226,
+        "y": 0.2585844428871759,
+        "updatedAt": 1771636537277
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__ソースカツ丼",
+        "foodName": "ソースカツ丼",
+        "iconKey": "カツ丼",
+        "x": 0.5164681149264191,
+        "y": 0.25998598458304134,
+        "updatedAt": 1771636570719
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__焼き鯖寿司",
+        "foodName": "焼き鯖寿司",
+        "iconKey": "焼き鯖寿司",
+        "x": 0.24456902592852137,
+        "y": 0.7666433076384023,
+        "updatedAt": 1771636696153
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__若狭ふぐ料理",
+        "foodName": "若狭ふぐ料理",
+        "iconKey": "ふぐ料理",
+        "x": 0.21373510861948142,
+        "y": 0.7890679747722494,
+        "updatedAt": 1771636714857
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__敦賀ラーメン",
+        "foodName": "敦賀ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.4127540294323756,
+        "y": 0.644709180098108,
+        "updatedAt": 1771636758931
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__今庄そば",
+        "foodName": "今庄そば",
+        "iconKey": "そば",
+        "x": 0.5409950946040645,
+        "y": 0.4800280308339173,
+        "updatedAt": 1771636821324
+      },
+      {
+        "prefCode": "fukui",
+        "foodId": "fukui__若狭牡蠣料理",
+        "foodName": "若狭牡蠣料理",
+        "iconKey": "牡蠣料理",
+        "x": 0.27049754730203224,
+        "y": 0.7603363700070077,
+        "updatedAt": 1771636861516
+      }
+    ],
+    "fukuoka": [
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__博多ラーメン",
+        "foodName": "博多ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.27189908899789766,
+        "y": 0.3629992992291521,
+        "updatedAt": 1771649755584
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__長浜ラーメン",
+        "foodName": "長浜ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.30623686054660126,
+        "y": 0.3461807988787666,
+        "updatedAt": 1771649859804
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__もつ鍋",
+        "foodName": "もつ鍋",
+        "iconKey": "もつ鍋",
+        "x": 0.3482831114225648,
+        "y": 0.3209530483531885,
+        "updatedAt": 1771649918724
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__水炊き",
+        "foodName": "水炊き",
+        "iconKey": "水炊き",
+        "x": 0.3076384022424667,
+        "y": 0.37631394533987383,
+        "updatedAt": 1771649935332
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__焼きうどん",
+        "foodName": "焼きうどん",
+        "iconKey": "焼うどん",
+        "x": 0.716187806587246,
+        "y": 0.102312543798178,
+        "updatedAt": 1771650005149
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__焼きラーメン",
+        "foodName": "焼きラーメン",
+        "iconKey": "焼きラーメン",
+        "x": 0.3524877365101612,
+        "y": 0.37140854940434476,
+        "updatedAt": 1771650033933
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__鉄なべ餃子",
+        "foodName": "鉄なべ餃子",
+        "iconKey": "餃子",
+        "x": 0.6517168885774351,
+        "y": 0.11983181499649614,
+        "updatedAt": 1771650057734
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__久留米ラーメン",
+        "foodName": "久留米ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.42256482130343376,
+        "y": 0.5185704274702172,
+        "updatedAt": 1771650195761
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__明太子料理",
+        "foodName": "明太子料理",
+        "iconKey": "明太子料理",
+        "x": 0.3398738612473721,
+        "y": 0.40574632095304836,
+        "updatedAt": 1771650305483
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__筑豊ラーメン",
+        "foodName": "筑豊ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.5788367203924317,
+        "y": 0.30833917309039943,
+        "updatedAt": 1771650386828
+      },
+      {
+        "prefCode": "fukuoka",
+        "foodId": "fukuoka__久留米焼き鳥",
+        "foodName": "久留米焼き鳥",
+        "iconKey": "焼き鳥",
+        "x": 0.4639103013314646,
+        "y": 0.5206727400140154,
+        "updatedAt": 1771650450174
+      }
+    ],
+    "fukushima": [
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__喜多方ラーメン",
+        "foodName": "喜多方ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.34267694463910303,
+        "y": 0.37070777855641207,
+        "updatedAt": 1771650594769
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__ソースカツ丼",
+        "foodName": "ソースカツ丼",
+        "iconKey": "カツ丼",
+        "x": 0.41205325858444286,
+        "y": 0.409250175192712,
+        "updatedAt": 1771650678164
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__円盤餃子",
+        "foodName": "円盤餃子",
+        "iconKey": "餃子",
+        "x": 0.6503153468815698,
+        "y": 0.2725998598458304,
+        "updatedAt": 1771650720203
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__なみえ焼そば",
+        "foodName": "なみえ焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.9474421864050455,
+        "y": 0.43307638402242465,
+        "updatedAt": 1771650758980
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__白河ラーメン",
+        "foodName": "白河ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.6005606166783461,
+        "y": 0.6678346180798879,
+        "updatedAt": 1771650835990
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__会津ラーメン",
+        "foodName": "会津ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.4498948843728101,
+        "y": 0.4078486334968465,
+        "updatedAt": 1771650847254
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__郡山ブラック",
+        "foodName": "郡山ブラック",
+        "iconKey": "ラーメン",
+        "x": 0.6594253679046952,
+        "y": 0.4639103013314646,
+        "updatedAt": 1771650901351
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__会津こづゆ",
+        "foodName": "会津こづゆ",
+        "iconKey": "会津こづゆ",
+        "x": 0.3931324456902593,
+        "y": 0.43027330063069374,
+        "updatedAt": 1771650965504
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__会津馬刺し",
+        "foodName": "会津馬刺し",
+        "iconKey": "馬刺し",
+        "x": 0.44498948843728103,
+        "y": 0.43728100911002105,
+        "updatedAt": 1771650984449
+      },
+      {
+        "prefCode": "fukushima",
+        "foodId": "fukushima__いかにんじん",
+        "foodName": "いかにんじん",
+        "iconKey": "いかにんじん",
+        "x": 0.6977099225721286,
+        "y": 0.26736641658171445,
+        "updatedAt": 1771651041467
+      }
+    ],
+    "gifu": [
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__飛騨牛料理",
+        "foodName": "飛騨牛料理",
+        "iconKey": "牛料理",
+        "x": 0.7062977088316706,
+        "y": 0.1375954205753239,
+        "updatedAt": 1771651127756
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__鶏ちゃん",
+        "foodName": "鶏ちゃん",
+        "iconKey": "鶏ちゃん料理",
+        "x": 0.6681297699003729,
+        "y": 0.47729008798380845,
+        "updatedAt": 1771651217366
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__朴葉味噌",
+        "foodName": "朴葉味噌",
+        "iconKey": "朴葉味噌",
+        "x": 0.6986641210454111,
+        "y": 0.17003817230690527,
+        "updatedAt": 1771651323735
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__奥美濃カレー",
+        "foodName": "奥美濃カレー",
+        "iconKey": "カレー",
+        "x": 0.47442747982403705,
+        "y": 0.5307251879277121,
+        "updatedAt": 1771651379209
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__けいちゃん焼き",
+        "foodName": "けいちゃん焼き",
+        "iconKey": "けいちゃん焼き",
+        "x": 0.5011450370759455,
+        "y": 0.4935114474696967,
+        "updatedAt": 1771651393034
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__奥飛騨温泉郷朴葉味噌",
+        "foodName": "奥飛騨温泉郷朴葉味噌",
+        "iconKey": "朴葉味噌",
+        "x": 0.7435114492896859,
+        "y": 0.16049618393410253,
+        "updatedAt": 1771651450179
+      },
+      {
+        "prefCode": "gifu",
+        "foodId": "gifu__各務原キムチ鍋",
+        "foodName": "各務原キムチ鍋",
+        "iconKey": "キムチ鍋",
+        "x": 0.4448473271522813,
+        "y": 0.7301526834036558,
+        "updatedAt": 1771651508331
+      }
+    ],
+    "gunma": [
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__水沢うどん",
+        "foodName": "水沢うどん",
+        "iconKey": "うどん",
+        "x": 0.3885496172286172,
+        "y": 0.3541984740104384,
+        "updatedAt": 1771651618527
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__焼きまんじゅう",
+        "foodName": "焼きまんじゅう",
+        "iconKey": "焼きまんじゅう",
+        "x": 0.5020992355492279,
+        "y": 0.48206106943028576,
+        "updatedAt": 1771651661119
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__高崎パスタ",
+        "foodName": "高崎パスタ",
+        "iconKey": "高崎パスタ",
+        "x": 0.48874045692327367,
+        "y": 0.5459923671402094,
+        "updatedAt": 1771651720039
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__草津温泉湯もみ料理系",
+        "foodName": "草津温泉湯もみ料理系",
+        "iconKey": "草津温泉湯もみ料理",
+        "x": 0.1366412202820523,
+        "y": 0.48969465721654526,
+        "updatedAt": 1771651778440
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__上州もつ煮",
+        "foodName": "上州もつ煮",
+        "iconKey": "上州もつ煮",
+        "x": 0.29408396837365536,
+        "y": 0.5917938938577667,
+        "updatedAt": 1771653326354
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__焼きうどん",
+        "foodName": "焼きうどん",
+        "iconKey": "焼うどん",
+        "x": 0.6595419836408309,
+        "y": 0.5879770963246586,
+        "updatedAt": 1771653370060
+      },
+      {
+        "prefCode": "gunma",
+        "foodId": "gunma__上州牛料理",
+        "foodName": "上州牛料理",
+        "iconKey": "牛料理",
+        "x": 0.5421755714270905,
+        "y": 0.4696564856376357,
+        "updatedAt": 1771653390403
+      }
+    ],
+    "hiroshima": [
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__広島風お好み焼き",
+        "foodName": "広島風お好み焼き",
+        "iconKey": "広島風お好み焼き",
+        "x": 0.3007633576866325,
+        "y": 0.6146946608565236,
+        "updatedAt": 1771653637880
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__牡蠣料理",
+        "foodName": "牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.15954198364083094,
+        "y": 0.7043893100651166,
+        "updatedAt": 1771653724602
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__尾道ラーメン",
+        "foodName": "尾道ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.8045801515797623,
+        "y": 0.5545801497597731,
+        "updatedAt": 1771653755642
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__穴子飯",
+        "foodName": "穴子飯",
+        "iconKey": "穴子飯",
+        "x": 0.19389312867899888,
+        "y": 0.6757633558666433,
+        "updatedAt": 1771653781843
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__汁なし担々麺",
+        "foodName": "汁なし担々麺",
+        "iconKey": "汁なし担々麵",
+        "x": 0.3322519073049531,
+        "y": 0.6385496154086281,
+        "updatedAt": 1771653805379
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__広島つけ麺",
+        "foodName": "広島つけ麺",
+        "iconKey": "つけ麵",
+        "x": 0.2597328233354874,
+        "y": 0.6433206077750403,
+        "updatedAt": 1771653823116
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__呉海自カレー",
+        "foodName": "呉海自カレー",
+        "iconKey": "カレー",
+        "x": 0.375190838602663,
+        "y": 0.713931294797941,
+        "updatedAt": 1771653861061
+      },
+      {
+        "prefCode": "hiroshima",
+        "foodId": "hiroshima__呉冷麺",
+        "foodName": "呉冷麺",
+        "iconKey": "冷麵",
+        "x": 0.37709923554922786,
+        "y": 0.7463740574494573,
+        "updatedAt": 1771653873093
+      }
+    ],
+    "hokkaido": [
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__カレー",
+        "foodName": "カレー",
+        "iconKey": "カレー",
+        "x": 0.20572911425376098,
+        "y": 0.6324574995296973,
+        "updatedAt": 1771658972166
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ラーメンサラダ",
+        "foodName": "ラーメンサラダ",
+        "iconKey": "ラーメンサラダ",
+        "x": 0.23381922636016755,
+        "y": 0.6255351508618027,
+        "updatedAt": 1771658993999
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__旭川ラーメン",
+        "foodName": "旭川ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.32175349034544026,
+        "y": 0.4983369940892378,
+        "updatedAt": 1771659026417
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__函館イカ刺し",
+        "foodName": "函館イカ刺し",
+        "iconKey": "イカ",
+        "x": 0.15870870920608043,
+        "y": 0.891372580925072,
+        "updatedAt": 1771659130714
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__函館塩ラーメン",
+        "foodName": "函館塩ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.13245056093270038,
+        "y": 0.8887767001746114,
+        "updatedAt": 1771659142595
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__海鮮丼",
+        "foodName": "海鮮丼",
+        "iconKey": "海鮮丼",
+        "x": 0.15077019926296553,
+        "y": 0.6156323545861563,
+        "updatedAt": 1771659160674
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__寿司",
+        "foodName": "寿司",
+        "iconKey": "寿司",
+        "x": 0.17031114681524837,
+        "y": 0.6154400612550116,
+        "updatedAt": 1771659186763
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ジンギスカン",
+        "foodName": "ジンギスカン",
+        "iconKey": "ジンギスカン",
+        "x": 0.23565119019319405,
+        "y": 0.6595700340128402,
+        "updatedAt": 1771659354894
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ちゃんちゃん焼き",
+        "foodName": "ちゃんちゃん焼き",
+        "iconKey": "ちゃんちゃん焼き",
+        "x": 0.22404875258402612,
+        "y": 0.5349677579907359,
+        "updatedAt": 1771659383528
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__石狩鍋",
+        "foodName": "石狩鍋",
+        "iconKey": "石狩鍋",
+        "x": 0.22160613413999078,
+        "y": 0.566118326996262,
+        "updatedAt": 1771659401496
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__カニ料理",
+        "foodName": "カニ料理",
+        "iconKey": "カニ",
+        "x": 0.5055605282591006,
+        "y": 0.41123077555211845,
+        "updatedAt": 1771659442017
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__根室花咲ガニ料理",
+        "foodName": "根室花咲ガニ料理",
+        "iconKey": "カニ",
+        "x": 0.6551709079562661,
+        "y": 0.5574653911613936,
+        "updatedAt": 1771659504906
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ホタテ料理",
+        "foodName": "ホタテ料理",
+        "iconKey": "ホタテ",
+        "x": 0.42678608343896046,
+        "y": 0.35671727979244783,
+        "updatedAt": 1771659539491
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ウニ丼",
+        "foodName": "ウニ丼",
+        "iconKey": "ウニ丼",
+        "x": 0.11596288643546174,
+        "y": 0.5842894922494856,
+        "updatedAt": 1771659595884
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__いくら丼",
+        "foodName": "いくら丼",
+        "iconKey": "いくら",
+        "x": 0.5409784956976132,
+        "y": 0.6015953639192222,
+        "updatedAt": 1771659626236
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__ザンギ",
+        "foodName": "ザンギ",
+        "iconKey": "ザンギ",
+        "x": 0.5128883835912067,
+        "y": 0.6007300703357354,
+        "updatedAt": 1771659670710
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__室蘭やきとり",
+        "foodName": "室蘭やきとり",
+        "iconKey": "焼き鳥",
+        "x": 0.17458572909231024,
+        "y": 0.7711929062826419,
+        "updatedAt": 1771659698510
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__海鮮炉端焼き",
+        "foodName": "海鮮炉端焼き",
+        "iconKey": "海鮮炉端焼き",
+        "x": 0.5660153347489756,
+        "y": 0.5981341895852749,
+        "updatedAt": 1771659714278
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__塩ホルモン",
+        "foodName": "塩ホルモン",
+        "iconKey": "ホルモン",
+        "x": 0.46892125159857034,
+        "y": 0.4371895830567235,
+        "updatedAt": 1771659742198
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__帯広豚丼",
+        "foodName": "帯広豚丼",
+        "iconKey": "豚丼",
+        "x": 0.4139623366077749,
+        "y": 0.6258235842568536,
+        "updatedAt": 1771659800743
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__厚岸牡蠣料理",
+        "foodName": "厚岸牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.5989906837434529,
+        "y": 0.5790977307485645,
+        "updatedAt": 1771659829265
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__羅臼昆布料理",
+        "foodName": "羅臼昆布料理",
+        "iconKey": "昆布",
+        "x": 0.6148677036296827,
+        "y": 0.39565549104935543,
+        "updatedAt": 1771659863305
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__知床海鮮",
+        "foodName": "知床海鮮",
+        "iconKey": "海鮮",
+        "x": 0.5464743871966928,
+        "y": 0.42074900497047363,
+        "updatedAt": 1771659900618
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__美瑛カレー",
+        "foodName": "美瑛カレー",
+        "iconKey": "カレー",
+        "x": 0.34373705634175844,
+        "y": 0.540159519491657,
+        "updatedAt": 1771659951668
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__北見焼肉",
+        "foodName": "北見焼肉",
+        "iconKey": "焼肉",
+        "x": 0.49334743603892384,
+        "y": 0.4527648675594866,
+        "updatedAt": 1771659990772
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__スパカツ",
+        "foodName": "スパカツ",
+        "iconKey": "スパカツ",
+        "x": 0.537925222642569,
+        "y": 0.5643877398292884,
+        "updatedAt": 1771660034509
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__あげいも",
+        "foodName": "あげいも",
+        "iconKey": "あげいも",
+        "x": 0.14527430776388597,
+        "y": 0.7244670527743529,
+        "updatedAt": 1771660102094
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__美唄やきとり",
+        "foodName": "美唄やきとり",
+        "iconKey": "焼き鳥",
+        "x": 0.288778141350963,
+        "y": 0.5574653911613936,
+        "updatedAt": 1771660141399
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__夕張カレーそば",
+        "foodName": "夕張カレーそば",
+        "iconKey": "カレーそば",
+        "x": 0.3144256350133342,
+        "y": 0.6509170981779718,
+        "updatedAt": 1771660169328
+      },
+      {
+        "prefCode": "hokkaido",
+        "foodId": "hokkaido__小樽あんかけ焼そば",
+        "foodName": "小樽あんかけ焼そば",
+        "iconKey": "あんかけ焼きそば",
+        "x": 0.15870870920608043,
+        "y": 0.639668281592643,
+        "updatedAt": 1771660192416
+      }
+    ],
+    "hyogo": [
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__明石焼き",
+        "foodName": "明石焼き",
+        "iconKey": "明石焼き",
+        "x": 0.5886095553563027,
+        "y": 0.6730262017193744,
+        "updatedAt": 1771660337899
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__神戸牛料理",
+        "foodName": "神戸牛料理",
+        "iconKey": "牛料理",
+        "x": 0.6582241810113102,
+        "y": 0.6388295435028795,
+        "updatedAt": 1771660377493
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__牡蠣料理",
+        "foodName": "牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.2344298809711764,
+        "y": 0.5753214639579602,
+        "updatedAt": 1771660428173
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__カニ料理",
+        "foodName": "カニ料理",
+        "iconKey": "カニ",
+        "x": 0.46769994237655266,
+        "y": 0.02742856805817201,
+        "updatedAt": 1771660497063
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__ぼっかけ",
+        "foodName": "ぼっかけ",
+        "iconKey": "ぼっかけ",
+        "x": 0.6857036385067079,
+        "y": 0.6353013303206115,
+        "updatedAt": 1771660510958
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__淡路島玉ねぎ料理",
+        "foodName": "淡路島玉ねぎ料理",
+        "iconKey": "玉ねぎ料理",
+        "x": 0.5067818374811183,
+        "y": 0.8393956755634988,
+        "updatedAt": 1771660557480
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__出石そば",
+        "foodName": "出石そば",
+        "iconKey": "そば",
+        "x": 0.44510572176922564,
+        "y": 0.10314973982326797,
+        "updatedAt": 1771660606736
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__赤穂塩ラーメン",
+        "foodName": "赤穂塩ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.26129868385556526,
+        "y": 0.5723360341680338,
+        "updatedAt": 1771660628057
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__姫路ラーメン",
+        "foodName": "姫路ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.45487619554536707,
+        "y": 0.5679257537134241,
+        "updatedAt": 1771660654417
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__香住ガニ料理",
+        "foodName": "香住ガニ料理",
+        "iconKey": "カニ",
+        "x": 0.3461796747857938,
+        "y": 0.02559660422514549,
+        "updatedAt": 1771660683275
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__姫路おでん",
+        "foodName": "姫路おでん",
+        "iconKey": "おでん",
+        "x": 0.4219008465508898,
+        "y": 0.5661616447928277,
+        "updatedAt": 1771660729459
+      },
+      {
+        "prefCode": "hyogo",
+        "foodId": "hyogo__明石鯛料理",
+        "foodName": "明石鯛料理",
+        "iconKey": "鯛料理",
+        "x": 0.6166996674627092,
+        "y": 0.6724833903734833,
+        "updatedAt": 1771660775083
+      }
+    ],
+    "ibaraki": [
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__あんこう鍋",
+        "foodName": "あんこう鍋",
+        "iconKey": "あんこう鍋",
+        "x": 0.7742485571029896,
+        "y": 0.1336824703737099,
+        "updatedAt": 1771660876222
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__常陸牛料理",
+        "foodName": "常陸牛料理",
+        "iconKey": "牛料理",
+        "x": 0.6166996674627092,
+        "y": 0.5137131915111853,
+        "updatedAt": 1771660948537
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__納豆料理",
+        "foodName": "納豆料理",
+        "iconKey": "納豆料理",
+        "x": 0.6142570490186738,
+        "y": 0.5454672312836449,
+        "updatedAt": 1771660972432
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__常陸秋そば",
+        "foodName": "常陸秋そば",
+        "iconKey": "常陸秋そば",
+        "x": 0.6765438193415754,
+        "y": 0.33031325511855586,
+        "updatedAt": 1771661023961
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__しらす丼",
+        "foodName": "しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.6997486945599113,
+        "y": 0.5148666574680852,
+        "updatedAt": 1771661115787
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__鹿島灘はまぐり料理",
+        "foodName": "鹿島灘はまぐり料理",
+        "iconKey": "はまぐり料理",
+        "x": 0.7528756457176802,
+        "y": 0.861379241559817,
+        "updatedAt": 1771661145140
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__しらすピザ",
+        "foodName": "しらすピザ",
+        "iconKey": "しらすピザ",
+        "x": 0.6826503654516638,
+        "y": 0.5453993880185272,
+        "updatedAt": 1771661174901
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__スタミナラーメン",
+        "foodName": "スタミナラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.6716585824535046,
+        "y": 0.47151018008645773,
+        "updatedAt": 1771661207181
+      },
+      {
+        "prefCode": "ibaraki",
+        "foodId": "ibaraki__奥久慈しゃも料理",
+        "foodName": "奥久慈しゃも料理",
+        "iconKey": "しゃも料理",
+        "x": 0.55319158791779,
+        "y": 0.15749800020305457,
+        "updatedAt": 1771661242390
+      }
+    ],
+    "ishikawa": [
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__のどぐろ料理",
+        "foodName": "のどぐろ料理",
+        "iconKey": "のどぐろ料理",
+        "x": 0.3174491941135249,
+        "y": 0.7694463910301331,
+        "updatedAt": 1771661389688
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__かに面",
+        "foodName": "かに面",
+        "iconKey": "カニ",
+        "x": 0.27610371408549406,
+        "y": 0.7687456201822004,
+        "updatedAt": 1771661414393
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__牡蠣料理",
+        "foodName": "牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.6748423265592152,
+        "y": 0.13314646110721795,
+        "updatedAt": 1771661440922
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__海鮮丼",
+        "foodName": "海鮮丼",
+        "iconKey": "海鮮丼",
+        "x": 0.5634197617379118,
+        "y": 0.3265592151366503,
+        "updatedAt": 1771661469044
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__治部煮",
+        "foodName": "治部煮",
+        "iconKey": "治部煮",
+        "x": 0.29432375613174494,
+        "y": 0.8051857042747022,
+        "updatedAt": 1771661489827
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__能登牡蠣料理",
+        "foodName": "能登牡蠣料理",
+        "iconKey": "牡蠣料理",
+        "x": 0.5900490539593553,
+        "y": 0.3328661527680449,
+        "updatedAt": 1771661537620
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__金沢カレー",
+        "foodName": "金沢カレー",
+        "iconKey": "カレー",
+        "x": 0.3251576734407849,
+        "y": 0.8009810791871058,
+        "updatedAt": 1771661548091
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__輪島ふぐ料理",
+        "foodName": "輪島ふぐ料理",
+        "iconKey": "ふぐ料理",
+        "x": 0.5276804484933427,
+        "y": 0.1051156271899089,
+        "updatedAt": 1771661584204
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__加賀料理",
+        "foodName": "加賀料理",
+        "iconKey": "加賀料理",
+        "x": 0.24737210932025228,
+        "y": 0.8332165381920112,
+        "updatedAt": 1771661628917
+      },
+      {
+        "prefCode": "ishikawa",
+        "foodId": "ishikawa__金沢おでん",
+        "foodName": "金沢おでん",
+        "iconKey": "おでん",
+        "x": 0.3076384022424667,
+        "y": 0.7358093903293623,
+        "updatedAt": 1771661645999
+      }
+    ],
+    "iwate": [
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__わんこそば",
+        "foodName": "わんこそば",
+        "iconKey": "わんこそば",
+        "x": 0.37140854940434476,
+        "y": 0.40294323756131745,
+        "updatedAt": 1771661811226
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__盛岡冷麺",
+        "foodName": "盛岡冷麺",
+        "iconKey": "冷麵",
+        "x": 0.3693062368605466,
+        "y": 0.4365802382620883,
+        "updatedAt": 1771661832257
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__じゃじゃ麺",
+        "foodName": "じゃじゃ麺",
+        "iconKey": "じゃじゃ麵",
+        "x": 0.4022424667133847,
+        "y": 0.40014015416958654,
+        "updatedAt": 1771661848035
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__前沢牛料理",
+        "foodName": "前沢牛料理",
+        "iconKey": "牛料理",
+        "x": 0.42957252978276106,
+        "y": 0.7967764540995095,
+        "updatedAt": 1771661902843
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__瓶ドン",
+        "foodName": "瓶ドン",
+        "iconKey": "瓶ドン",
+        "x": 0.7456201822004205,
+        "y": 0.4583041345480028,
+        "updatedAt": 1771661936900
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__遠野ジンギスカン",
+        "foodName": "遠野ジンギスカン",
+        "iconKey": "ジンギスカン",
+        "x": 0.5592151366503153,
+        "y": 0.6012613875262789,
+        "updatedAt": 1771661982388
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__三陸海鮮丼",
+        "foodName": "三陸海鮮丼",
+        "iconKey": "海鮮丼",
+        "x": 0.5991590749824808,
+        "y": 0.8220042046250876,
+        "updatedAt": 1771662016726
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__三陸ウニ丼",
+        "foodName": "三陸ウニ丼",
+        "iconKey": "ウニ丼",
+        "x": 0.6951646811492642,
+        "y": 0.22704975473020322,
+        "updatedAt": 1771662074711
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__釜石ラーメン",
+        "foodName": "釜石ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.7407147862648914,
+        "y": 0.6040644709180099,
+        "updatedAt": 1771662176577
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__大槌サンマ料理",
+        "foodName": "大槌サンマ料理",
+        "iconKey": "サンマ",
+        "x": 0.751927119831815,
+        "y": 0.5571128241065172,
+        "updatedAt": 1771662214201
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__盛岡ホルモン",
+        "foodName": "盛岡ホルモン",
+        "iconKey": "ホルモン",
+        "x": 0.4071478626489138,
+        "y": 0.4337771548703574,
+        "updatedAt": 1771662225523
+      },
+      {
+        "prefCode": "iwate",
+        "foodId": "iwate__ひっつみ汁",
+        "foodName": "ひっつみ汁",
+        "iconKey": "ひっつみ汁",
+        "x": 0.34548002803083394,
+        "y": 0.5977575332866153,
+        "updatedAt": 1771662261082
+      }
+    ],
+    "kagawa": [
+      {
+        "prefCode": "kagawa",
+        "foodId": "kagawa__讃岐うどん",
+        "foodName": "讃岐うどん",
+        "iconKey": "うどん",
+        "x": 0.5143658023826209,
+        "y": 0.42676944639103015,
+        "updatedAt": 1771663457675
+      },
+      {
+        "prefCode": "kagawa",
+        "foodId": "kagawa__骨付鳥",
+        "foodName": "骨付鳥",
+        "iconKey": "骨付鳥",
+        "x": 0.22704975473020322,
+        "y": 0.5059565522074282,
+        "updatedAt": 1771663491796
+      },
+      {
+        "prefCode": "kagawa",
+        "foodId": "kagawa__小豆島そうめん料理",
+        "foodName": "小豆島そうめん料理",
+        "iconKey": "そうめん",
+        "x": 0.8128941836019622,
+        "y": 0.24106517168885774,
+        "updatedAt": 1771663525277
+      },
+      {
+        "prefCode": "kagawa",
+        "foodId": "kagawa__しっぽくうどん",
+        "foodName": "しっぽくうどん",
+        "iconKey": "うどん",
+        "x": 0.4772249474421864,
+        "y": 0.4260686755430974,
+        "updatedAt": 1771663546430
+      },
+      {
+        "prefCode": "kagawa",
+        "foodId": "kagawa__小豆島オリーブ牛料理",
+        "foodName": "小豆島オリーブ牛料理",
+        "iconKey": "牛料理",
+        "x": 0.7806587245970568,
+        "y": 0.2312543798177996,
+        "updatedAt": 1771663589438
+      }
+    ],
+    "kagoshima": [
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__黒豚料理",
+        "foodName": "黒豚料理",
+        "iconKey": "黒豚料理",
+        "x": 0.4477925718290119,
+        "y": 0.27960756832515765,
+        "updatedAt": 1771663648986
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__白熊",
+        "foodName": "白熊",
+        "iconKey": "白熊デザート",
+        "x": 0.4099509460406447,
+        "y": 0.27960756832515765,
+        "updatedAt": 1771663658016
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__鶏飯",
+        "foodName": "鶏飯",
+        "iconKey": "鶏飯",
+        "x": 0.26194466228400504,
+        "y": 0.9907794966702587,
+        "updatedAt": 1771663705607
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__きびなご料理",
+        "foodName": "きびなご料理",
+        "iconKey": "きびなご料理",
+        "x": 0.46180798878766643,
+        "y": 0.46741415557112825,
+        "updatedAt": 1771663750657
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__鹿児島ラーメン",
+        "foodName": "鹿児島ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.44639103013314646,
+        "y": 0.3174491941135249,
+        "updatedAt": 1771663761745
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__志布志うなぎ料理",
+        "foodName": "志布志うなぎ料理",
+        "iconKey": "うなぎ",
+        "x": 0.6517168885774351,
+        "y": 0.37281009110021024,
+        "updatedAt": 1771663794403
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__鹿児島黒さつま鶏料理",
+        "foodName": "鹿児島黒さつま鶏料理",
+        "iconKey": "黒薩摩鶏料理",
+        "x": 0.4036440084092502,
+        "y": 0.3181499649614576,
+        "updatedAt": 1771663832892
+      },
+      {
+        "prefCode": "kagoshima",
+        "foodId": "kagoshima__指宿砂むし温泉湯豆腐(温泉地の店文化)",
+        "foodName": "指宿砂むし温泉湯豆腐(温泉地の店文化)",
+        "iconKey": "草津温泉湯もみ料理",
+        "x": 0.4260686755430974,
+        "y": 0.46741415557112825,
+        "updatedAt": 1771663860684
+      }
+    ],
+    "kanagawa": [
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__家系ラーメン",
+        "foodName": "家系ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.7787217052904187,
+        "y": 0.5123984141245167,
+        "updatedAt": 1771663959830
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__サンマーメン",
+        "foodName": "サンマーメン",
+        "iconKey": "ラーメン",
+        "x": 0.7324971464505079,
+        "y": 0.5123984141245167,
+        "updatedAt": 1771663997911
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__しらす丼",
+        "foodName": "しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.5746960662728813,
+        "y": 0.6643308624055282,
+        "updatedAt": 1771664032455
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__三崎まぐろ",
+        "foodName": "三崎まぐろ",
+        "iconKey": "マグロ",
+        "x": 0.816976512606207,
+        "y": 0.8251024796998502,
+        "updatedAt": 1771664064288
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__海軍カレー",
+        "foodName": "海軍カレー",
+        "iconKey": "カレー",
+        "x": 0.8153825623013825,
+        "y": 0.6467249545548074,
+        "updatedAt": 1771664098545
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__箱根湯葉料理",
+        "foodName": "箱根湯葉料理",
+        "iconKey": "湯葉料理",
+        "x": 0.1562841112564471,
+        "y": 0.7726470286359437,
+        "updatedAt": 1771664147139
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__湘南しらす丼",
+        "foodName": "湘南しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.5898385941687142,
+        "y": 0.5391333089791529,
+        "updatedAt": 1771664169570
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__小田原ラーメン",
+        "foodName": "小田原ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.28459711079482025,
+        "y": 0.6430298846224753,
+        "updatedAt": 1771664202500
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__湯河原担々焼そば",
+        "foodName": "湯河原担々焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.18736614220052505,
+        "y": 0.84980870942463,
+        "updatedAt": 1771664251475
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__横浜ナポリタン",
+        "foodName": "横浜ナポリタン",
+        "iconKey": "横浜ナポリタン",
+        "x": 0.7771277549855943,
+        "y": 0.5553626178571273,
+        "updatedAt": 1771664279773
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__鎌倉しらすピザ",
+        "foodName": "鎌倉しらすピザ",
+        "iconKey": "しらすピザ",
+        "x": 0.6711300597147642,
+        "y": 0.5960083506301522,
+        "updatedAt": 1771664311158
+      },
+      {
+        "prefCode": "kanagawa",
+        "foodId": "kanagawa__鎌倉しらす丼",
+        "foodName": "鎌倉しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.7038060409636667,
+        "y": 0.5976023009349768,
+        "updatedAt": 1771664314036
+      }
+    ],
+    "kochi": [
+      {
+        "prefCode": "kochi",
+        "foodId": "kochi__カツオのたたき",
+        "foodName": "カツオのたたき",
+        "iconKey": "カツオ",
+        "x": 0.502171327403366,
+        "y": 0.34836644476311346,
+        "updatedAt": 1771664591763
+      },
+      {
+        "prefCode": "kochi",
+        "foodId": "kochi__清水鯖料理",
+        "foodName": "清水鯖料理",
+        "iconKey": "鯖寿司",
+        "x": 0.16903571369504317,
+        "y": 0.8293771734525164,
+        "updatedAt": 1771664721941
+      },
+      {
+        "prefCode": "kochi",
+        "foodId": "kochi__鍋焼きラーメン",
+        "foodName": "鍋焼きラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.33640049570161684,
+        "y": 0.48051940802802645,
+        "updatedAt": 1771664757878
+      },
+      {
+        "prefCode": "kochi",
+        "foodId": "kochi__土佐あかうし料理",
+        "foodName": "土佐あかうし料理",
+        "iconKey": "牛料理",
+        "x": 0.6153417990459064,
+        "y": 0.17455340703959046,
+        "updatedAt": 1771664815000
+      },
+      {
+        "prefCode": "kochi",
+        "foodId": "kochi__四万十うなぎ",
+        "foodName": "四万十うなぎ",
+        "iconKey": "うなぎ",
+        "x": 0.16903571369504317,
+        "y": 0.7304073455580942,
+        "updatedAt": 1771664841777
+      }
+    ],
+    "kumamoto": [
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__馬刺し",
+        "foodName": "馬刺し",
+        "iconKey": "馬刺し",
+        "x": 0.5178696566222845,
+        "y": 0.3461807988787666,
+        "updatedAt": 1771664940226
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__太平燕",
+        "foodName": "太平燕",
+        "iconKey": "太平燕",
+        "x": 0.5536089698668535,
+        "y": 0.3419761737911703,
+        "updatedAt": 1771664970795
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__からし蓮根",
+        "foodName": "からし蓮根",
+        "iconKey": "からし蓮根",
+        "x": 0.5157673440784863,
+        "y": 0.3777154870357393,
+        "updatedAt": 1771664988131
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__あか牛料理",
+        "foodName": "あか牛料理",
+        "iconKey": "牛料理",
+        "x": 0.8276103714085494,
+        "y": 0.22704975473020322,
+        "updatedAt": 1771665038548
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__玉名ラーメン",
+        "foodName": "玉名ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.4533987386124737,
+        "y": 0.2291520672740014,
+        "updatedAt": 1771665064389
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__天草大王料理",
+        "foodName": "天草大王料理",
+        "iconKey": "天草大王料理",
+        "x": 0.14926419060967064,
+        "y": 0.6075683251576735,
+        "updatedAt": 1771665095229
+      },
+      {
+        "prefCode": "kumamoto",
+        "foodId": "kumamoto__天草海鮮",
+        "foodName": "天草海鮮",
+        "iconKey": "海鮮",
+        "x": 0.14576033637000702,
+        "y": 0.6384022424667134,
+        "updatedAt": 1771665103998
+      }
+    ],
+    "kyoto": [
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__湯豆腐",
+        "foodName": "湯豆腐",
+        "iconKey": "湯豆腐",
+        "x": 0.524176594253679,
+        "y": 0.5381920112123336,
+        "updatedAt": 1771665324434
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__にしんそば",
+        "foodName": "にしんそば",
+        "iconKey": "にしんそば",
+        "x": 0.5466012613875263,
+        "y": 0.5662228451296426,
+        "updatedAt": 1771665337299
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__鴨料理",
+        "foodName": "鴨料理",
+        "iconKey": "鴨料理",
+        "x": 0.51156271899089,
+        "y": 0.5655220742817099,
+        "updatedAt": 1771665360010
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__京懐石",
+        "foodName": "京懐石",
+        "iconKey": "京懐石",
+        "x": 0.5444989488437281,
+        "y": 0.5949544498948843,
+        "updatedAt": 1771665370603
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__鯖寿司",
+        "foodName": "鯖寿司",
+        "iconKey": "鯖寿司",
+        "x": 0.508759635599159,
+        "y": 0.5949544498948843,
+        "updatedAt": 1771665381363
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__鱧料理",
+        "foodName": "鱧料理",
+        "iconKey": "鱧料理",
+        "x": 0.5101611772950245,
+        "y": 0.6257883672039243,
+        "updatedAt": 1771665396829
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__京うどん",
+        "foodName": "京うどん",
+        "iconKey": "うどん",
+        "x": 0.547302032235459,
+        "y": 0.6243868255080589,
+        "updatedAt": 1771665412780
+      },
+      {
+        "prefCode": "kyoto",
+        "foodId": "kyoto__抹茶",
+        "foodName": "抹茶",
+        "iconKey": "抹茶",
+        "x": 0.547302032235459,
+        "y": 0.6503153468815698,
+        "updatedAt": 1771665433956
+      }
+    ],
+    "mie": [
+      {
+        "prefCode": "mie",
+        "foodId": "mie__松阪牛料理",
+        "foodName": "松阪牛料理",
+        "iconKey": "牛料理",
+        "x": 0.5648213034337771,
+        "y": 0.4477925718290119,
+        "updatedAt": 1771665543846
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__伊勢うどん",
+        "foodName": "伊勢うどん",
+        "iconKey": "うどん",
+        "x": 0.6433076384022425,
+        "y": 0.4933426769446391,
+        "updatedAt": 1771665567646
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__牡蠣料理",
+        "foodName": "牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.7238962859145059,
+        "y": 0.508759635599159,
+        "updatedAt": 1771665596873
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__伊勢海老料理",
+        "foodName": "伊勢海老料理",
+        "iconKey": "伊勢海老料理",
+        "x": 0.6566222845129642,
+        "y": 0.5809390329362298,
+        "updatedAt": 1771665677977
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__てこね寿司",
+        "foodName": "てこね寿司",
+        "iconKey": "寿司",
+        "x": 0.6846531184302733,
+        "y": 0.5802382620882971,
+        "updatedAt": 1771665687866
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__的矢牡蠣料理",
+        "foodName": "的矢牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.6552207428170989,
+        "y": 0.5522074281709881,
+        "updatedAt": 1771665699954
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__尾鷲ブリ料理",
+        "foodName": "尾鷲ブリ料理",
+        "iconKey": "ブリ料理",
+        "x": 0.3826208829712684,
+        "y": 0.7855641205325858,
+        "updatedAt": 1771665769852
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__津ぎょうざ",
+        "foodName": "津ぎょうざ",
+        "iconKey": "餃子",
+        "x": 0.5543097407147862,
+        "y": 0.3475823405746321,
+        "updatedAt": 1771665808579
+      },
+      {
+        "prefCode": "mie",
+        "foodId": "mie__伊勢まぐろ料理",
+        "foodName": "伊勢まぐろ料理",
+        "iconKey": "マグロ",
+        "x": 0.6089698668535389,
+        "y": 0.48843728100911005,
+        "updatedAt": 1771665826278
+      }
+    ],
+    "miyagi": [
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__仙台牛料理",
+        "foodName": "仙台牛料理",
+        "iconKey": "牛料理",
+        "x": 0.4590049053959355,
+        "y": 0.6019621583742116,
+        "updatedAt": 1771668804810
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__牡蠣料理",
+        "foodName": "牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.5613174491941135,
+        "y": 0.4716187806587246,
+        "updatedAt": 1771666407744
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__牛タン",
+        "foodName": "牛タン",
+        "iconKey": "牛タン",
+        "x": 0.42256482130343376,
+        "y": 0.5991590749824808,
+        "updatedAt": 1771668814051
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__ずんだ餅",
+        "foodName": "ずんだ餅",
+        "iconKey": "ずんだ餅",
+        "x": 0.4562018220042046,
+        "y": 0.5641205325858444,
+        "updatedAt": 1771668877732
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__はらこ飯",
+        "foodName": "はらこ飯",
+        "iconKey": "はらこ飯",
+        "x": 0.4400840925017519,
+        "y": 0.731604765241766,
+        "updatedAt": 1771668922005
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__金華サバ料理",
+        "foodName": "金華サバ料理",
+        "iconKey": "サバ料理",
+        "x": 0.7449194113524877,
+        "y": 0.4113524877365102,
+        "updatedAt": 1771668953894
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__気仙沼フカヒレ料理",
+        "foodName": "気仙沼フカヒレ料理",
+        "iconKey": "フカヒレ料理",
+        "x": 0.8605466012613875,
+        "y": 0.08409250175192712,
+        "updatedAt": 1771668994767
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__塩釜寿司",
+        "foodName": "塩釜寿司",
+        "iconKey": "寿司",
+        "x": 0.5234758234057463,
+        "y": 0.5466012613875263,
+        "updatedAt": 1771669028142
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__気仙沼カツオ料理",
+        "foodName": "気仙沼カツオ料理",
+        "iconKey": "カツオ",
+        "x": 0.8605466012613875,
+        "y": 0.1156271899088998,
+        "updatedAt": 1771669054272
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__笹かまぼこ",
+        "foodName": "笹かまぼこ",
+        "iconKey": "笹かまぼこ",
+        "x": 0.42116327960756833,
+        "y": 0.562718990889979,
+        "updatedAt": 1771669087312
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__仙台麻婆焼そば",
+        "foodName": "仙台麻婆焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.4183601962158374,
+        "y": 0.5332866152768044,
+        "updatedAt": 1771669103824
+      },
+      {
+        "prefCode": "miyagi",
+        "foodId": "miyagi__白石温麺",
+        "foodName": "白石温麺",
+        "iconKey": "温麺",
+        "x": 0.33006306937631397,
+        "y": 0.8374211632796076,
+        "updatedAt": 1771669157906
+      }
+    ],
+    "miyazaki": [
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__チキン南蛮",
+        "foodName": "チキン南蛮",
+        "iconKey": "チキン南蛮",
+        "x": 0.7221364694691486,
+        "y": 0.17621981184206623,
+        "updatedAt": 1771669483153
+      },
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__地鶏炭火焼き",
+        "foodName": "地鶏炭火焼き",
+        "iconKey": "地鶏炭火焼",
+        "x": 0.5659293395963465,
+        "y": 0.5084135383624554,
+        "updatedAt": 1771669537720
+      },
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__冷や汁",
+        "foodName": "冷や汁",
+        "iconKey": "冷や汁",
+        "x": 0.5157199049943744,
+        "y": 0.5084135383624554,
+        "updatedAt": 1771669573019
+      },
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__宮崎辛麺",
+        "foodName": "宮崎辛麺",
+        "iconKey": "宮崎辛麵",
+        "x": 0.6759119106292377,
+        "y": 0.1721624815823537,
+        "updatedAt": 1771669628764
+      },
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__辛麺",
+        "foodName": "辛麺",
+        "iconKey": "辛麺",
+        "x": 0.5109380540799009,
+        "y": 0.45110378492664316,
+        "updatedAt": 1771669622947
+      },
+      {
+        "prefCode": "miyazaki",
+        "foodId": "miyazaki__うなまぶし",
+        "foodName": "うなまぶし",
+        "iconKey": "うなまぶし",
+        "x": 0.5659293395963465,
+        "y": 0.45349471038387995,
+        "updatedAt": 1771669649435
+      }
+    ],
+    "nagano": [
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__戸隠そば",
+        "foodName": "戸隠そば",
+        "iconKey": "そば",
+        "x": 0.49659250133648025,
+        "y": 0.1602803087938211,
+        "updatedAt": 1771669782526
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__山賊焼き",
+        "foodName": "山賊焼き",
+        "iconKey": "さんが焼き",
+        "x": 0.49659250133648025,
+        "y": 0.3130097269068618,
+        "updatedAt": 1771669906104
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__おやき",
+        "foodName": "おやき",
+        "iconKey": "さんが焼き",
+        "x": 0.5715081656632323,
+        "y": 0.21019993224568082,
+        "updatedAt": 1771669961074
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__信州サーモン料理",
+        "foodName": "信州サーモン料理",
+        "iconKey": "サーモン料理",
+        "x": 0.5388321844143298,
+        "y": 0.3130097269068618,
+        "updatedAt": 1771669983130
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__野沢菜料理",
+        "foodName": "野沢菜料理",
+        "iconKey": "野沢菜料理",
+        "x": 0.6145448238934941,
+        "y": 0.20780900678844405,
+        "updatedAt": 1771670004251
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__野沢温泉菜料理",
+        "foodName": "野沢温泉菜料理",
+        "iconKey": "野沢菜温泉料理",
+        "x": 0.6488147554472211,
+        "y": 0.08616161961948134,
+        "updatedAt": 1771670093381
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__安曇野ラーメン",
+        "foodName": "安曇野ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.3284307441774943,
+        "y": 0.5501460521176219,
+        "updatedAt": 1771670195319
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__信州味噌おでん",
+        "foodName": "信州味噌おでん",
+        "iconKey": "おでん",
+        "x": 0.5404261347191543,
+        "y": 0.35626374178958475,
+        "updatedAt": 1771670214040
+      },
+      {
+        "prefCode": "nagano",
+        "foodId": "nagano__おしぼりうどん",
+        "foodName": "おしぼりうどん",
+        "iconKey": "うどん",
+        "x": 0.5858537184066529,
+        "y": 0.26852401748636645,
+        "updatedAt": 1771670262809
+      }
+    ],
+    "nagasaki": [
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__ちゃんぽん",
+        "foodName": "ちゃんぽん",
+        "iconKey": "ちゃんぽん",
+        "x": 0.6432359293803352,
+        "y": 0.9032060446362512,
+        "updatedAt": 1771670382483
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__皿うどん",
+        "foodName": "皿うどん",
+        "iconKey": "焼うどん",
+        "x": 0.6790998112388867,
+        "y": 0.9024090694838389,
+        "updatedAt": 1771670403707
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__佐世保バーガー",
+        "foodName": "佐世保バーガー",
+        "iconKey": "佐世保バーガー",
+        "x": 0.6012613875262789,
+        "y": 0.7182901191310441,
+        "updatedAt": 1771670491244
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__トルコライス",
+        "foodName": "トルコライス",
+        "iconKey": "トルコライス",
+        "x": 0.6362999299229152,
+        "y": 0.8591450595655221,
+        "updatedAt": 1771670507542
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__平戸ヒラメ料理",
+        "foodName": "平戸ヒラメ料理",
+        "iconKey": "ヒラメ料理",
+        "x": 0.5592151366503153,
+        "y": 0.6187806587245971,
+        "updatedAt": 1771670680002
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__五島うどん",
+        "foodName": "五島うどん",
+        "iconKey": "うどん",
+        "x": 0.22494744218640506,
+        "y": 0.9173090399439383,
+        "updatedAt": 1771670713897
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__対馬穴子料理",
+        "foodName": "対馬穴子料理",
+        "iconKey": "穴子料理",
+        "x": 0.46461107217939734,
+        "y": 0.22284512964260686,
+        "updatedAt": 1771670753299
+      },
+      {
+        "prefCode": "nagasaki",
+        "foodId": "nagasaki__壱岐うに丼",
+        "foodName": "壱岐うに丼",
+        "iconKey": "ウニ丼",
+        "x": 0.613875262789068,
+        "y": 0.44498948843728103,
+        "updatedAt": 1771670782674
+      }
+    ],
+    "nara": [
+      {
+        "prefCode": "nara",
+        "foodId": "nara__柿の葉寿司",
+        "foodName": "柿の葉寿司",
+        "iconKey": "柿の葉寿司",
+        "x": 0.5347862241843173,
+        "y": 0.31768649475217914,
+        "updatedAt": 1771670921333
+      },
+      {
+        "prefCode": "nara",
+        "foodId": "nara__三輪そうめん料理",
+        "foodName": "三輪そうめん料理",
+        "iconKey": "そうめん",
+        "x": 0.46437549853262383,
+        "y": 0.2397317627806613,
+        "updatedAt": 1771670958303
+      },
+      {
+        "prefCode": "nara",
+        "foodId": "nara__奈良ラーメン",
+        "foodName": "奈良ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.47066217046581077,
+        "y": 0.1198658765939806,
+        "updatedAt": 1771671030704
+      },
+      {
+        "prefCode": "nara",
+        "foodId": "nara__奈良茶粥",
+        "foodName": "奈良茶粥",
+        "iconKey": "奈良茶粥",
+        "x": 0.4128247886804911,
+        "y": 0.11609387343406845,
+        "updatedAt": 1771671067241
+      },
+      {
+        "prefCode": "nara",
+        "foodId": "nara__大和肉鶏料理",
+        "foodName": "大和肉鶏料理",
+        "iconKey": "大和肉鶏料理",
+        "x": 0.5121542052248444,
+        "y": 0.17393125521938813,
+        "updatedAt": 1771671150004
+      }
+    ],
+    "niigata": [
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__へぎそば",
+        "foodName": "へぎそば",
+        "iconKey": "へきそば",
+        "x": 0.484492848718822,
+        "y": 0.7946353323548268,
+        "updatedAt": 1771671407594
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__タレかつ丼",
+        "foodName": "タレかつ丼",
+        "iconKey": "タレかつ丼",
+        "x": 0.6617769972346932,
+        "y": 0.32984071916242375,
+        "updatedAt": 1771671456904
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__のっぺ",
+        "foodName": "のっぺ",
+        "iconKey": "のっぺ",
+        "x": 0.7158423758601007,
+        "y": 0.32858339916483653,
+        "updatedAt": 1771671471730
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__南蛮エビ丼",
+        "foodName": "南蛮エビ丼",
+        "iconKey": "南蛮エビ丼",
+        "x": 0.6542329909148689,
+        "y": 0.38264877779024403,
+        "updatedAt": 1771671487410
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__村上牛料理",
+        "foodName": "村上牛料理",
+        "iconKey": "牛料理",
+        "x": 0.7761944264186951,
+        "y": 0.20410728049868535,
+        "updatedAt": 1771671514978
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__糸魚川ブラック焼そば",
+        "foodName": "糸魚川ブラック焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.12992455168707967,
+        "y": 0.8218775837937702,
+        "updatedAt": 1771671576836
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__三条カレーラーメン",
+        "foodName": "三条カレーラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.6328583063420333,
+        "y": 0.4530594890528874,
+        "updatedAt": 1771671634524
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__上越ラーメン",
+        "foodName": "上越ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.29840735949648917,
+        "y": 0.7497904186883602,
+        "updatedAt": 1771671655997
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__新潟濃厚味噌ラーメン",
+        "foodName": "新潟濃厚味噌ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.7208717134066502,
+        "y": 0.3776194402436945,
+        "updatedAt": 1771671696525
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__寺泊魚のアメ横海鮮",
+        "foodName": "寺泊魚のアメ横海鮮",
+        "iconKey": "海鮮",
+        "x": 0.4794635111722725,
+        "y": 0.605196964225061,
+        "updatedAt": 1771671728783
+      },
+      {
+        "prefCode": "niigata",
+        "foodId": "niigata__燕背脂ラーメン",
+        "foodName": "燕背脂ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.549874236823966,
+        "y": 0.5104777609747779,
+        "updatedAt": 1771671755102
+      }
+    ],
+    "oita": [
+      {
+        "prefCode": "oita",
+        "foodId": "oita__とり天",
+        "foodName": "とり天",
+        "iconKey": "とり天",
+        "x": 0.6552207428170989,
+        "y": 0.5052557813594954,
+        "updatedAt": 1771671832250
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__だんご汁",
+        "foodName": "だんご汁",
+        "iconKey": "だんご汁",
+        "x": 0.4926419060967064,
+        "y": 0.45409950946040645,
+        "updatedAt": 1771671872225
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__地獄蒸し",
+        "foodName": "地獄蒸し",
+        "iconKey": "地獄蒸し料理",
+        "x": 0.5732305536089699,
+        "y": 0.41976173791170285,
+        "updatedAt": 1771671914939
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__宇佐からあげ",
+        "foodName": "宇佐からあげ",
+        "iconKey": "宇佐唐揚げ",
+        "x": 0.46811492641906094,
+        "y": 0.16608269096005607,
+        "updatedAt": 1771671975316
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__別府冷麺",
+        "foodName": "別府冷麺",
+        "iconKey": "冷麵",
+        "x": 0.5325858444288718,
+        "y": 0.41205325858444286,
+        "updatedAt": 1771671996892
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__中津からあげ",
+        "foodName": "中津からあげ",
+        "iconKey": "宇佐唐揚げ",
+        "x": 0.33847231955150664,
+        "y": 0.13104414856341975,
+        "updatedAt": 1771672028341
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__佐伯寿司",
+        "foodName": "佐伯寿司",
+        "iconKey": "寿司",
+        "x": 0.8640504555010512,
+        "y": 0.759635599159075,
+        "updatedAt": 1771672059325
+      },
+      {
+        "prefCode": "oita",
+        "foodId": "oita__日田焼そば",
+        "foodName": "日田焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.11002102312543798,
+        "y": 0.3433777154870357,
+        "updatedAt": 1771672104575
+      }
+    ],
+    "okayama": [
+      {
+        "prefCode": "okayama",
+        "foodId": "okayama__デミカツ丼",
+        "foodName": "デミカツ丼",
+        "iconKey": "カツ丼",
+        "x": 0.5206727400140154,
+        "y": 0.744218640504555,
+        "updatedAt": 1771672180032
+      },
+      {
+        "prefCode": "okayama",
+        "foodId": "okayama__ままかり寿司",
+        "foodName": "ままかり寿司",
+        "iconKey": "寿司",
+        "x": 0.5795374912403644,
+        "y": 0.7421163279607569,
+        "updatedAt": 1771672225243
+      },
+      {
+        "prefCode": "okayama",
+        "foodId": "okayama__ホルモンうどん",
+        "foodName": "ホルモンうどん",
+        "iconKey": "ホルモンうどん",
+        "x": 0.7070777855641205,
+        "y": 0.30063069376313944,
+        "updatedAt": 1771672256241
+      },
+      {
+        "prefCode": "okayama",
+        "foodId": "okayama__日生カキオコ",
+        "foodName": "日生カキオコ",
+        "iconKey": "日生カキオコ",
+        "x": 0.846531184302733,
+        "y": 0.6636299929922915,
+        "updatedAt": 1771672361228
+      },
+      {
+        "prefCode": "okayama",
+        "foodId": "okayama__津山そずり鍋",
+        "foodName": "津山そずり鍋",
+        "iconKey": "津山そずり鍋",
+        "x": 0.6503153468815698,
+        "y": 0.2999299229152067,
+        "updatedAt": 1771672385205
+      }
+    ],
+    "okinawa": [
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__沖縄そば",
+        "foodName": "沖縄そば",
+        "iconKey": "沖縄そば",
+        "x": 0.6341976173791171,
+        "y": 0.7274001401541695,
+        "updatedAt": 1771672450381
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__ゴーヤーチャンプルー",
+        "foodName": "ゴーヤーチャンプルー",
+        "iconKey": "ゴーヤチャンプルー",
+        "x": 0.5851436580238262,
+        "y": 0.7266993693062369,
+        "updatedAt": 1771672466872
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__ラフテー",
+        "foodName": "ラフテー",
+        "iconKey": "ラフテー",
+        "x": 0.6370007007708479,
+        "y": 0.6832515767344078,
+        "updatedAt": 1771672487646
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__沖縄天ぷら",
+        "foodName": "沖縄天ぷら",
+        "iconKey": "沖縄天ぷら",
+        "x": 0.5949544498948843,
+        "y": 0.6825508058864751,
+        "updatedAt": 1771672504967
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__宮古ヤギ汁",
+        "foodName": "宮古ヤギ汁",
+        "iconKey": "宮古ヤギ汁",
+        "x": 0.42957252978276106,
+        "y": 0.9810791871058164,
+        "updatedAt": 1771672559400
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__石垣牛料理",
+        "foodName": "石垣牛料理",
+        "iconKey": "牛料理",
+        "x": 0.2754029432375613,
+        "y": 0.9859845830413455,
+        "updatedAt": 1771672672450
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__宮古そば",
+        "foodName": "宮古そば",
+        "iconKey": "そば",
+        "x": 0.4590049053959355,
+        "y": 0.9803784162578837,
+        "updatedAt": 1771672632985
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__八重山そば",
+        "foodName": "八重山そば",
+        "iconKey": "そば",
+        "x": 0.3090399439383322,
+        "y": 0.9838822704975473,
+        "updatedAt": 1771672739355
+      },
+      {
+        "prefCode": "okinawa",
+        "foodId": "okinawa__アグー豚料理",
+        "foodName": "アグー豚料理",
+        "iconKey": "アグー豚料理",
+        "x": 0.7806587245970568,
+        "y": 0.4877365101611773,
+        "updatedAt": 1771672765923
+      }
+    ],
+    "osaka": [
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__たこ焼き",
+        "foodName": "たこ焼き",
+        "iconKey": "たこ焼き",
+        "x": 0.6033637000700771,
+        "y": 0.4288717589348283,
+        "updatedAt": 1771672951591
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__お好み焼き",
+        "foodName": "お好み焼き",
+        "iconKey": "お好み焼き",
+        "x": 0.6580238262088297,
+        "y": 0.4288717589348283,
+        "updatedAt": 1771673063890
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__串カツ",
+        "foodName": "串カツ",
+        "iconKey": "串カツ",
+        "x": 0.5977575332866153,
+        "y": 0.46601261387526277,
+        "updatedAt": 1771672974418
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__かすうどん",
+        "foodName": "かすうどん",
+        "iconKey": "うどん",
+        "x": 0.6545199719691661,
+        "y": 0.4688156972669937,
+        "updatedAt": 1771673126411
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__ホルモン焼き",
+        "foodName": "ホルモン焼き",
+        "iconKey": "ホルモン",
+        "x": 0.5409950946040645,
+        "y": 0.42747021723896284,
+        "updatedAt": 1771673020418
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__自由軒カレー",
+        "foodName": "自由軒カレー",
+        "iconKey": "カレー",
+        "x": 0.6580238262088297,
+        "y": 0.37631394533987383,
+        "updatedAt": 1771673094771
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__イカ焼き",
+        "foodName": "イカ焼き",
+        "iconKey": "イカ焼き",
+        "x": 0.5963559915907498,
+        "y": 0.373510861948143,
+        "updatedAt": 1771673045362
+      },
+      {
+        "prefCode": "osaka",
+        "foodId": "osaka__肉吸い",
+        "foodName": "肉吸い",
+        "iconKey": "肉吸い",
+        "x": 0.5451997196916608,
+        "y": 0.47021723896285916,
+        "updatedAt": 1771673112203
+      }
+    ],
+    "saga": [
+      {
+        "prefCode": "saga",
+        "foodId": "saga__呼子イカ",
+        "foodName": "呼子イカ",
+        "iconKey": "イカ",
+        "x": 0.21864050455501052,
+        "y": 0.10721793973370708,
+        "updatedAt": 1771673375417
+      },
+      {
+        "prefCode": "saga",
+        "foodId": "saga__佐賀牛料理",
+        "foodName": "佐賀牛料理",
+        "iconKey": "牛料理",
+        "x": 0.8086895585143657,
+        "y": 0.3945339873861247,
+        "updatedAt": 1771673410369
+      },
+      {
+        "prefCode": "saga",
+        "foodId": "saga__竹崎かに",
+        "foodName": "竹崎かに",
+        "iconKey": "カニ",
+        "x": 0.44919411352487737,
+        "y": 0.7379117028731604,
+        "updatedAt": 1771673429154
+      },
+      {
+        "prefCode": "saga",
+        "foodId": "saga__嬉野温泉湯どうふ",
+        "foodName": "嬉野温泉湯どうふ",
+        "iconKey": "湯豆腐",
+        "x": 0.2725998598458304,
+        "y": 0.6355991590749824,
+        "updatedAt": 1771673460674
+      }
+    ],
+    "shiga": [
+      {
+        "prefCode": "shiga",
+        "foodId": "shiga__近江牛料理",
+        "foodName": "近江牛料理",
+        "iconKey": "牛料理",
+        "x": 0.5304835318850736,
+        "y": 0.6201822004204625,
+        "updatedAt": 1771673620550
+      },
+      {
+        "prefCode": "shiga",
+        "foodId": "shiga__鮒ずし",
+        "foodName": "鮒ずし",
+        "iconKey": "鮒ずし",
+        "x": 0.42256482130343376,
+        "y": 0.3672039243167484,
+        "updatedAt": 1771673551453
+      },
+      {
+        "prefCode": "shiga",
+        "foodId": "shiga__近江ちゃんぽん",
+        "foodName": "近江ちゃんぽん",
+        "iconKey": "近江ちゃんぽん",
+        "x": 0.6440084092501752,
+        "y": 0.46320953048353186,
+        "updatedAt": 1771673580725
+      },
+      {
+        "prefCode": "shiga",
+        "foodId": "shiga__近江牛すき焼き",
+        "foodName": "近江牛すき焼き",
+        "iconKey": "近江牛すき焼き",
+        "x": 0.6741415557112824,
+        "y": 0.460406447091801,
+        "updatedAt": 1771673624214
+      },
+      {
+        "prefCode": "shiga",
+        "foodId": "shiga__焼鯖そうめん",
+        "foodName": "焼鯖そうめん",
+        "iconKey": "焼鯖そうめん",
+        "x": 0.6643307638402243,
+        "y": 0.3433777154870357,
+        "updatedAt": 1771673645741
+      }
+    ],
+    "shimane": [
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__出雲そば",
+        "foodName": "出雲そば",
+        "iconKey": "そば",
+        "x": 0.6012083971269742,
+        "y": 0.4723127035830619,
+        "updatedAt": 1771673701312
+      },
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__しじみラーメン",
+        "foodName": "しじみラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.7101121055497899,
+        "y": 0.43969420154337796,
+        "updatedAt": 1771673759608
+      },
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__しじみ汁 しじみ料理",
+        "foodName": "しじみ汁・しじみ料理",
+        "iconKey": "しじみ汁",
+        "x": 0.6732847645372435,
+        "y": 0.43706367718533895,
+        "updatedAt": 1771673771265
+      },
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__宍道湖七珍料理",
+        "foodName": "宍道湖七珍料理",
+        "iconKey": "宍道湖七珍料理",
+        "x": 0.6759152888952825,
+        "y": 0.46021229153608234,
+        "updatedAt": 1771673788402
+      },
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__浜田赤天",
+        "foodName": "浜田赤天",
+        "iconKey": "浜田赤天",
+        "x": 0.39655360207153795,
+        "y": 0.6538188842877547,
+        "updatedAt": 1771673817522
+      },
+      {
+        "prefCode": "shimane",
+        "foodId": "shimane__隠岐岩牡蠣料理",
+        "foodName": "隠岐岩牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.8199018920812894,
+        "y": 0.06797477224947442,
+        "updatedAt": 1771673856915
+      }
+    ],
+    "shizuoka": [
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__浜松餃子",
+        "foodName": "浜松餃子",
+        "iconKey": "餃子",
+        "x": 0.16257883672039244,
+        "y": 0.7967764540995095,
+        "updatedAt": 1771673956341
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__うなぎ料理",
+        "foodName": "うなぎ料理",
+        "iconKey": "うなぎ",
+        "x": 0.22004204625087595,
+        "y": 0.7967764540995095,
+        "updatedAt": 1771673967901
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__桜えび料理",
+        "foodName": "桜えび料理",
+        "iconKey": "桜えび料理",
+        "x": 0.6208829712683952,
+        "y": 0.4940434477925718,
+        "updatedAt": 1771673997189
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__静岡おでん",
+        "foodName": "静岡おでん",
+        "iconKey": "おでん",
+        "x": 0.578135949544499,
+        "y": 0.49614576033637003,
+        "updatedAt": 1771674014215
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__富士宮焼そば",
+        "foodName": "富士宮焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.6531184302733006,
+        "y": 0.3945339873861247,
+        "updatedAt": 1771674055287
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__金目鯛料理",
+        "foodName": "金目鯛料理",
+        "iconKey": "金目鯛料理",
+        "x": 0.8633496846531185,
+        "y": 0.8044849334267694,
+        "updatedAt": 1771674081835
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__生しらす丼",
+        "foodName": "生しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.575332866152768,
+        "y": 0.5480028030833918,
+        "updatedAt": 1771674096834
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__藤枝朝ラーメン",
+        "foodName": "藤枝朝ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.4036440084092502,
+        "y": 0.6853538892782061,
+        "updatedAt": 1771674226782
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__焼津カツオ料理",
+        "foodName": "焼津カツオ料理",
+        "iconKey": "カツオ",
+        "x": 0.4898388227049755,
+        "y": 0.6727400140154169,
+        "updatedAt": 1771674237646
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__沼津アジフライ",
+        "foodName": "沼津アジフライ",
+        "iconKey": "房総アジフライ",
+        "x": 0.7946741415557113,
+        "y": 0.4835318850735809,
+        "updatedAt": 1771674278059
+      },
+      {
+        "prefCode": "shizuoka",
+        "foodId": "shizuoka__浜松さわやか系(げんこつハンバーグ)",
+        "foodName": "浜松さわやか系(げんこつハンバーグ)",
+        "iconKey": "げんこつハンバーグ",
+        "x": 0.3629992992291521,
+        "y": 0.48283111422564823,
+        "updatedAt": 1771674299262
+      }
+    ],
+    "tochigi": [
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__宇都宮餃子",
+        "foodName": "宇都宮餃子",
+        "iconKey": "餃子",
+        "x": 0.6019621583742116,
+        "y": 0.5690259285213735,
+        "updatedAt": 1771674381744
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__宇都宮焼そば",
+        "foodName": "宇都宮焼そば",
+        "iconKey": "焼きそば",
+        "x": 0.6517168885774351,
+        "y": 0.5676243868255081,
+        "updatedAt": 1771674395605
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__佐野ラーメン",
+        "foodName": "佐野ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.3447792571829012,
+        "y": 0.8738612473721094,
+        "updatedAt": 1771674453794
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__レモン牛乳",
+        "foodName": "レモン牛乳",
+        "iconKey": "レモン牛乳",
+        "x": 0.6538192011212334,
+        "y": 0.51156271899089,
+        "updatedAt": 1771674463410
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__とちぎ和牛料理",
+        "foodName": "とちぎ和牛料理",
+        "iconKey": "牛料理",
+        "x": 0.6944639103013315,
+        "y": 0.14155571128241065,
+        "updatedAt": 1771674492018
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__那須高原ステーキ",
+        "foodName": "那須高原ステーキ",
+        "iconKey": "那須高原ステーキ",
+        "x": 0.7610371408549405,
+        "y": 0.12613875262789068,
+        "updatedAt": 1771674519240
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__那須高原チーズ料理",
+        "foodName": "那須高原チーズ料理",
+        "iconKey": "那須高原チーズ料理",
+        "x": 0.759635599159075,
+        "y": 0.16608269096005607,
+        "updatedAt": 1771674525176
+      },
+      {
+        "prefCode": "tochigi",
+        "foodId": "tochigi__日光ゆば料理",
+        "foodName": "日光ゆば料理",
+        "iconKey": "湯葉料理",
+        "x": 0.3994393833216538,
+        "y": 0.3973370707778556,
+        "updatedAt": 1771674556303
+      }
+    ],
+    "tokushima": [
+      {
+        "prefCode": "tokushima",
+        "foodId": "tokushima__徳島ラーメン",
+        "foodName": "徳島ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.826208829712684,
+        "y": 0.28941836019621586,
+        "updatedAt": 1771674723368
+      },
+      {
+        "prefCode": "tokushima",
+        "foodId": "tokushima__阿波尾鶏料理",
+        "foodName": "阿波尾鶏料理",
+        "iconKey": "比内地鶏料理",
+        "x": 0.7372170604329362,
+        "y": 0.29086335317666484,
+        "updatedAt": 1771674768056
+      },
+      {
+        "prefCode": "tokushima",
+        "foodId": "tokushima__徳島すだち鶏料理",
+        "foodName": "徳島すだち鶏料理",
+        "iconKey": "比内地鶏料理",
+        "x": 0.8214584643376409,
+        "y": 0.35498742128422156,
+        "updatedAt": 1771674777021
+      },
+      {
+        "prefCode": "tokushima",
+        "foodId": "tokushima__徳島フィッシュカツ",
+        "foodName": "徳島フィッシュカツ",
+        "iconKey": "徳島フィッシュカツ",
+        "x": 0.7309303884997493,
+        "y": 0.35498740689517144,
+        "updatedAt": 1771674788189
+      },
+      {
+        "prefCode": "tokushima",
+        "foodId": "tokushima__鳴門鯛料理",
+        "foodName": "鳴門鯛料理",
+        "iconKey": "鯛料理",
+        "x": 0.9044425338557083,
+        "y": 0.1978206085654984,
+        "updatedAt": 1771674818052
+      }
+    ],
+    "tokyo": [
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__もんじゃ焼き",
+        "foodName": "もんじゃ焼き",
+        "iconKey": "もんじゃ焼き",
+        "x": 0.5976529435161866,
+        "y": 0.5544844645070864,
+        "updatedAt": 1771675354708
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__深川めし",
+        "foodName": "深川めし",
+        "iconKey": "深川めし",
+        "x": 0.733445057273024,
+        "y": 0.5896898273329332,
+        "updatedAt": 1771675387403
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__東京ラーメン",
+        "foodName": "東京ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.4945515238119211,
+        "y": 0.5863369484255002,
+        "updatedAt": 1771675150971
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__江戸前寿司",
+        "foodName": "江戸前寿司",
+        "iconKey": "寿司",
+        "x": 0.44928748589297524,
+        "y": 0.5595138020536359,
+        "updatedAt": 1771675234131
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__天ぷら",
+        "foodName": "天ぷら",
+        "iconKey": "天ぷら",
+        "x": 0.7032690319937268,
+        "y": 0.49413241394849194,
+        "updatedAt": 1771675851973
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__深川あさり料理",
+        "foodName": "深川あさり料理",
+        "iconKey": "あさり料理",
+        "x": 0.7912824390583437,
+        "y": 0.5884324929462957,
+        "updatedAt": 1771675403513
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__神保町ラーメン",
+        "foodName": "神保町ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.5800502621032632,
+        "y": 0.4861693025615886,
+        "updatedAt": 1771675568325
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__二郎ラーメン",
+        "foodName": "二郎ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.5611902463037024,
+        "y": 0.618189413158514,
+        "updatedAt": 1771675606908
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__深大寺そば",
+        "foodName": "深大寺そば",
+        "iconKey": "そば",
+        "x": 0.45934616098607434,
+        "y": 0.47778706692220596,
+        "updatedAt": 1771675692618
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__八王子ラーメン",
+        "foodName": "八王子ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.35624474128180883,
+        "y": 0.4865884076286677,
+        "updatedAt": 1771675728762
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__神田カレー",
+        "foodName": "神田カレー",
+        "iconKey": "カレー",
+        "x": 0.6466889845950445,
+        "y": 0.5494551269605369,
+        "updatedAt": 1771675769583
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__築地海鮮食べ歩き",
+        "foodName": "築地海鮮食べ歩き",
+        "iconKey": "海鮮",
+        "x": 0.6504609877549568,
+        "y": 0.6274098589320547,
+        "updatedAt": 1771675796871
+      },
+      {
+        "prefCode": "tokyo",
+        "foodId": "tokyo__下町天丼",
+        "foodName": "下町天丼",
+        "iconKey": "下町天丼",
+        "x": 0.788767770285069,
+        "y": 0.4865884076286677,
+        "updatedAt": 1771675838740
+      }
+    ],
+    "tottori": [
+      {
+        "prefCode": "tottori",
+        "foodId": "tottori__カニ料理",
+        "foodName": "カニ料理",
+        "iconKey": "カニ",
+        "x": 0.2110762800417973,
+        "y": 0.4054336468129572,
+        "updatedAt": 1771675913657
+      },
+      {
+        "prefCode": "tottori",
+        "foodId": "tottori__牛骨ラーメン",
+        "foodName": "牛骨ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.5391849529780565,
+        "y": 0.40334378265412746,
+        "updatedAt": 1771675954207
+      },
+      {
+        "prefCode": "tottori",
+        "foodId": "tottori__境港マグロ料理",
+        "foodName": "境港マグロ料理",
+        "iconKey": "マグロ料理",
+        "x": 0.11912225705329153,
+        "y": 0.4012539184952978,
+        "updatedAt": 1771675982336
+      },
+      {
+        "prefCode": "tottori",
+        "foodId": "tottori__砂丘らっきょう料理",
+        "foodName": "砂丘らっきょう料理",
+        "iconKey": "砂丘らっきょう料理",
+        "x": 0.7920585161964472,
+        "y": 0.34691745036572624,
+        "updatedAt": 1771676023493
+      },
+      {
+        "prefCode": "tottori",
+        "foodId": "tottori__白イカ料理",
+        "foodName": "白イカ料理",
+        "iconKey": "白イカ料理",
+        "x": 0.8944618599791013,
+        "y": 0.3500522466039707,
+        "updatedAt": 1771676033669
+      }
+    ],
+    "toyama": [
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__白えび丼",
+        "foodName": "白えび丼",
+        "iconKey": "白エビ丼",
+        "x": 0.39707419017763845,
+        "y": 0.38035527690700105,
+        "updatedAt": 1771676118587
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__ホタルイカ料理",
+        "foodName": "ホタルイカ料理",
+        "iconKey": "ホタルイカ料理",
+        "x": 0.5956112852664577,
+        "y": 0.31974921630094044,
+        "updatedAt": 1771676153678
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__ます寿司",
+        "foodName": "ます寿司",
+        "iconKey": "ます寿司",
+        "x": 0.3176593521421108,
+        "y": 0.3343782654127482,
+        "updatedAt": 1771676351630
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__ブラックラーメン",
+        "foodName": "ブラックラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.24660397074190177,
+        "y": 0.3782654127481714,
+        "updatedAt": 1771676200566
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__富山おでん",
+        "foodName": "富山おでん",
+        "iconKey": "おでん",
+        "x": 0.3176593521421108,
+        "y": 0.445141065830721,
+        "updatedAt": 1771676231617
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__氷見寒ブリ料理",
+        "foodName": "氷見寒ブリ料理",
+        "iconKey": "寒ブリ料理",
+        "x": 0.20689655172413793,
+        "y": 0.1839080459770115,
+        "updatedAt": 1771676263201
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__氷見うどん",
+        "foodName": "氷見うどん",
+        "iconKey": "うどん",
+        "x": 0.19644723092998956,
+        "y": 0.25914315569487983,
+        "updatedAt": 1771676281595
+      },
+      {
+        "prefCode": "toyama",
+        "foodId": "toyama__射水ベニズワイガニ料理",
+        "foodName": "射水ベニズワイガニ料理",
+        "iconKey": "カニ",
+        "x": 0.30094043887147337,
+        "y": 0.24660397074190177,
+        "updatedAt": 1771676329630
+      }
+    ],
+    "wakayama": [
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__梅うどん",
+        "foodName": "梅うどん",
+        "iconKey": "うどん",
+        "x": 0.3385579937304075,
+        "y": 0.6624869383490073,
+        "updatedAt": 1771676400481
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__マグロ料理",
+        "foodName": "マグロ料理",
+        "iconKey": "マグロ",
+        "x": 0.8338557993730408,
+        "y": 0.7481713688610241,
+        "updatedAt": 1771676427482
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__和歌山ラーメン",
+        "foodName": "和歌山ラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.2089864158829676,
+        "y": 0.19017763845350052,
+        "updatedAt": 1771676453689
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__クエ料理",
+        "foodName": "クエ料理",
+        "iconKey": "クエ料理",
+        "x": 0.509926854754441,
+        "y": 0.8944618599791013,
+        "updatedAt": 1771676485484
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__加太鯛料理",
+        "foodName": "加太鯛料理",
+        "iconKey": "鯛料理",
+        "x": 0.17972831765935215,
+        "y": 0.28213166144200624,
+        "updatedAt": 1771676511221
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__しらす丼",
+        "foodName": "しらす丼",
+        "iconKey": "しらす丼",
+        "x": 0.12957157784743992,
+        "y": 0.12748171368861025,
+        "updatedAt": 1771676547688
+      },
+      {
+        "prefCode": "wakayama",
+        "foodId": "wakayama__梅とんかつ",
+        "foodName": "梅とんかつ",
+        "iconKey": "梅とんかつ",
+        "x": 0.43260188087774293,
+        "y": 0.6593521421107628,
+        "updatedAt": 1771676568536
+      }
+    ],
+    "yamagata": [
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__芋煮",
+        "foodName": "芋煮",
+        "iconKey": "芋煮",
+        "x": 0.6185997910135841,
+        "y": 0.5256008359456635,
+        "updatedAt": 1771676758497
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__米沢牛料理",
+        "foodName": "米沢牛料理",
+        "iconKey": "牛料理",
+        "x": 0.5287356321839081,
+        "y": 0.7983281086729362,
+        "updatedAt": 1771676693870
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__冷やしラーメン",
+        "foodName": "冷やしラーメン",
+        "iconKey": "冷やしラーメン",
+        "x": 0.6039707419017764,
+        "y": 0.6185997910135841,
+        "updatedAt": 1771676733761
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__どんどん焼き",
+        "foodName": "どんどん焼き",
+        "iconKey": "どんどん焼き",
+        "x": 0.51619644723093,
+        "y": 0.5276907001044933,
+        "updatedAt": 1771676797955
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__酒田ワンタンメン",
+        "foodName": "酒田ワンタンメン",
+        "iconKey": "酒田ワンタン面",
+        "x": 0.38662486938349006,
+        "y": 0.04597701149425287,
+        "updatedAt": 1771676829095
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__庄内浜天然岩牡蠣料理",
+        "foodName": "庄内浜天然岩牡蠣料理",
+        "iconKey": "牡蠣",
+        "x": 0.3719958202716823,
+        "y": 0.14420062695924765,
+        "updatedAt": 1771676859094
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__赤湯からみそラーメン",
+        "foodName": "赤湯からみそラーメン",
+        "iconKey": "ラーメン",
+        "x": 0.677115987460815,
+        "y": 0.6332288401253918,
+        "updatedAt": 1771676951370
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__玉こんにゃく",
+        "foodName": "玉こんにゃく",
+        "iconKey": "玉こんにゃく",
+        "x": 0.4952978056426332,
+        "y": 0.6154649947753396,
+        "updatedAt": 1771676970054
+      },
+      {
+        "prefCode": "yamagata",
+        "foodId": "yamagata__鳥中華",
+        "foodName": "鳥中華",
+        "iconKey": "鳥中華",
+        "x": 0.7314524555903866,
+        "y": 0.44096133751306166,
+        "updatedAt": 1771677002251
+      }
+    ],
+    "yamaguchi": [
+      {
+        "prefCode": "yamaguchi",
+        "foodId": "yamaguchi__ふぐ料理",
+        "foodName": "ふぐ料理",
+        "iconKey": "ふぐ料理",
+        "x": 0.0877742946708464,
+        "y": 0.5862068965517241,
+        "updatedAt": 1771677052680
+      },
+      {
+        "prefCode": "yamaguchi",
+        "foodId": "yamaguchi__瓦そば",
+        "foodName": "瓦そば",
+        "iconKey": "瓦そば",
+        "x": 0.17763845350052246,
+        "y": 0.5893416927899686,
+        "updatedAt": 1771677065969
+      },
+      {
+        "prefCode": "yamaguchi",
+        "foodId": "yamaguchi__岩国寿司",
+        "foodName": "岩国寿司",
+        "iconKey": "寿司",
+        "x": 0.8944618599791013,
+        "y": 0.5621734587251829,
+        "updatedAt": 1771677096108
+      },
+      {
+        "prefCode": "yamaguchi",
+        "foodId": "yamaguchi__長門焼き鳥",
+        "foodName": "長門焼き鳥",
+        "iconKey": "焼き鳥",
+        "x": 0.30303030303030304,
+        "y": 0.4043887147335423,
+        "updatedAt": 1771677117563
+      }
+    ],
+    "yamanashi": [
+      {
+        "prefCode": "yamanashi",
+        "foodId": "yamanashi__ほうとう",
+        "foodName": "ほうとう",
+        "iconKey": "ほうとう",
+        "x": 0.4200626959247649,
+        "y": 0.33646812957157785,
+        "updatedAt": 1771677169535
+      },
+      {
+        "prefCode": "yamanashi",
+        "foodId": "yamanashi__鳥もつ煮",
+        "foodName": "鳥もつ煮",
+        "iconKey": "鳥もつ煮",
+        "x": 0.5308254963427377,
+        "y": 0.3322884012539185,
+        "updatedAt": 1771677186591
+      },
+      {
+        "prefCode": "yamanashi",
+        "foodId": "yamanashi__吉田うどん",
+        "foodName": "吉田うどん",
+        "iconKey": "うどん",
+        "x": 0.6792058516196448,
+        "y": 0.5956112852664577,
+        "updatedAt": 1771677208671
+      },
+      {
+        "prefCode": "yamanashi",
+        "foodId": "yamanashi__甲州ほうとう",
+        "foodName": "甲州ほうとう",
+        "iconKey": "ほうとう",
+        "x": 0.7021943573667712,
+        "y": 0.664576802507837,
+        "updatedAt": 1771677248986
+      },
+      {
+        "prefCode": "yamanashi",
+        "foodId": "yamanashi__ワインビーフ料理",
+        "foodName": "ワインビーフ料理",
+        "iconKey": "牛料理",
+        "x": 0.6123301985370951,
+        "y": 0.20794148380355276,
+        "updatedAt": 1771677287292
+      }
+    ]
+  }
+}
