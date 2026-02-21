@@ -1,3 +1,4 @@
+// src/app/components/PrefMapWithIcons.tsx
 import { useMemo } from "react";
 import { iconManifest } from "../edit/iconManifest.generated";
 
@@ -20,14 +21,14 @@ function norm(s: string) {
 export function PrefMapWithIcons({
   prefCode,
   placementsByPref,
-  activeFoodName,              // ★追加（検索クエリ等）
-  onIconClick,                 // ★追加（クリックで名産名を返す）
+  activeFoodKey,                // ★検索用キー（例：ラーメン / カレー）
+  onIconClick,                  // ★クリックで (foodName, prefCode) を返す
   className,
 }: {
   prefCode: string;
   placementsByPref: PlacementsByPref;
-  activeFoodName?: string;
-  onIconClick?: (foodName: string) => void;
+  activeFoodKey?: string;
+  onIconClick?: (foodName: string, prefCode: string) => void;
   className?: string;
 }) {
   const BASE = import.meta.env.BASE_URL || "/";
@@ -50,7 +51,7 @@ export function PrefMapWithIcons({
       .filter(Boolean) as Array<Placement & { iconSrc: string }>;
   }, [prefCode, placementsByPref]);
 
-  const activeN = norm(activeFoodName ?? "");
+  const q = norm(activeFoodKey ?? "");
 
   return (
     <div
@@ -71,28 +72,26 @@ export function PrefMapWithIcons({
         draggable={false}
       />
 
-      {/* overlay */}
       {pins.map((pl) => {
-        const isActive = activeN.length > 0 && norm(pl.foodName) === activeN;
+        // ★円の表示条件：検索キーが foodName に含まれるか（部分一致）
+        const isActive = q.length > 0 && norm(pl.foodName).includes(q);
 
         return (
           <button
             key={pl.foodId}
             type="button"
             title={pl.foodName}
-            onClick={() => onIconClick?.(pl.foodName)}
+            onClick={() => onIconClick?.(pl.foodName, pl.prefCode ?? prefCode)}
             style={{
               position: "absolute",
               left: `${pl.x * 100}%`,
               top: `${pl.y * 100}%`,
               transform: "translate(-50%, -50%)",
-
               border: "none",
               background: "transparent",
               padding: 0,
               cursor: onIconClick ? "pointer" : "default",
               borderRadius: 999,
-
               boxShadow: isActive ? "0 0 0 3px #111, 0 6px 14px rgba(0,0,0,0.25)" : "none",
             }}
           >
@@ -108,8 +107,8 @@ export function PrefMapWithIcons({
                 src={pl.iconSrc}
                 alt={pl.iconKey}
                 style={{
-                  width: isActive ? 40 : 36,
-                  height: isActive ? 40 : 36,
+                  width: isActive ? 96 : 90,
+                  height: isActive ? 96 : 90,
                   display: "block",
                   objectFit: "contain",
                   filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.25))",

@@ -1,3 +1,4 @@
+// src/app/pages/SearchResults.tsx
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router";
 import { ArrowLeft } from "lucide-react";
@@ -27,11 +28,41 @@ export type FoodItem = {
 
 export const foodData = generatedFoodData as FoodItem[];
 
+
+
+
+function norm(s: string) {
+  return (s ?? "").trim().toLowerCase();
+}
+
+// 「自由軒カレー」みたいな文字列を、foodDataに存在する検索キーへ寄せる
+function resolveFoodQuery(raw: string, foods: FoodItem[]): string {
+  const src = norm(raw);
+  if (!src) return raw;
+
+  // raw の中に含まれる food.name を探して「一番長い一致」を採用
+  // 例: "自由軒カレー" の中に "カレー" が含まれる → "カレー"
+  let best: string | null = null;
+
+  for (const f of foods) {
+    const name = (f.name ?? "").trim();
+    if (!name) continue;
+
+    const nameLower = norm(name);
+    if (src.includes(nameLower)) {
+      if (best === null || name.length > best.length) best = name;
+    }
+  }
+
+  return best ?? raw;
+}
+
 export default function SearchResults() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
   const query = searchParams.get("q") || "";
+  const prefParam = searchParams.get("pref") || "";
 
   // 検索欄用（共通ヘッダー）
   const [searchQuery, setSearchQuery] = useState<string>(() => query);
@@ -46,8 +77,12 @@ export default function SearchResults() {
     navigate(`/search?q=${encodeURIComponent(q)}`);
   };
 
-  // 右のカード hover/focus で県切替
+  const [lockedPrefCode, setLockedPrefCode] = useState<string | null>(null);
+
+  // 左の地図の表示県（hover/focus で切替）
   const [hoverPrefCode, setHoverPrefCode] = useState<string>("tokyo");
+
+  const effectivePrefCode = lockedPrefCode ?? hoverPrefCode;
 
   // placements 読み込み（public/placements.json）
   const [placementsByPref, setPlacementsByPref] = useState<PlacementsByPref>({});
@@ -59,9 +94,7 @@ export default function SearchResults() {
         if (!json || !json.placementsByPref) return;
         setPlacementsByPref(json.placementsByPref);
       })
-      .catch(() => {
-        // まだファイルがない段階は無視
-      });
+      .catch(() => {});
   }, []);
 
   // -----------------------------
@@ -101,12 +134,8 @@ export default function SearchResults() {
       const regionsToShow = food.regions.filter((region) => {
         const matchByPrefecture = region.prefecture.toLowerCase().includes(qLower);
 
-        // 県名検索ならその県だけ
-        if (matchByPrefecture) return true;
-
-        // 料理名検索なら全部表示
-        if (matchByFood) return true;
-
+        if (matchByPrefecture) return true; // 県名検索ならその県だけ
+        if (matchByFood) return true; // 料理名検索なら全部
         return false;
       });
 
@@ -116,8 +145,15 @@ export default function SearchResults() {
     return map;
   }, [matchedFoods, query]);
 
-  // 初期県：最初に「表示対象」になる地域の県に合わせる
+  // ★「3) クリックした県を最初に表示」対応
   useEffect(() => {
+    // ① アイコンクリックで渡された県(pref=tokyo等)を最優先
+    if (prefParam) {
+      setHoverPrefCode(prefParam);
+      return;
+    }
+
+    // ② それ以外は従来通り：データセット先頭の地域に合わせる
     for (const food of matchedFoods) {
       const regionsToShow = regionsToShowByFoodId.get(food.id) ?? [];
       const first = regionsToShow[0];
@@ -129,24 +165,37 @@ export default function SearchResults() {
         break;
       }
     }
-  }, [matchedFoods, regionsToShowByFoodId]);
+  }, [prefParam, matchedFoods, regionsToShowByFoodId]);
+
+  // ★「1) 丸い円」「2) 検索用の名前」対応のキー（queryそのままではなく丸めたキー）
+  const activeKey = useMemo(() => resolveFoodQuery(query, foodData), [query]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* 共通ヘッダー */}
-      <AppHeader value={searchQuery} onChange={setSearchQuery} onSearch={handleSearch} />
+    // ✅ Home と同じ背景色
+    <div className="min-h-screen bg-red-50"
+    onClick={() => setLockedPrefCode(null)}>
+      <AppHeader
+  value={searchQuery}
+  onChange={setSearchQuery}
+  onSearch={handleSearch}
+  leftSlot={
+    <button
+      type="button"
+      onClick={() => navigate("/")}
+      className="text-white font-semibold hover:opacity-80"
+    >
+      ← 戻る
+    </button>
+  }
+/>
 
-      {/* サブバー */}
-      <div className="border-b bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-3">
+      {/* サブバー（戻る＋件数） */}
+      <div className="border-b border-black/10 bg-white/80 backdrop-blur-sm">
+        <div className="w-full px-2 sm:px-3 md:px-4 py-3">
           <div className="flex items-center justify-between gap-3">
-            <Button variant="ghost" onClick={() => navigate("/")} className="gap-2">
-              <ArrowLeft size={20} />
-              戻る
-            </Button>
 
             <div className="text-center flex-1">
-              <h1 className="font-bold text-lg">「{query}」の検索結果</h1>
+              <h1 className="font-bold text-lg text-red-900">「{query}」の検索結果</h1>
               <p className="text-sm text-gray-600">{matchedFoods.length}件見つかりました</p>
             </div>
 
@@ -155,92 +204,140 @@ export default function SearchResults() {
         </div>
       </div>
 
-      {/* メイン */}
-      <main className="container mx-auto px-4 py-6">
+      {/* メイン（Homeに合わせて py-8 / 余白広め） */}
+      <main className="w-full px-2 sm:px-3 md:px-4 py-6">
         {matchedFoods.length === 0 ? (
           <div className="py-20 text-center">
-            <h2 className="text-2xl font-bold mb-4">「{query}」の検索結果が見つかりませんでした</h2>
+            <h2 className="text-2xl font-bold mb-4 text-red-900">
+              「{query}」の検索結果が見つかりませんでした
+            </h2>
             <p className="text-gray-600 mb-8">別の料理名や県名で検索してみてください</p>
             <Button onClick={() => navigate("/")}>ホームに戻る</Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-6 items-start">
+          // ✅ 地図を大きく（左カラム幅を増やす）
+          <div className="grid grid-cols-1 lg:grid-cols-[720px_1fr] gap-6 items-start">
             {/* 左：県地図（hoverで切替） */}
-            <div className="lg:sticky lg:top-24">
-              <div className="text-sm text-gray-600 mb-2">地図（地域にカーソルで県切替）</div>
+            <div className="lg:sticky lg:top-[140px]">
+              <div className="text-sm font-bold text-gray-800 mb-2">
+  地図
+  <span className="ml-2 text-gray-500 font-normal">
+    （地域にカーソルで県切替）
+  </span>
+</div>
 
               <PrefMapWithIcons
-  prefCode={hoverPrefCode}
-  placementsByPref={placementsByPref}
-  activeFoodName={query}
-  onIconClick={(foodName) => {
-    navigate(`/search?q=${encodeURIComponent(foodName)}`);
-  }}
-/>
+                prefCode={hoverPrefCode}
+                placementsByPref={placementsByPref}
+                activeFoodKey={activeKey} // ★円の判定に使う（検索用キー）
+                onIconClick={(clickedName: string, clickedPrefCode: string) => {
+                  // ★正式名称を検索キーへ丸める
+                  const q = resolveFoodQuery(clickedName, foodData);
+                  // ★クリックした県を pref= で渡して初期表示県にする
+                  navigate(
+                    `/search?q=${encodeURIComponent(q)}&pref=${encodeURIComponent(clickedPrefCode)}`
+                  );
+                }}
+                className="rounded-xl border border-black/10 bg-white overflow-hidden"
+              />
             </div>
 
             {/* 右：検索結果 */}
-            <div className="space-y-10">
+            <div
+  className="space-y-10"
+  onClick={() => {
+    setLockedPrefCode(null);
+  }}
+>
               {matchedFoods.map((food) => {
                 const regionsToShow = regionsToShowByFoodId.get(food.id) ?? [];
-
-                // 念のため空になった場合は表示しない
                 if (regionsToShow.length === 0) return null;
 
                 return (
-                  <section key={food.id} className="rounded-2xl border bg-white p-5">
+                  <section key={food.id} className="rounded-2xl border border-black/10 bg-white p-5">
                     <div className="flex items-end justify-between gap-4">
                       <div>
-                        <h2 className="text-2xl font-bold">{food.name}</h2>
+                        <h2 className="text-5xl font-extrabold text-red-900 leading-tight">{food.name}</h2>
                         <p className="text-sm text-gray-600 mt-1">
                           名産地にカーソルを合わせると地図が切り替わります
-                        </p>
+                          </p>
+                          <p className="text-sm text-gray-600 mt-1">
+                          カードをクリックすることで名産地を固定できます</p>
+                        
                       </div>
 
-                      {/* 料理写真（相手側の要素も残す：無ければプレースホルダ） */}
-                      <div className="hidden sm:block w-[180px] h-[110px] rounded-xl border bg-gray-50 overflow-hidden">
-                        <img
-                          src={getFoodImage(food)}
-                          alt={food.name}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.style.display = "none";
-                          }}
-                        />
-                        {/* 画像が無い時の保険（imgが消えたら見える） */}
-                        <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-                          料理写真（未設定）
-                        </div>
-                      </div>
+                      {/* 写真 */}
+<div className="w-[40vw] max-w-[720px] h-[260px] rounded-2xl border border-black/10 bg-gray-50 overflow-hidden shrink-0">
+  <img
+    src={getFoodImage(food)}
+    alt={food.name}
+    className="w-full h-full object-cover"
+    onError={(e) => {
+      e.currentTarget.style.display = "none";
+    }}
+  />
+  <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
+    料理写真（未設定）
+  </div>
+</div>
                     </div>
 
                     <div className="mt-5 grid md:grid-cols-2 gap-4">
                       {regionsToShow.map((region) => {
                         const code = prefToCode(region.prefecture);
+                        const isLocked = !!lockedPrefCode && code === lockedPrefCode;
 
                         return (
                           <Card
-                            key={region.id}
-                            className="p-4 cursor-pointer hover:shadow-md transition"
-                            onMouseEnter={() => {
-                              if (code) setHoverPrefCode(code);
-                            }}
-                            onFocus={() => {
-                              if (code) setHoverPrefCode(code);
-                            }}
-                            onClick={() => navigate(`/map?food=${food.id}&region=${region.id}`)}
-                            tabIndex={0}
-                            title={region.prefecture}
-                          >
-                            <div className="font-bold text-lg">{region.name}</div>
-                            <div className="text-sm text-gray-600">{region.prefecture}</div>
-                            <div className="text-xs text-gray-500 mt-2 line-clamp-3">
-                              {region.description}
-                            </div>
-                            <div className="mt-4">
-                              <Button className="w-full">この地域の宿を探す</Button>
-                            </div>
-                          </Card>
+  key={region.id}
+  className={[
+    "p-4 cursor-pointer transition",
+    isLocked ? "ring-4 ring-black shadow-xl" : "hover:shadow-md",
+  ].join(" ")}
+  onMouseEnter={() => {
+    if (lockedPrefCode) return;
+    if (code) setHoverPrefCode(code);
+  }}
+  onFocus={() => {
+    if (lockedPrefCode) return;
+    if (code) setHoverPrefCode(code);
+  }}
+  onClick={(e) => {
+    e.stopPropagation();
+    if (!code) return;
+    setLockedPrefCode((prev) => (prev === code ? null : code));
+  }}
+  tabIndex={0}
+>
+  {/* 1段目 */}
+  <div className="text-2xl font-black text-red-700">
+    {region.description && region.description.trim() !== ""
+      ? region.description
+      : food.name}
+  </div>
+
+  {/* 2段目 */}
+  <div className="mt-1 text-lg font-semibold text-gray-900">
+    {region.name}
+    <span className="text-gray-500 text-sm ml-2">
+      | {region.prefecture}
+    </span>
+  </div>
+
+  <div className="mt-4">
+    <Button
+  className="
+    w-full
+    transition-all duration-200
+    hover:-translate-y-0.5 hover:shadow-lg
+    active:translate-y-0 active:shadow-md
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2
+  "
+>
+  この地域の宿を探す
+</Button>
+  </div>
+</Card>
                         );
                       })}
                     </div>

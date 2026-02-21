@@ -1,6 +1,7 @@
 import { Hotel } from "lucide-react";
 import { SearchBar } from "./SearchBar";
 import { Button } from "./ui/button";
+import type { ReactNode } from "react";
 
 type Props = {
   value: string;
@@ -15,6 +16,8 @@ type Props = {
 
   // Joyrideの target を共通で使いたい場合に付けられる
   enableTourTarget?: boolean;
+
+  leftSlot?: ReactNode;
 };
 
 export function AppHeader({
@@ -24,6 +27,8 @@ export function AppHeader({
   onStartTour,
   logoX = 0,
   enableTourTarget = false,
+
+  leftSlot,
 }: Props) {
   const BASE = import.meta.env.BASE_URL;
 
@@ -56,6 +61,8 @@ export function AppHeader({
             className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex items-center"
             style={{ transform: `translate(${logoX}px, -50%)` }}
           >
+
+            
             <img
               src={`${BASE}hero/ロゴ.png`}
               alt="R-Hack"
@@ -67,6 +74,7 @@ export function AppHeader({
 
         {/* 2段目：アイコン + 検索 + 使い方 */}
         <div className="mt-3 flex items-center gap-3">
+          
           <div className="flex items-center gap-2 shrink-0">
             <div className="w-11 h-11 bg-gray-900 rounded-lg flex items-center justify-center">
               <Hotel className="text-white" size={22} />
@@ -80,10 +88,15 @@ export function AppHeader({
           </div>
 
           <div className="flex-1 flex justify-center">
-            <div className="w-full max-w-2xl" data-tour="search">
-                <SearchBar value={value} onChange={onChange} onSearch={onSearch} />
-            </div>
-        </div>
+  {/* 検索バー枠の中で「戻る」とSearchBarを横並び */}
+  <div className="w-full max-w-2xl flex items-center gap-2" data-tour="search">
+    {leftSlot && <div className="shrink-0">{leftSlot}</div>}
+
+    <div className="flex-1 min-w-0">
+      <SearchBar value={value} onChange={onChange} onSearch={onSearch} />
+    </div>
+  </div>
+</div>
 
           {/* Homeだけ表示 */}
           {onStartTour && (
