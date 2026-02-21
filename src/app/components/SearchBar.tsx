@@ -25,11 +25,11 @@ export function SearchBar({ value, onChange, onSearch, placeholder }: SearchBarP
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder || '特産品を検索（例：かき、りんご、うに）'}
+          placeholder={placeholder || '特産品を検索（例：ラーメン、海鮮、寿司、牛料理、鍋、うどん）'}
           className="pl-12 h-14 text-base"
         />
       </div>
-      <Button onClick={onSearch} size="lg" className="px-8 h-14 bg-black text-white hover:bg-gray-800">
+      <Button onClick={onSearch} size="lg" className="px-8 h-14 bg-red-900 text-white hover:bg-red-200">
         検索
       </Button>
     </div>

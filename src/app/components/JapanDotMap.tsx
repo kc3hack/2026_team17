@@ -12,6 +12,7 @@ type Props = {
   // 例: `${import.meta.env.BASE_URL}maps/geolonia/map-full.svg`
   svgPath?: string;
 };
+
 const CODE_TO_PREF_NAME: Record<string, string> = {
   "01": "北海道",
   "02": "青森県",
@@ -62,10 +63,7 @@ const CODE_TO_PREF_NAME: Record<string, string> = {
   "47": "沖縄県",
 };
 
-export function JapanDotMap({
-  onPickPrefecture,
-  svgPath,
-}: Props) {
+export function JapanDotMap({ onPickPrefecture, svgPath }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [error, setError] = useState<string>("");
 
@@ -97,54 +95,62 @@ export function JapanDotMap({
           ".geolonia-svg-map [data-code], [data-code], .prefecture"
         );
 
-            prefNodes.forEach((node) => {
-            // ベース色（薄い黄緑）
-            (node as HTMLElement).style.fill = "#d9f99d";   // lime-200相当
-            (node as HTMLElement).style.stroke = "#4d7c0f"; // lime-800寄り
-            (node as HTMLElement).style.strokeWidth = "1";
-            (node as HTMLElement).style.transition = "fill 120ms ease, transform 120ms ease";
-            (node as HTMLElement).style.transformOrigin = "center";
+        // ✅ ベース色（常にこれに戻す：灰色に戻らないように）
+        const BASE_FILL = "#d9f99d"; // lime-200相当
+        const BASE_STROKE = "#4d7c0f"; // lime-800寄り
 
+        prefNodes.forEach((node) => {
+          const el = node as unknown as SVGElement;
 
-          // 押せる見た目
-          node.style.cursor = "pointer";
+          // ベース見た目（最初に固定）
+          (el as any).style.fill = BASE_FILL;
+          (el as any).style.stroke = BASE_STROKE;
+          (el as any).style.strokeWidth = "1";
+          (el as any).style.transition =
+            "fill 120ms ease, transform 120ms ease";
+          (el as any).style.transformOrigin = "center";
+          (el as any).style.cursor = "pointer";
 
           // hover演出（fillを変える）
-          node.addEventListener("mouseenter", () => {
-            (node as any).style.fill = "#16a34a"; // 緑
-            (node as any).style.stroke = "rgba(0,0,0,0.35)";
-            (node as any).style.strokeWidth = "1";
-          });
+          const onEnter = () => {
+            (el as any).style.fill = "#16a34a"; // 緑
+            (el as any).style.stroke = "rgba(0,0,0,0.35)";
+            (el as any).style.strokeWidth = "1";
+          };
 
-          node.addEventListener("mouseleave", () => {
-            (node as any).style.fill = "";
-            (node as any).style.stroke = "";
-            (node as any).style.strokeWidth = "";
-          });
+          // ✅ 重要：mouseleaveで空に戻さず、必ずベース色へ戻す
+          const onLeave = () => {
+            (el as any).style.fill = BASE_FILL;
+            (el as any).style.stroke = BASE_STROKE;
+            (el as any).style.strokeWidth = "1";
+          };
 
-          node.addEventListener("click", () => {
-        const rawCode = (node as any).dataset?.code as string | undefined;
-         const rawName = (node as any).dataset?.name as string | undefined;
+          const onClick = () => {
+            const rawCode = (el as any).dataset?.code as string | undefined;
+            const rawName = (el as any).dataset?.name as string | undefined;
 
-        // 1) data-name が取れればそれが最優先
-         if (rawName && rawName.trim()) {
-        onPickPrefecture(rawName.trim());
-         return;
-        }
+            // 1) data-name が取れればそれが最優先
+            if (rawName && rawName.trim()) {
+              onPickPrefecture(rawName.trim());
+              return;
+            }
 
-  // 2) data-code が "1" の場合もあるので 2桁に正規化
-  if (rawCode) {
-    const code2 = rawCode.padStart(2, "0");
-    const prefName = CODE_TO_PREF_NAME[code2];
-    if (prefName) {
-      onPickPrefecture(prefName);
-      return;
-    }
-    // 3) 万一の保険（コードしか無いとき）
-    onPickPrefecture(code2);
-  }
-});
+            // 2) data-code が "1" の場合もあるので 2桁に正規化
+            if (rawCode) {
+              const code2 = rawCode.padStart(2, "0");
+              const prefName = CODE_TO_PREF_NAME[code2];
+              if (prefName) {
+                onPickPrefecture(prefName);
+                return;
+              }
+              // 3) 万一の保険（コードしか無いとき）
+              onPickPrefecture(code2);
+            }
+          };
 
+          el.addEventListener("mouseenter", onEnter);
+          el.addEventListener("mouseleave", onLeave);
+          el.addEventListener("click", onClick);
         });
       } catch (e: any) {
         setError(e?.message ?? "failed");
@@ -161,15 +167,15 @@ export function JapanDotMap({
   return (
     <div className="w-full">
       <div className="rounded-2xl border bg-[linear-gradient(180deg,#e0f2fe_0%,#f0f9ff_35%,#e0f2fe_100%)] p-3">
-  <div
-    ref={containerRef}
-    className="
-      h-[68vh] w-full overflow-hidden rounded-xl
-      [&_svg]:h-full [&_svg]:w-full [&_svg]:max-w-full [&_svg]:max-h-full
-    "
-  />
-</div>
-
+        <div
+          ref={containerRef}
+          className="
+            japanMapSvg
+            h-[68vh] w-full overflow-hidden rounded-xl
+            [&_svg]:h-full [&_svg]:w-full [&_svg]:max-w-full [&_svg]:max-h-full
+          "
+        />
+      </div>
 
       {error && (
         <div className="mt-2 text-sm text-red-600">
