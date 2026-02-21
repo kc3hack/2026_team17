@@ -32,6 +32,7 @@ type FoodItem = {
 
 const foodData = generatedFoodData as FoodItem[];
 
+
 // ▼ 件数設定
 const MAX_RESTAURANTS = 20;
 const MAX_LODGINGS = 20;
@@ -39,6 +40,7 @@ const MAX_NEARBY_FOODS = 2;
 
 // ▼ 店舗検索半径（地図用）
 const SEARCH_RADIUS_KM = 10;
+
 
 function extractCityFromRegionParam(regionParam: string) {
   if (!regionParam) return "";
