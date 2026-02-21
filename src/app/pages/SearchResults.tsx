@@ -317,16 +317,28 @@ export default function SearchResults() {
   </div>
 
   <div className="mt-4">
-    <Button
+   <Button
+  type="button"
   className="
-    w-full
+    w-full h-10
+    bg-gray-900 text-white
+    border border-transparent
     transition-all duration-200
-    hover:-translate-y-0.5 hover:shadow-lg
-    active:translate-y-0 active:shadow-md
+    hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-lg
+    active:translate-y-0 active:shadow-md active:bg-gray-900
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2
   "
+  onClick={(e) => {
+    e.stopPropagation();
+    navigate(
+      `/map?foodId=${encodeURIComponent(food.id)}&regionId=${encodeURIComponent(region.id)}`
+    );
+  }}
 >
-  この地域の宿を探す
+  <span className="inline-flex items-center justify-center gap-2">
+    この地域の宿を探す
+    <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+  </span>
 </Button>
   </div>
 </Card>
