@@ -78,13 +78,27 @@ const handleBack = () => {
   else navigate(-1);
 };
 
-  const foodId = searchParams.get("food") || "";
-  const regionParam = searchParams.get("region") || "";
-  const cityName = extractCityFromRegionParam(regionParam);
+  // ✅ 新旧どっちのクエリにも対応
+const foodId =
+  searchParams.get("foodId") || searchParams.get("food") || "";
 
-  const food = foodData.find((f) => f.id === foodId);
-  const region =
-    food?.regions.find((r) => r.name === cityName) ?? food?.regions[0];
+const regionId =
+  searchParams.get("regionId") || searchParams.get("region") || "";
+
+// ✅ food は id で引く
+const food = foodData.find((f) => f.id === foodId);
+
+// ✅ region は基本 id で引く（これが一番壊れない）
+let region = food?.regions.find((r) => r.id === regionId);
+
+// 旧仕様（region=xxx-市名 の名残）にも一応対応
+if (!region && food && regionId) {
+  const cityName = extractCityFromRegionParam(regionId);
+  region = food.regions.find((r) => r.name === cityName);
+}
+
+// それでも無いなら先頭
+region = region ?? food?.regions[0];
 
   const [restaurants, setRestaurants] = useState<PlaceItem[]>([]);
   const [lodgings, setLodgings] = useState<PlaceItem[]>([]);
