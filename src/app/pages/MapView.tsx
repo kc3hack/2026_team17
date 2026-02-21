@@ -1,10 +1,9 @@
 import { useSearchParams, useNavigate } from "react-router";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { CompactAppHeader } from "../components/CompactAppHeader";
 import {
   MapPin,
   Star,
-  Navigation,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -33,9 +32,12 @@ type FoodItem = {
 
 const foodData = generatedFoodData as FoodItem[];
 
-const MAX_RESTAURANTS = 40;
-const MAX_LODGINGS = 40;
-const MAX_NEARBY_FOODS = 20;
+// ▼ 件数設定
+const MAX_RESTAURANTS = 20;
+const MAX_LODGINGS = 20;
+const MAX_NEARBY_FOODS = 2;
+
+// ▼ 店舗検索半径（地図用）
 const SEARCH_RADIUS_KM = 10;
 
 function extractCityFromRegionParam(regionParam: string) {
@@ -76,6 +78,9 @@ export default function MapView() {
   const [restaurants, setRestaurants] = useState<PlaceItem[]>([]);
   const [lodgings, setLodgings] = useState<PlaceItem[]>([]);
 
+  const [loadingRestaurants, setLoadingRestaurants] = useState(false);
+  const [loadingLodgings, setLoadingLodgings] = useState(false);
+
   const [selected, setSelected] = useState<{
     id: string;
     lat: number;
@@ -108,7 +113,7 @@ export default function MapView() {
 
   if (!food || !region) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen bg-red-50 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">データが見つかりません</h2>
           <Button onClick={() => navigate("/")}>ホームに戻る</Button>
@@ -118,6 +123,14 @@ export default function MapView() {
   }
 
   const regionSafe = region;
+
+  // ▼ 検索条件が変わったら即ローディング表示にする
+  useEffect(() => {
+    setLoadingRestaurants(true);
+    setLoadingLodgings(true);
+    setRestaurants([]);
+    setLodgings([]);
+  }, [foodId, regionSafe.lat, regionSafe.lng]);
 
   const nearbyFoods = useMemo(() => {
     return foodData
@@ -129,7 +142,7 @@ export default function MapView() {
             distanceKm(
               { lat: regionSafe.lat, lng: regionSafe.lng },
               { lat: rr.lat, lng: rr.lng }
-            ) <= 50;
+            ) <= 5; // ← 近くの料理の検索範囲：5km
           return samePref && near;
         })
       )
@@ -157,7 +170,7 @@ export default function MapView() {
   }, [openedNearbyFoodIds, nearbyRestaurantsByFood]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-red-50">
       <CompactAppHeader
         value={searchQuery}
         onChange={setSearchQuery}
@@ -167,19 +180,19 @@ export default function MapView() {
         subtitle={regionSafe.prefecture}
       />
 
-      <div className="container mx-auto px-4 py-4">
+      <main className="container mx-auto px-4 py-6">
         <div className="grid lg:grid-cols-[1.4fr_1.05fr_1.0fr] gap-4">
 
-          {/* ---------- 左：GoogleMap + 近くの料理 ---------- */}
-          <div className="flex flex-col gap-4 h-[calc(100vh-90px)]">
+          {/* ---------- 左：地図＋近くの料理 ---------- */}
+          <div className="flex flex-col gap-4 h-[calc(100vh-120px)]">
 
-            {/* ---------------- GoogleMap ---------------- */}
-            <Card className="p-3 flex flex-col flex-[7] min-h-0">
-              <h2 className="text-sm font-bold mb-2">
-                Google Maps 検索結果
+            {/* ---------- 地図 ---------- */}
+            <Card className="p-3 flex flex-col flex-[7] min-h-0 border border-black bg-white rounded-xl">
+              <h2 className="text-sm font-bold mb-2 text-red-900">
+                周辺マップ
               </h2>
 
-              <div className="flex-1 min-h-0 overflow-hidden">
+              <div className="flex-1 min-h-0 overflow-hidden rounded-lg border">
                 <AreaMap
                   center={{
                     lat: regionSafe.lat,
@@ -187,12 +200,14 @@ export default function MapView() {
                   }}
                   foodKeyword={food.name}
                   radiusKm={SEARCH_RADIUS_KM}
-                  onRestaurants={(items) =>
-                    setRestaurants(items.slice(0, MAX_RESTAURANTS))
-                  }
-                  onLodgings={(items) =>
-                    setLodgings(items.slice(0, MAX_LODGINGS))
-                  }
+                  onRestaurants={(items) => {
+                    setRestaurants(items.slice(0, MAX_RESTAURANTS));
+                    setLoadingRestaurants(false);
+                  }}
+                  onLodgings={(items) => {
+                    setLodgings(items.slice(0, MAX_LODGINGS));
+                    setLoadingLodgings(false);
+                  }}
                   selected={selected ?? undefined}
                   nearbyStorePins={yellowPinStores}
                   fetchFoodId={fetchFoodId}
@@ -208,10 +223,12 @@ export default function MapView() {
               </div>
             </Card>
 
-            {/* ---------------- 近くの料理 ---------------- */}
-            <Card className="p-3 flex flex-col flex-[3] min-h-0">
+            {/* ---------- 近くの料理 ---------- */}
+            <Card className="p-3 flex flex-col flex-[3] min-h-0 border border-black bg-white rounded-xl">
               <div className="flex items-center justify-between mb-2">
-                <h4 className="font-bold text-sm">近くの料理</h4>
+                <h4 className="font-bold text-sm text-red-900">
+                  近くの料理
+                </h4>
                 <Badge variant="secondary">
                   {nearbyFoods.length}件
                 </Badge>
@@ -223,7 +240,10 @@ export default function MapView() {
                   const items = nearbyRestaurantsByFood[f.id] ?? [];
 
                   return (
-                    <Card key={f.id} className="p-2">
+                    <Card
+                      key={f.id}
+                      className="p-2 border border-black/10"
+                    >
                       <button
                         type="button"
                         className="w-full flex items-center justify-between text-left"
@@ -260,7 +280,7 @@ export default function MapView() {
                           {items.map((r) => (
                             <button
                               key={r.id}
-                              className="w-full text-left text-xs p-2 bg-gray-50 rounded"
+                              className="w-full text-left text-xs p-2 bg-red-50 rounded hover:bg-red-100"
                               onClick={() =>
                                 setSelected({
                                   id: r.id,
@@ -283,10 +303,10 @@ export default function MapView() {
             </Card>
           </div>
 
-          {/* ---------------- 周辺の〇〇店舗 ---------------- */}
-          <Card className="p-3 flex flex-col h-[calc(100vh-90px)]">
+          {/* ---------- 周辺の店舗 ---------- */}
+          <Card className="p-3 flex flex-col h-[calc(100vh-120px)] border border-black bg-white rounded-xl">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="font-bold text-sm">
+              <h3 className="font-bold text-sm text-red-900">
                 周辺の{food.name}店舗
               </h3>
               <Badge variant="secondary">
@@ -295,62 +315,70 @@ export default function MapView() {
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain space-y-2">
-              {restaurants.map((r) => (
-                <Card
-                  key={r.id}
-                  className="p-2 cursor-pointer hover:shadow"
-                  onClick={() =>
-                    setSelected({
-                      id: r.id,
-                      lat: r.lat,
-                      lng: r.lng,
-                      title: r.name,
-                      kind: "restaurant",
-                    })
-                  }
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                      店
+              {loadingRestaurants && (
+                <div className="text-sm text-gray-500 p-2">
+                  検索中…
+                </div>
+              )}
+
+              {!loadingRestaurants &&
+                restaurants.map((r) => (
+                  <Card
+                    key={r.id}
+                    className="p-2 cursor-pointer hover:shadow border border-black/20 rounded-xl bg-white"
+                    onClick={() =>
+                      setSelected({
+                        id: r.id,
+                        lat: r.lat,
+                        lng: r.lng,
+                        title: r.name,
+                        kind: "restaurant",
+                      })
+                    }
+                  >
+                    <div className="text-sm font-medium">
+                      {r.name}
                     </div>
 
-                    <div className="flex-1">
-                      <p className="text-sm font-medium">
-                        {r.name}
-                      </p>
+                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
+                      <MapPin size={12} />
+                      <span className="line-clamp-1">
+                        {r.address ?? "住所情報なし"}
+                      </span>
+                    </div>
 
-                      <div className="flex items-center gap-1 text-xs text-gray-600">
+                    {typeof r.rating === "number" && (
+                      <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                         <Star
                           size={12}
                           className="fill-yellow-400 text-yellow-400"
                         />
                         <span>{r.rating}</span>
                       </div>
-                    </div>
-                  </div>
+                    )}
 
-                  <a
-                    href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
-                      r.id
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="block mt-2"
-                  >
-                    <Button size="sm" className="w-full">
-                      Googleマップで開く
-                    </Button>
-                  </a>
-                </Card>
-              ))}
+                    <a
+                      href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
+                        r.id
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="block mt-2"
+                    >
+                      <Button size="sm" className="w-full">
+                        Googleマップで開く
+                      </Button>
+                    </a>
+                  </Card>
+                ))}
             </div>
           </Card>
 
-          {/* ---------------- 宿泊施設 ---------------- */}
-          <Card className="p-3 flex flex-col h-[calc(100vh-90px)]">
+          {/* ---------- 宿泊施設 ---------- */}
+          <Card className="p-3 flex flex-col h-[calc(100vh-120px)] border border-black bg-white rounded-xl">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="font-bold text-sm">
+              <h3 className="font-bold text-sm text-red-900">
                 おすすめの宿泊施設
               </h3>
               <Badge variant="secondary">
@@ -359,61 +387,68 @@ export default function MapView() {
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain space-y-2">
-              {lodgings.map((h) => (
-                <Card
-                  key={h.id}
-                  className="p-2 cursor-pointer hover:shadow"
-                  onClick={() =>
-                    setSelected({
-                      id: h.id,
-                      lat: h.lat,
-                      lng: h.lng,
-                      title: h.name,
-                      kind: "lodging",
-                    })
-                  }
-                >
-                  <div className="text-sm font-medium">
-                    {h.name}
-                  </div>
+              {loadingLodgings && (
+                <div className="text-sm text-gray-500 p-2">
+                  検索中…
+                </div>
+              )}
 
-                  <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
-                    <MapPin size={12} />
-                    <span className="line-clamp-1">
-                      {h.address ?? "住所情報なし"}
-                    </span>
-                  </div>
-
-                  {typeof h.rating === "number" && (
-                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
-                      <Star
-                        size={12}
-                        className="fill-yellow-400 text-yellow-400"
-                      />
-                      <span>{h.rating}</span>
-                    </div>
-                  )}
-
-                  <a
-                    href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
-                      h.id
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="block mt-2"
+              {!loadingLodgings &&
+                lodgings.map((h) => (
+                  <Card
+                    key={h.id}
+                    className="p-2 cursor-pointer hover:shadow border border-black/20 rounded-xl bg-white"
+                    onClick={() =>
+                      setSelected({
+                        id: h.id,
+                        lat: h.lat,
+                        lng: h.lng,
+                        title: h.name,
+                        kind: "lodging",
+                      })
+                    }
                   >
-                    <Button size="sm" className="w-full">
-                      Googleマップで開く
-                    </Button>
-                  </a>
-                </Card>
-              ))}
+                    <div className="text-sm font-medium">
+                      {h.name}
+                    </div>
+
+                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
+                      <MapPin size={12} />
+                      <span className="line-clamp-1">
+                        {h.address ?? "住所情報なし"}
+                      </span>
+                    </div>
+
+                    {typeof h.rating === "number" && (
+                      <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
+                        <Star
+                          size={12}
+                          className="fill-yellow-400 text-yellow-400"
+                        />
+                        <span>{h.rating}</span>
+                      </div>
+                    )}
+
+                    <a
+                      href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
+                        h.id
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="block mt-2"
+                    >
+                      <Button size="sm" className="w-full">
+                        Googleマップで開く
+                      </Button>
+                    </a>
+                  </Card>
+                ))}
             </div>
           </Card>
-
         </div>
-      </div>
+      </main>
     </div>
   );
 }
+
