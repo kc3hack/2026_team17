@@ -15,6 +15,9 @@ type Props = {
 
   // Joyrideの target を共通で使いたい場合に付けられる
   enableTourTarget?: boolean;
+
+  // ✅ 追加：ロゴ(R-Hack)クリック時の挙動（Homeへ戻す等）
+  onGoHome?: () => void;
 };
 
 export function AppHeader({
@@ -24,6 +27,7 @@ export function AppHeader({
   onStartTour,
   logoX = 0,
   enableTourTarget = false,
+  onGoHome,
 }: Props) {
   const BASE = import.meta.env.BASE_URL;
 
@@ -41,7 +45,7 @@ export function AppHeader({
 
       <div className="container mx-auto px-4 py-3 relative z-10">
         {/* 1段目：中央タイトル */}
-        <div className="flex justify-center">
+        <div className="relative flex justify-center">
           <div className="text-center">
             <div className="text-4xl font-bold tracking-wide text-white">
               しょくたび <span className="ml-1">✈</span>
@@ -51,23 +55,40 @@ export function AppHeader({
             </div>
           </div>
 
-          {/* 左ロゴ */}
+          {/* 左ロゴ（クリックでHomeへ） */}
           <div
             className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex items-center"
             style={{ transform: `translate(${logoX}px, -50%)` }}
           >
-            <img
-              src={`${BASE}hero/ロゴ.png`}
-              alt="R-Hack"
-              className="h-14 w-auto select-none"
-              draggable={false}
-            />
+            {onGoHome ? (
+              <button
+                type="button"
+                onClick={onGoHome}
+                className="cursor-pointer"
+                aria-label="ホームへ戻る"
+              >
+                <img
+                  src={`${BASE}hero/ロゴ.png`}
+                  alt="R-Hack"
+                  className="h-14 w-auto select-none"
+                  draggable={false}
+                />
+              </button>
+            ) : (
+              <img
+                src={`${BASE}hero/ロゴ.png`}
+                alt="R-Hack"
+                className="h-14 w-auto select-none"
+                draggable={false}
+              />
+            )}
           </div>
         </div>
 
-        {/* 2段目：アイコン + 検索 + 使い方 */}
-        <div className="mt-3 flex items-center gap-3">
-          <div className="flex items-center gap-2 shrink-0">
+        {/* 2段目：左情報 + 検索(中央固定) + 使い方 */}
+        <div className="mt-3 flex items-center">
+          {/* 左：アイコン+説明（固定幅にして中央ズレ防止） */}
+          <div className="w-[340px] flex items-center gap-2 shrink-0">
             <div className="w-11 h-11 bg-gray-900 rounded-lg flex items-center justify-center">
               <Hotel className="text-white" size={22} />
             </div>
@@ -79,24 +100,30 @@ export function AppHeader({
             </div>
           </div>
 
+          {/* 中央：検索（完全中央） */}
           <div className="flex-1 flex justify-center">
-            <div className="w-full max-w-2xl" data-tour="search">
-                <SearchBar value={value} onChange={onChange} onSearch={onSearch} />
+            <div
+              className="w-full max-w-2xl"
+              {...(enableTourTarget ? { "data-tour": "search" } : {})}
+            >
+              <SearchBar value={value} onChange={onChange} onSearch={onSearch} />
             </div>
-        </div>
+          </div>
 
-          {/* Homeだけ表示 */}
-          {onStartTour && (
-            <div className="hidden md:flex shrink-0 ml-auto">
-              <Button
-                variant="outline"
-                className="rounded-full bg-white/85 hover:bg-white text-gray-900 border-white/60"
-                onClick={onStartTour}
-              >
-                使い方
-              </Button>
-            </div>
-          )}
+          {/* 右：使い方（固定幅にして中央ズレ防止） */}
+          <div className="w-[340px] flex justify-end shrink-0">
+            {onStartTour && (
+              <div className="hidden md:flex">
+                <Button
+                  variant="outline"
+                  className="rounded-full bg-white/85 hover:bg-white text-gray-900 border-white/60"
+                  onClick={onStartTour}
+                >
+                  使い方
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>

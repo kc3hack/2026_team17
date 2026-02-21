@@ -1,17 +1,19 @@
-import { useSearchParams, useNavigate } from "react-router";
+import { useSearchParams, useNavigate, useLocation } from "react-router";
 import { useMemo, useState, useEffect } from "react";
-import { CompactAppHeader } from "../components/CompactAppHeader";
+import { AppHeader } from "../components/AppHeader";
 import {
   MapPin,
   Star,
   ChevronDown,
-  ChevronUp,
+  ChevronUp, 
+  ArrowLeft,
 } from "lucide-react";
 import generatedFoodData from "../data/foodData.generated.json";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import AreaMap, { PlaceItem } from "../components/AreaMap";
+
 
 type Region = {
   id: string;
@@ -67,7 +69,14 @@ function distanceKm(
 
 export default function MapView() {
   const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const location = useLocation() as { state?: { from?: string } };
+const navigate = useNavigate();
+
+const handleBack = () => {
+  const from = location.state?.from;
+  if (from) navigate(from);
+  else navigate(-1);
+};
 
   const foodId = searchParams.get("food") || "";
   const regionParam = searchParams.get("region") || "";
@@ -124,7 +133,7 @@ export default function MapView() {
     );
   }
 
-  const regionSafe = region;
+    const regionSafe = region;
 
   // ▼ 検索条件が変わったら即ローディング表示にする
   useEffect(() => {
@@ -173,14 +182,21 @@ export default function MapView() {
 
   return (
     <div className="min-h-screen bg-red-50">
-      <CompactAppHeader
-        value={searchQuery}
-        onChange={setSearchQuery}
-        onSearch={handleSearch}
-        onBack={() => navigate(-1)}
-        title={`${food.name} × ${regionSafe.name}`}
-        subtitle={regionSafe.prefecture}
-      />
+    <AppHeader value={searchQuery} onChange={setSearchQuery} onSearch={handleSearch} />
+
+      {/* サブバー */}
+      <div className="border-b bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between gap-3">
+            <Button variant="ghost" onClick={handleBack} className="gap-2">
+              <ArrowLeft size={20} />
+              戻る
+            </Button>
+            <div className="w-20" />
+          </div>
+        </div>
+      </div>
+  
 
       <main className="container mx-auto px-4 py-6">
         <div className="grid lg:grid-cols-[1.4fr_1.05fr_1.0fr] gap-4">
@@ -338,27 +354,29 @@ export default function MapView() {
                       })
                     }
                   >
-                    <div className="text-sm font-medium">
-                      {r.name}
+                    {/* 1行目：店名（左）＋レビュー（右） */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="text-sm font-medium leading-snug line-clamp-2">
+                        {r.name}
+                      </div>
+
+                      {typeof r.rating === "number" && (
+                        <div className="flex items-center gap-1 text-xs text-gray-700 shrink-0">
+                          <Star size={12} className="fill-yellow-400 text-yellow-400" />
+                          <span>{r.rating}</span>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
+                    {/* 2行目：住所（詰める） */}
+                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-0.25">
                       <MapPin size={12} />
-                      <span className="line-clamp-1">
+                      <span className="line-clamp-1 leading-snug">
                         {r.address ?? "住所情報なし"}
                       </span>
                     </div>
 
-                    {typeof r.rating === "number" && (
-                      <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
-                        <Star
-                          size={12}
-                          className="fill-yellow-400 text-yellow-400"
-                        />
-                        <span>{r.rating}</span>
-                      </div>
-                    )}
-
+                    {/* ボタン：上の余白を小さく */}
                     <a
                       href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
                         r.id
@@ -366,9 +384,9 @@ export default function MapView() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="block mt-2"
+                      className="block mt-0.25"
                     >
-                      <Button size="sm" className="w-full">
+                      <Button size="sm" className="w-full h-8">
                         Googleマップで開く
                       </Button>
                     </a>
@@ -380,19 +398,13 @@ export default function MapView() {
           {/* ---------- 宿泊施設 ---------- */}
           <Card className="p-3 flex flex-col h-[calc(100vh-120px)] border border-black bg-white rounded-xl">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="font-bold text-sm text-red-900">
-                おすすめの宿泊施設
-              </h3>
-              <Badge variant="secondary">
-                {lodgings.length}件
-              </Badge>
+              <h3 className="font-bold text-sm text-red-900">おすすめの宿泊施設</h3>
+              <Badge variant="secondary">{lodgings.length}件</Badge>
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain space-y-2">
               {loadingLodgings && (
-                <div className="text-sm text-gray-500 p-2">
-                  検索中…
-                </div>
+                <div className="text-sm text-gray-500 p-2">検索中…</div>
               )}
 
               {!loadingLodgings &&
@@ -410,27 +422,29 @@ export default function MapView() {
                       })
                     }
                   >
-                    <div className="text-sm font-medium">
-                      {h.name}
+                    {/* 1行目：宿名（左）＋レビュー（右） ※店舗と同じ感じに */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="text-sm font-medium leading-snug line-clamp-2">
+                        {h.name}
+                      </div>
+
+                      {typeof h.rating === "number" && (
+                        <div className="flex items-center gap-1 text-xs text-gray-700 shrink-0">
+                          <Star size={12} className="fill-yellow-400 text-yellow-400" />
+                          <span>{h.rating}</span>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
+                    {/* 2行目：住所（詰める） */}
+                    <div className="flex items-center gap-1 text-xs text-gray-600 mt-0.25">
                       <MapPin size={12} />
-                      <span className="line-clamp-1">
+                      <span className="line-clamp-1 leading-snug">
                         {h.address ?? "住所情報なし"}
                       </span>
                     </div>
 
-                    {typeof h.rating === "number" && (
-                      <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
-                        <Star
-                          size={12}
-                          className="fill-yellow-400 text-yellow-400"
-                        />
-                        <span>{h.rating}</span>
-                      </div>
-                    )}
-
+                    {/* ボタン：店舗と同じ高さに固定 */}
                     <a
                       href={`https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(
                         h.id
@@ -438,9 +452,9 @@ export default function MapView() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="block mt-2"
+                      className="block mt-0.25"
                     >
-                      <Button size="sm" className="w-full">
+                      <Button size="sm" className="w-full h-8">
                         Googleマップで開く
                       </Button>
                     </a>
@@ -453,4 +467,3 @@ export default function MapView() {
     </div>
   );
 }
-
