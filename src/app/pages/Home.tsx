@@ -274,10 +274,7 @@ export default function Home() {
       {/* ===== メイン ===== */}
       <main className="container mx-auto px-4 py-8 space-y-10">
         {/* ================= 地図/一覧/写真 ================= */}
-        <section
-          id="map"
-          
-        >
+        <section id="map">
           <div className="mb-6 hidden xl:grid grid-cols-[1fr_300px_360px] gap-4 items-end">
             <div className="text-2xl font-bold text-center text-red-900">
               地図から探す
@@ -346,66 +343,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= 人気の名産品（横スクロール） ================= */}
-{/* ================= 人気の名産品（回転ずし・無限） ================= */}
-<section data-tour="popular" id="popular">
-  <div className="mb-4">
-    <div className="text-2xl font-bold text-red-900">人気の名産品</div>
-    <div className="text-sm text-gray-600 mt-1">
-      クリックするとその名産で検索します
-    </div>
-  </div>
+        {/* ================= 人気の名産品（回転ずし・無限） ================= */}
+        <section data-tour="popular" id="popular">
+          <div className="mb-4">
+            <div className="text-2xl font-bold text-red-900">人気の名産品</div>
+            <div className="text-sm text-gray-600 mt-1">
+              クリックするとその名産で検索します
+            </div>
+          </div>
 
-  <div className="relative rounded-2xl border border-black/10 bg-white overflow-hidden">
-    {/* 端フェード（任意） */}
-    <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
-    <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="relative rounded-2xl border border-black/10 bg-white overflow-hidden">
+            {/* 端フェード（任意） */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
 
-    {/* レーン（2列つなげて無限に見せる） */}
-    <div className="sushi-viewport py-3">
-      <div className="sushi-track">
-        {[...popularFoods, ...popularFoods].map((food, i) => {
-          const regionCount = getRegionCount(food.name);
+            {/* レーン（2列つなげて無限に見せる） */}
+            <div className="sushi-viewport py-3">
+              <div className="sushi-track">
+                {[...popularFoods, ...popularFoods].map((food, i) => {
+                  const regionCount = getRegionCount(food.name);
 
-          return (
-            <button
-              key={`${food.name}-${i}`}
-              type="button"
-              onClick={() => handlePopularSearch(food.name)}
-              className="
-                sushi-card group text-left
-                rounded-2xl border border-black/10 bg-white overflow-hidden
-                hover:shadow-xl transition duration-300 hover:-translate-y-1
-              "
-              style={{
-                width: 250,      // ✅ カード大きめ（好きに調整OK）
-                flex: "0 0 auto" // ✅ つぶれ防止
-              }}
-              title={`${food.name}で検索`}
-            >
-              <div className="h-44 overflow-hidden">
-                <img
-                  src={food.image}
-                  alt={food.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  loading="lazy"
-                />
+                  return (
+                    <button
+                      key={`${food.name}-${i}`}
+                      type="button"
+                      onClick={() => handlePopularSearch(food.name)}
+                      className="
+                        sushi-card group text-left
+                        rounded-2xl border border-black/10 bg-white overflow-hidden
+                        hover:shadow-xl transition duration-300 hover:-translate-y-1
+                      "
+                      style={{
+                        width: 250,
+                        flex: "0 0 auto",
+                      }}
+                      title={`${food.name}で検索`}
+                    >
+                      <div className="h-44 overflow-hidden">
+                        <img
+                          src={food.image}
+                          alt={food.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      <div className="p-4">
+                        <div className="font-semibold text-lg">{food.name}</div>
+                        <div className="text-sm text-gray-500 mt-1">
+                          {regionCount}つの地域
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-
-              <div className="p-4">
-                <div className="font-semibold text-lg">{food.name}</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  {regionCount}つの地域
-                </div>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
       </main>
+
+      {/* ✅ フッター：写真の出典を明記 */}
+      <footer className="mt-10 border-t border-black/10 bg-white">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-sm text-gray-600">
+            <div className="font-semibold text-gray-800">写真の出典</div>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Adobe Stock</li>
+              <li>photo library</li>
+              <li>photo AC</li>
+            </ul>
+            <div className="mt-4 text-xs text-gray-500">
+              © {new Date().getFullYear()} R-Hack
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-} 
+}
