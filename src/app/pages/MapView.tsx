@@ -29,6 +29,7 @@ type FoodItem = {
   name: string;
   kana?: string;
   imageQuery: string;
+  tags?: string[];
   regions: Region[];
 };
 

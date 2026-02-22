@@ -4,6 +4,7 @@
     "name": "ラーメン",
     "kana": "らーめん",
     "imageQuery": "ramen",
+    "tags": ["めんるい", "麺","麺類"],
     "regions": [
       {
         "id": "ラーメン-札幌市",
@@ -429,6 +430,7 @@
     "name": "海鮮丼",
     "kana": "かいせんどん",
     "imageQuery": "kaisendon",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "海鮮丼-小樽市",
@@ -477,6 +479,7 @@
     "name": "寿司",
     "kana": "すし",
     "imageQuery": "sushi",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "寿司-小樽市",
@@ -557,6 +560,7 @@
     "name": "ジンギスカン",
     "kana": "じんぎすかん",
     "imageQuery": "zingisukan",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "ジンギスカン-札幌市",
@@ -589,6 +593,7 @@
     "name": "ちゃんちゃん焼き",
     "kana": "ちゃんちゃん焼き",
     "imageQuery": "tyantyanyaki",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "ちゃんちゃん焼き-石狩市",
@@ -646,6 +651,7 @@
     "name": "ホタテ",
     "kana": "ほたて",
     "imageQuery": "hotate",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "ホタテ-紋別市",
@@ -670,6 +676,7 @@
     "name": "ウニ丼",
     "kana": "うにどん",
     "imageQuery": "unidon",
+    "tags": ["海鮮", "魚介","丼"],
     "regions": [
       {
         "id": "ウニ丼-積丹町",
@@ -718,6 +725,7 @@
     "name": "いくら丼",
     "kana": "いくらどん",
     "imageQuery": "ikuradon",
+    "tags": ["海鮮", "魚介","丼"],
     "regions": [
       {
         "id": "いくら丼-釧路市",
@@ -734,6 +742,7 @@
     "name": "ザンギ",
     "kana": "ざんぎ",
     "imageQuery": "zangi",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "ザンギ-釧路市",
@@ -750,6 +759,7 @@
     "name": "焼き鳥",
     "kana": "やきとり",
     "imageQuery": "yakitori",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "焼き鳥-室蘭市",
@@ -798,6 +808,7 @@
     "name": "海鮮炉端焼き",
     "kana": "かいせんろばたやき",
     "imageQuery": "kaisenrobatayaki",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "海鮮炉端焼き-釧路市",
@@ -854,6 +865,7 @@
     "name": "豚丼",
     "kana": "ぶたどん",
     "imageQuery": "butadon",
+    "tags": ["丼","肉"],
     "regions": [
       {
         "id": "豚丼-帯広市",
@@ -870,6 +882,7 @@
     "name": "牡蠣料理",
     "kana": "かきりょうり",
     "imageQuery": "kaki",
+    "tags": ["海鮮","魚介"],
     "regions": [
       {
         "id": "牡蠣料理-厚岸町",
@@ -998,6 +1011,7 @@
     "name": "海鮮",
     "kana": "かいせん",
     "imageQuery": "kaisen",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "海鮮-斜里町",
@@ -1110,6 +1124,7 @@
     "name": "焼肉",
     "kana": "やきにく",
     "imageQuery": "yakiniku",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "焼肉-北見市",
@@ -1126,6 +1141,7 @@
     "name": "スパカツ",
     "kana": "すぱかつ",
     "imageQuery": "supakatu",
+    "tags": ["肉","麺類"],
     "regions": [
       {
         "id": "スパカツ-釧路市",
@@ -1160,6 +1176,7 @@
     "name": "カレーそば",
     "kana": "かれーそば",
     "imageQuery": "kare-soba",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "カレーそば-夕張市",
@@ -1176,6 +1193,7 @@
     "name": "焼そば",
     "kana": "やきそば",
     "imageQuery": "yakisoba",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "焼そば-小樽市",
@@ -1272,6 +1290,7 @@
     "name": "マグロ料理",
     "kana": "まぐろりょうり",
     "imageQuery": "maguro",
+    "tags": ["海鮮", "魚介"],
     "regions": [
       {
         "id": "マグロ料理-大間町",
@@ -1376,7 +1395,9 @@
     "name": "バラ焼き",
     "kana": "ばらやき",
     "imageQuery": "barayaki",
+    "tags": ["肉"],
     "regions": [
+      
       {
         "id": "バラ焼き-十和田市",
         "name": "十和田市",
@@ -1424,6 +1445,7 @@
     "name": "そば",
     "kana": "そば",
     "imageQuery": "soba",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "そば-盛岡市",
@@ -1552,6 +1574,7 @@
     "name": "冷麺",
     "kana": "れいめん",
     "imageQuery": "reimen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "冷麺-盛岡市",
@@ -1584,6 +1607,7 @@
     "name": "じゃじゃ麺",
     "kana": "じゃじゃめん",
     "imageQuery": "jajamen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "じゃじゃ麺-盛岡市",
@@ -1600,6 +1624,7 @@
     "name": "牛料理",
     "kana": "うしりょうり",
     "imageQuery": "beef",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "牛料理-奥州市",
@@ -1744,6 +1769,7 @@
     "name": "瓶ドン",
     "kana": "びんどん",
     "imageQuery": "bindon",
+    "tags": ["海鮮"],
     "regions": [
       {
         "id": "瓶ドン-宮古市",
@@ -1760,6 +1786,7 @@
     "name": "サンマ",
     "kana": "さんま",
     "imageQuery": "sanma",
+    "tags": ["魚介"],
     "regions": [
       {
         "id": "サンマ-大槌町",
@@ -1792,6 +1819,7 @@
     "name": "牛タン",
     "kana": "ぎゅうたん",
     "imageQuery": "gyutan",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "牛タン-仙台市",
@@ -1808,6 +1836,7 @@
     "name": "ずんだ餅",
     "kana": "ずんだもち",
     "imageQuery": "zundamoti",
+    "tags": ["スイーツ"],
     "regions": [
       {
         "id": "ずんだ餅-仙台市",
@@ -1840,6 +1869,7 @@
     "name": "鯖料理",
     "kana": "さばりょうり",
     "imageQuery": "saba",
+    "tags": [ "魚介","海鮮"],
     "regions": [
       {
         "id": "鯖料理-石巻市",
@@ -1864,6 +1894,7 @@
     "name": "フカヒレ料理",
     "kana": "ふかひれりょうり",
     "imageQuery": "hukahire",
+    "tags": ["魚介"],
     "regions": [
       {
         "id": "フカヒレ料理-気仙沼市",
@@ -1880,6 +1911,7 @@
     "name": "カツオ料理",
     "kana": "かつおりょうり",
     "imageQuery": "katuo",
+    "tags": ["魚介","海鮮"],
     "regions": [
       {
         "id": "カツオ料理-気仙沼市",
@@ -1936,6 +1968,7 @@
     "name": "温麺",
     "kana": "うーめん",
     "imageQuery": "u-men",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "温麺-白石市",
@@ -1968,6 +2001,7 @@
     "name": "うどん",
     "kana": "うどん",
     "imageQuery": "udon",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "うどん-湯沢市",
@@ -2120,6 +2154,7 @@
     "name": "地鶏料理",
     "kana": "じどりりょうり",
     "imageQuery": "zidori",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "比内地鶏料理-大館市",
@@ -2185,6 +2220,8 @@
     "name": "どんどん焼き",
     "kana": "どんどんやき",
     "imageQuery": "dondon",
+    "tags": ["スイーツ"],
+    
     "regions": [
       {
         "id": "どんどん焼き-山形市",
@@ -2201,6 +2238,7 @@
     "name": "ワンタンメン",
     "kana": "さかたわんたんめん",
     "imageQuery": "wantanmen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "ワンタンメン-酒田市",
@@ -2217,6 +2255,7 @@
     "name": "コロッケ",
     "kana": "ころっけ",
     "imageQuery": "korokke",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "米沢牛コロッケ-米沢市",
@@ -2249,6 +2288,7 @@
     "name": "鳥中華",
     "kana": "とりちゅうか",
     "imageQuery": "torityuka",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "鳥中華-天童市",
@@ -2265,6 +2305,7 @@
     "name": "カツ丼",
     "kana": "かつどん",
     "imageQuery": "katudon",
+    "tags": ["肉", "丼"],
     "regions": [
       {
         "id": "カツ丼-会津若松市",
@@ -2449,6 +2490,7 @@
     "name": "しらす丼",
     "kana": "しらすどん",
     "imageQuery": "sirasudon",
+    "tags": ["丼","海鮮"],
     "regions": [
       {
         "id": "しらす丼-大洗町",
@@ -2505,6 +2547,8 @@
     "name": "はまぐり料理",
     "kana": "はまぐりりょうり",
     "imageQuery": "hamaguri",
+    "tags": ["海鮮", "魚介"],
+
     "regions": [
       {
         "id": "はまぐり料理-鹿嶋市",
@@ -2553,6 +2597,7 @@
     "name": "しゃも料理",
     "kana": "しゃもりょうり",
     "imageQuery": "shamo",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "しゃも料理-大子町",
@@ -2585,6 +2630,7 @@
     "name": "ステーキ",
     "kana": "すてーき",
     "imageQuery": "sute-ki",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "那須高原ステーキ-那須町",
@@ -2657,6 +2703,7 @@
     "name": "パスタ",
     "kana": "ぱすた",
     "imageQuery": "pasuta",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "高崎パスタ-高崎市",
@@ -2713,6 +2760,7 @@
     "name": "焼きうどん",
     "kana": "やきうどん",
     "imageQuery": "yakiudon",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "焼きうどん-太田市",
@@ -2740,22 +2788,7 @@
       }
     ]
   },
-  {
-    "id": "ゼリーフライ",
-    "name": "ゼリーフライ",
-    "kana": "ぜりーふらい",
-    "imageQuery": "zeri-hurai",
-    "regions": [
-      {
-        "id": "ゼリーフライ-行田市",
-        "name": "行田市",
-        "prefecture": "埼玉県",
-        "description": "",
-        "lat": 36.13905,
-        "lng": 139.4559326
-      }
-    ]
-  },
+  
   {
     "id": "味噌ポテト",
     "name": "味噌ポテト",
@@ -2777,6 +2810,7 @@
     "name": "豚みそ丼",
     "kana": "ぶたみそどん",
     "imageQuery": "butamiso",
+    "tags": ["肉", "丼"],
     "regions": [
       {
         "id": "豚みそ丼-秩父市",
@@ -2793,12 +2827,21 @@
     "name": "フライ",
     "kana": "ふらい",
     "imageQuery": "gyoudahurai",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "行田フライ-行田市",
         "name": "行田市",
         "prefecture": "埼玉県",
         "description": "行田フライ",
+        "lat": 36.13905,
+        "lng": 139.4559326
+      },
+      {
+        "id": "ゼリーフライ-行田市",
+        "name": "行田市",
+        "prefecture": "埼玉県",
+        "description": "",
         "lat": 36.13905,
         "lng": 139.4559326
       }
@@ -2826,6 +2869,8 @@
     "name": "担々麵",
     "kana": "かつうらたんたんめん",
     "imageQuery": "tantanmen",
+    "tags": ["麺類"],
+    
     "regions": [
       {
         "id": "勝浦担々麵-勝浦市",
@@ -2882,6 +2927,7 @@
     "name": "伊勢海老料理",
     "kana": "いせえびりょうり",
     "imageQuery": "iseebi",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "伊勢海老料理-南房総市",
@@ -2906,6 +2952,7 @@
     "name": "金目鯛料理",
     "kana": "きんめだいりょうり",
     "imageQuery": "kinmedai",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "金目鯛料理-鴨川市",
@@ -2930,6 +2977,7 @@
     "name": "つりきんめ丼",
     "kana": "つりきんめどん",
     "imageQuery": "turikinme",
+    "tags": ["魚介", "海鮮","丼"],
     "regions": [
       {
         "id": "銚子つりきんめ丼-銚子市",
@@ -2946,6 +2994,7 @@
     "name": "アジフライ",
     "kana": "あじふらい",
     "imageQuery": "azihurai",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "房総アジフライ-館山市",
@@ -2970,6 +3019,7 @@
     "name": "もんじゃ焼き",
     "kana": "もんじゃやき",
     "imageQuery": "monja",
+    "tags": ["粉もの"],
     "regions": [
       {
         "id": "もんじゃ焼き-中央区（月島）",
@@ -3002,6 +3052,7 @@
     "name": "天ぷら",
     "kana": "てんぷら",
     "imageQuery": "tenpura",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "天ぷら-台東区（浅草）",
@@ -3026,6 +3077,7 @@
     "name": "あさり料理",
     "kana": "あさりりょうり",
     "imageQuery": "asari",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "あさり料理-江東区",
@@ -3042,6 +3094,8 @@
     "name": "天丼",
     "kana": "てんどん",
     "imageQuery": "tendon",
+    "tags": ["揚げ物"],
+    
     "regions": [
       {
         "id": "下町天丼-台東区（浅草）",
@@ -3093,6 +3147,7 @@
     "name": "白えび丼",
     "kana": "しろえびどん",
     "imageQuery": "siroebi",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "白えび丼-富山市",
@@ -3110,6 +3165,7 @@
     "name": "ブリ料理",
     "kana": "ぶりりょうり",
     "imageQuery": "kanburi",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "寒ブリ料理-氷見市",
@@ -3134,6 +3190,7 @@
     "name": "カニ",
     "kana": "かに",
     "imageQuery": "kani",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "カニ料理-射水市",
@@ -3286,6 +3343,7 @@
     "name": "のどぐろ料理",
     "kana": "のどぐろりょうり",
     "imageQuery": "nodoguro",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "のどぐろ料理-金沢市",
@@ -3318,6 +3376,7 @@
     "name": "ふぐ料理",
     "kana": "ふぐりょうり",
     "imageQuery": "hugu",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "ふぐ料理-輪島市",
@@ -3391,6 +3450,7 @@
     "name": "鳥もつ煮",
     "kana": "とりもつに",
     "imageQuery": "torimotuni",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "鳥もつ煮-甲府市",
@@ -3407,6 +3467,7 @@
     "name": "山賊焼き",
     "kana": "さんぞくやき",
     "imageQuery": "sanzoku",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "山賊焼き-松本市",
@@ -3423,6 +3484,7 @@
     "name": "おやき",
     "kana": "おやき",
     "imageQuery": "oyaki",
+    "tags": ["スイーツ"],
     "regions": [
       {
         "id": "おやき-長野市",
@@ -3439,6 +3501,7 @@
     "name": "サーモン料理",
     "kana": "さーもんりょうり",
     "imageQuery": "sa-mon",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "サーモン料理-松本市",
@@ -3487,6 +3550,7 @@
     "name": "鶏ちゃん",
     "kana": "にわとりちゃん",
     "imageQuery": "keityan",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "鶏ちゃん-下呂市",
@@ -3536,6 +3600,7 @@
     "name": "うなぎ料理",
     "kana": "うなぎりょうり",
     "imageQuery": "unagi",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "うなぎ料理-浜松市",
@@ -3576,6 +3641,7 @@
     "name": "桜えび料理",
     "kana": "さくらえびりょうり",
     "imageQuery": "sakuraebi",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "桜えび料理-静岡市（由比）",
@@ -3593,6 +3659,7 @@
     "name": "げんこつハンバーグ",
     "kana": "げんこつはんばーぐ",
     "imageQuery": "hanba-gu",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "げんこつハンバーグ-静岡県内広域",
@@ -3609,6 +3676,7 @@
     "name": "ひつまぶし",
     "kana": "ひつまぶし",
     "imageQuery": "hitumabusi",
+    "tags": ["丼"],
     "regions": [
       {
         "id": "ひつまぶし-名古屋市",
@@ -3625,6 +3693,7 @@
     "name": "味噌カツ",
     "kana": "みそかつ",
     "imageQuery": "misokatu",
+    "tags": ["丼","肉"],
     "regions": [
       {
         "id": "味噌カツ-名古屋市",
@@ -3641,6 +3710,7 @@
     "name": "手羽先",
     "kana": "てばさき",
     "imageQuery": "tebasaki",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "手羽先-名古屋市",
@@ -3657,6 +3727,7 @@
     "name": "きしめん",
     "kana": "きしめん",
     "imageQuery": "kisimen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "きしめん-名古屋市",
@@ -3673,6 +3744,7 @@
     "name": "あんかけスパ",
     "kana": "あんかけすぱ",
     "imageQuery": "ankakesupa",
+    "tags": ["麵類"],
     "regions": [
       {
         "id": "あんかけスパ-名古屋市",
@@ -3692,6 +3764,7 @@
     "name": "鮒ずし",
     "kana": "ふなずし",
     "imageQuery": "hunazusi",
+    "tags": ["魚介","海鮮","すし","寿司"],
     "regions": [
       {
         "id": "鮒ずし-高島市",
@@ -3708,6 +3781,7 @@
     "name": "ちゃんぽん",
     "kana": "ちゃんぽん",
     "imageQuery": "oumityanpon",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "近江ちゃんぽん-彦根市",
@@ -3732,6 +3806,7 @@
     "name": "近江牛すき焼き",
     "kana": "おうみぎゅうすきやき",
     "imageQuery": "sukiyaki",
+    "tags": ["肉","鍋"],
     "regions": [
       {
         "id": "近江牛すき焼き-彦根市",
@@ -3748,6 +3823,7 @@
     "name": "焼き鯖そうめん",
     "kana": "やきさばそうめん",
     "imageQuery": "sabasoumen",
+    "tags": ["麺類","魚介","海鮮"],
     "regions": [
       {
         "id": "焼き鯖そうめん-長浜市",
@@ -3844,6 +3920,7 @@
     "name": "鱧料理",
     "kana": "はもりょうり",
     "imageQuery": "hamo",
+    "tags": ["魚介","海鮮"],
     "regions": [
       {
         "id": "鱧料理-京都市",
@@ -3860,6 +3937,7 @@
     "name": "抹茶",
     "kana": "まっちゃ",
     "imageQuery": "mattya",
+    "tags": ["スイーツ"],
     "regions": [
       {
         "id": "抹茶-京都市",
@@ -3876,6 +3954,7 @@
     "name": "たこ焼き",
     "kana": "たこやき",
     "imageQuery": "takoyaki",
+    "tags": ["粉もの"],
     "regions": [
       {
         "id": "たこ焼き-大阪市（難波）",
@@ -3891,6 +3970,7 @@
     "id": "お好み焼き",
     "name": "お好み焼き",
     "kana": "おこのみやき",
+    "tags": ["粉もの"],
     "imageQuery": "okonomiyaki",
     "regions": [
       {
@@ -3916,6 +3996,7 @@
     "name": "串カツ",
     "kana": "くしかつ",
     "imageQuery": "kusikatu",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "串カツ-大阪市（新世界）",
@@ -4012,6 +4093,7 @@
     "name": "鯛料理",
     "kana": "たいりょうり",
     "imageQuery": "tai",
+    "tags": ["魚介","海鮮"],
     "regions": [
       {
         "id": "鯛料理-明石市",
@@ -4044,6 +4126,7 @@
     "name": "そうめん",
     "kana": "そうめん",
     "imageQuery": "soumen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "そうめん-桜井市",
@@ -4100,6 +4183,7 @@
     "name": "クエ料理",
     "kana": "くえりょうり",
     "imageQuery": "kue",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "クエ料理-すさみ町",
@@ -4116,6 +4200,7 @@
     "name": "梅とんかつ",
     "kana": "うめとんかつ",
     "imageQuery": "umetonkatu",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "梅とんかつ-みなべ町",
@@ -4133,6 +4218,7 @@
     "name": "日生カキオコ",
     "kana": "にっせいかきおこ",
     "imageQuery": "nisseikakioko",
+    "tags": ["粉もの", "海鮮"],
     "regions": [
       {
         "id": "日生カキオコ-備前市（日生）",
@@ -4149,6 +4235,7 @@
     "name": "穴子飯",
     "kana": "あなごめし",
     "imageQuery": "anagomesi",
+    "tags": ["丼"],
     "regions": [
       {
         "id": "穴子飯-廿日市市（宮島）",
@@ -4165,6 +4252,7 @@
     "name": "つけ麺",
     "kana": "つけめん",
     "imageQuery": "tukemen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "つけ麺-広島市",
@@ -4198,6 +4286,7 @@
     "name": "しじみ汁・しじみ料理",
     "kana": "しじみじる・しじみりょうり",
     "imageQuery": "sizimi",
+    "tags": ["海鮮","魚介"],
     "regions": [
       {
         "id": "しじみ汁・しじみ料理-松江市",
@@ -4246,6 +4335,7 @@
     "name": "骨付鳥",
     "kana": "ほねつきとり",
     "imageQuery": "honetukidori",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "骨付鳥-丸亀市",
@@ -4262,6 +4352,7 @@
     "name": "鶏料理",
     "kana": "とりりょうり",
     "imageQuery": "tori",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "鶏料理-徳島市",
@@ -4286,6 +4377,7 @@
     "name": "フィッシュカツ",
     "kana": "ふぃっしゅかつ",
     "imageQuery": "katu",
+    "tags": ["フライ"],
     "regions": [
       {
         "id": "徳島フィッシュカツ-徳島市",
@@ -4342,6 +4434,7 @@
     "name": "じゃこ天",
     "kana": "じゃこてん",
     "imageQuery": "jakoten",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "じゃこ天-宇和島市",
@@ -4409,6 +4502,7 @@
     "name": "イカ",
     "kana": "いか",
     "imageQuery": "ika",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "イカ刺し-函館市",
@@ -4468,6 +4562,7 @@
     "name": "トルコライス",
     "kana": "とるこらいす",
     "imageQuery": "torukoraisu",
+    "tags": ["揚げ物","麺類"],
     "regions": [
       {
         "id": "トルコライス-長崎市",
@@ -4484,6 +4579,7 @@
     "name": "ヒラメ料理",
     "kana": "ひらめりょうり",
     "imageQuery": "hirame",
+    "tags": ["魚介", "海鮮"],
     "regions": [
       {
         "id": "ヒラメ料理-平戸市",
@@ -4500,6 +4596,7 @@
     "name": "穴子料理",
     "kana": "あなごりょうり",
     "imageQuery": "anago",
+    "tags": ["魚介","海鮮","揚げ物"],
     "regions": [
       {
         "id": "穴子料理-対馬市",
@@ -4518,6 +4615,7 @@
     "name": "太平燕",
     "kana": "たいぴーえん",
     "imageQuery": "taipi-en",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "太平燕-熊本市",
@@ -4566,6 +4664,7 @@
     "name": "とり天",
     "kana": "とりてん",
     "imageQuery": "toriten",
+    "tags": ["肉","揚げ物"],
     "regions": [
       {
         "id": "とり天-大分市",
@@ -4615,6 +4714,7 @@
     "name": "からあげ",
     "kana": "からあげ",
     "imageQuery": "karaage",
+    "tags": ["肉","揚げ物"],
     "regions": [
       {
         "id": "からあげ-中津市",
@@ -4639,6 +4739,7 @@
     "name": "チキン南蛮",
     "kana": "ちきんなんばん",
     "imageQuery": "tikinnanban",
+    "tags": ["肉","揚げ物"],
     "regions": [
       {
         "id": "チキン南蛮-延岡市",
@@ -4672,6 +4773,7 @@
     "name": "辛麺",
     "kana": "しんめん",
     "imageQuery": "sinmen",
+    "tags": ["麺類"],
     "regions": [
       {
         "id": "辛麺-宮崎市",
@@ -4712,6 +4814,7 @@
     "name": "黒豚料理",
     "kana": "くろぶたりょうり",
     "imageQuery": "kurobuta",
+    "tags": ["肉","揚げ物"],
     "regions": [
       {
         "id": "黒豚料理-鹿児島市",
@@ -4728,6 +4831,7 @@
     "name": "白熊",
     "kana": "しろくま",
     "imageQuery": "sirokuma",
+    "tags": ["スイーツ"],
     "regions": [
       {
         "id": "白熊-鹿児島市",
@@ -4760,6 +4864,7 @@
     "name": "さつま揚げ",
     "kana": "さつまあげ",
     "imageQuery": "satumaage",
+    "tags": ["揚げ物"],
     "regions": [
       {
         "id": "さつま揚げ-鹿児島市",
@@ -4776,6 +4881,7 @@
     "name": "きびなご料理",
     "kana": "きびなごりょうり",
     "imageQuery": "kibinago",
+    "tags": ["揚げ物","魚介","海鮮"],
     "regions": [
       {
         "id": "きびなご料理-指宿市",
@@ -4792,6 +4898,7 @@
     "name": "黒さつま鶏料理",
     "kana": "くろさつまとりりょうり",
     "imageQuery": "kurosatuma",
+    "tags": ["肉", "鍋"],
     "regions": [
       {
         "id": "黒さつま鶏料理-鹿児島市",
@@ -4849,6 +4956,7 @@
     "name": "ラフテー",
     "kana": "らふてー",
     "imageQuery": "rahute-",
+    "tags": ["肉"],
     "regions": [
       {
         "id": "ラフテー-那覇市",
@@ -4865,6 +4973,7 @@
     "name": "アグー豚料理",
     "kana": "あぐーぶたりょうり",
     "imageQuery": "agu-",
+    "tags": ["鍋", "肉"],
     "regions": [
       {
         "id": "アグー豚料理-名護市",
